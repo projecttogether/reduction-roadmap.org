@@ -1,0 +1,26 @@
+/*
+ * styles.css — minimal local overrides only.
+ * All design rules come from the css/ folder (real Squarespace files).
+ */
+
+/* Mobile nav overlay (no SQS JS to drive this) */
+#mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: #013922;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+#mobile-nav[hidden] { display: none; }
+
+#mobile-nav .header-menu-nav-item a {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
