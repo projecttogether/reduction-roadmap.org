@@ -7,26 +7,16 @@
  * Static rendering fix: imageFluid.css sets height:100% on the whole wrapper
  * chain and position:absolute on the img, relying on JS to inject an explicit
  * pixel height. Without JS we collapse the chain to height:auto and let the img
- * use natural aspect-ratio flow.
+ * use natural aspect-ratio flow. Applied globally to all imageFluid blocks.
  */
-#block-fe2b1d4ea83045b5573b .sqs-block-content,
-#block-fe2b1d4ea83045b5573b .image-block-outer-wrapper,
-#block-fe2b1d4ea83045b5573b .sqs-image,
-#block-fe2b1d4ea83045b5573b .fluid-image-container,
-#block-84c0186281a655ad7e93 .sqs-block-content,
-#block-84c0186281a655ad7e93 .image-block-outer-wrapper,
-#block-84c0186281a655ad7e93 .sqs-image,
-#block-84c0186281a655ad7e93 .fluid-image-container,
-#block-18d6e060721550a9f3cb .sqs-block-content,
-#block-18d6e060721550a9f3cb .image-block-outer-wrapper,
-#block-18d6e060721550a9f3cb .sqs-image,
-#block-18d6e060721550a9f3cb .fluid-image-container {
+.sqs-block[data-definition-name="website.components.imageFluid"] .sqs-block-content,
+.sqs-block[data-definition-name="website.components.imageFluid"] .image-block-outer-wrapper,
+.sqs-block[data-definition-name="website.components.imageFluid"] .sqs-image,
+.sqs-block[data-definition-name="website.components.imageFluid"] .fluid-image-container {
   height: auto !important;
   display: block !important;
 }
-#block-fe2b1d4ea83045b5573b .fluid-image-container img,
-#block-84c0186281a655ad7e93 .fluid-image-container img,
-#block-18d6e060721550a9f3cb .fluid-image-container img {
+.sqs-block[data-definition-name="website.components.imageFluid"] .fluid-image-container img {
   position: static !important;
   width: 100% !important;
   height: auto !important;
