@@ -45,7 +45,9 @@
   gap: 1.5rem;
 }
 
-#mobile-nav[hidden] { display: none; }
+#mobile-nav[hidden] {
+  display: none;
+}
 
 #mobile-nav .header-menu-nav-item a {
   font-size: 1.5rem;
