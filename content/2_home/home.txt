@@ -2,7 +2,7 @@ Title: Home
 
 ----
 
-Layout: [{"attrs":[],"columns":[{"blocks":[{"content":{"text":"<p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over.</p>"},"id":"3317a878-8261-4f78-acab-79b35bec24e7","isHidden":false,"type":"text"}],"id":"462dba72-99c1-46f6-a56e-f2fabdd9f318","width":"1/1"}],"id":"56bf0fff-09da-4471-9512-60fc8ac8c7fc"}]
+Layout: [{"attrs":[],"columns":[{"blocks":[{"content":{"level":"h2","text":"Test"},"id":"01261b12-5794-4d8a-afef-490c5b47bf59","isHidden":false,"type":"heading"},{"content":{"text":"<p>Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt man Worte wie Hamburgefonts, Rafgenduks oder Handgloves, um Schriften zu testen. Manchmal Sätze, die alle Buchstaben des Alphabets enthalten - man nennt diese Sätze »Pangrams«. Sehr bekannt ist dieser: The quick brown fox jumps over.</p>"},"id":"3317a878-8261-4f78-acab-79b35bec24e7","isHidden":false,"type":"text"},{"content":{"location":"kirby","image":["file://csv7jvuk6egvxbez"],"src":"","alt":"","caption":"","link":"","ratio":"","crop":"false"},"id":"4804a36b-bc48-42c7-aeda-6f8947ce45d1","isHidden":false,"type":"image"}],"id":"462dba72-99c1-46f6-a56e-f2fabdd9f318","width":"1/1"}],"id":"56bf0fff-09da-4471-9512-60fc8ac8c7fc"}]
 
 ----
 
