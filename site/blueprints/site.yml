@@ -10,6 +10,44 @@ tabs:
         headline: All Pages
         layout: list
 
+  navigation:
+    label: Navigation
+    icon: menu
+    sections:
+      navigation:
+        type: fields
+        fields:
+          navigation:
+            type: structure
+            label: Navigation Links
+            help: Add, remove, and reorder the links shown in the header navigation.
+            fields:
+              label:
+                type: text
+                label: Label
+                width: 1/2
+                required: true
+              link:
+                type: pages
+                label: Page
+                width: 1/2
+                max: 1
+          footerNavigation:
+            type: structure
+            label: Footer Links
+            help: Links shown in the footer. Falls back to About, Contact and Privacy if empty.
+            fields:
+              label:
+                type: text
+                label: Label
+                width: 1/2
+                required: true
+              link:
+                type: pages
+                label: Page
+                width: 1/2
+                max: 1
+
   branding:
     label: Branding & Social
     icon: image

@@ -1,2 +1,43 @@
 Title: Reduction Roadmap
 
+----
+
+Navigation:
+
+- 
+  label: Start
+  link:
+    - page://q817nuzlo3ophijc
+- 
+  label: About
+  link:
+    - page://osx3eu5kxia9rwnx
+
+----
+
+Footernavigation:
+
+- 
+  label: About
+  link:
+    - page://osx3eu5kxia9rwnx
+- 
+  label: Kontakt
+  link:
+    - page://u22ezft4cigtcice
+- 
+  label: Datenschutz
+  link:
+    - page://rklwizzzmiesn7jm
+
+----
+
+Logo: 
+
+----
+
+Sociallinkedin: 
+
+----
+
+Socialinstagram: 
