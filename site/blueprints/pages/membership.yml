@@ -15,14 +15,6 @@ tabs:
           headline:
             type: text
             label: Hero Headline
-          body:
-            type: writer
-            label: Body Text
-            marks:
-              - bold
-              - italic
-              - link
-              - strike
           ctaText:
             type: text
             label: CTA Button Text
@@ -31,6 +23,24 @@ tabs:
             type: url
             label: CTA Button URL
             width: 1/2
+          layout:
+            type: layout
+            label: Page Layout
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+            fieldsets:
+              - heading
+              - text
+              - image
+              - quote
+              - list
+              - hero
+              - announcement
+              - image-full
+              - download-cta
+              - social-section
+              - org-info
 
   files:
     label: Files

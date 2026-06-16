@@ -11,6 +11,8 @@
     </div>
   </section>
 
+  <?php snippet('layout') ?>
+
   <section class="section section--white">
     <div class="container container--narrow">
       <?php if ($page->intro()->isNotEmpty()): ?>

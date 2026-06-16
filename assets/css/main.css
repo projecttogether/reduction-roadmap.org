@@ -627,6 +627,51 @@ ol {
   gap: var(--space-s);
 }
 
+/* --------------------------------------------------------------------------
+   Layout field (Kirby layout field — 1/1 and 1/2 1/2 grids)
+   -------------------------------------------------------------------------- */
+.layout {
+  display: grid;
+  gap: 0;
+  width: 100%;
+}
+
+.layout--single {
+  grid-template-columns: 1fr;
+}
+
+.layout--two-col {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-m);
+}
+
+.layout__column {
+  min-width: 0; /* prevent grid blowout on long content */
+}
+
+/* Stack to single column on mobile */
+@media (max-width: 767px) {
+  .layout--two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Legal/narrow layout wrapper — constrains text blocks inside the layout */
+.layout-wrapper--narrow {
+  max-width: var(--max-width-narrow);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.layout-wrapper--narrow .section {
+  padding-inline: 0;
+}
+
+.layout-wrapper--narrow .container {
+  padding-inline: 0;
+  max-width: 100%;
+}
+
 /* ==========================================================================
    Utilities
    ========================================================================== */

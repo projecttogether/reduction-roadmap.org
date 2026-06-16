@@ -9,9 +9,12 @@ tabs:
       sections:
         type: fields
         fields:
-          sections:
-            type: blocks
-            label: Page Sections
+          layout:
+            type: layout
+            label: Page Layout
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
             fieldsets:
               - hero
               - announcement
@@ -19,6 +22,11 @@ tabs:
               - download-cta
               - social-section
               - org-info
+              - heading
+              - text
+              - image
+              - quote
+              - list
 
   files:
     label: Files

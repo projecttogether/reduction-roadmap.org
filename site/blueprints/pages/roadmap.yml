@@ -26,14 +26,24 @@ tabs:
             type: files
             label: Hero Image
             max: 1
-          body:
-            type: writer
-            label: Body Text
-            marks:
-              - bold
-              - italic
-              - link
-              - strike
+          layout:
+            type: layout
+            label: Page Layout
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+            fieldsets:
+              - heading
+              - text
+              - image
+              - quote
+              - list
+              - hero
+              - announcement
+              - image-full
+              - download-cta
+              - social-section
+              - org-info
 
   files:
     label: Files

@@ -1,7 +1,7 @@
 <?php snippet('header') ?>
 
 <main id="page">
-  <?= $page->sections()->toBlocks() ?>
+  <?php snippet('layout') ?>
 </main>
 
 <?php snippet('footer') ?>

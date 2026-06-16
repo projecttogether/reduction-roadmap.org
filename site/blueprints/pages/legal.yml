@@ -12,18 +12,15 @@ tabs:
           title:
             type: text
             label: Page Title
-          body:
-            type: writer
-            label: Body Text
-            inline: false
-            marks:
-              - bold
-              - italic
-              - link
-              - strike
-              - code
-            nodes:
+          layout:
+            type: layout
+            label: Page Layout
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+            fieldsets:
               - heading
-              - bulletList
-              - orderedList
-              - horizontalRule
+              - text
+              - image
+              - quote
+              - list

@@ -7,13 +7,7 @@
     </div>
   </section>
 
-  <section class="section section--white">
-    <div class="container container--narrow">
-      <?php if ($page->body()->isNotEmpty()): ?>
-        <div class="prose prose--legal"><?= $page->body() ?></div>
-      <?php endif ?>
-    </div>
-  </section>
+  <?php snippet('layout') ?>
 </main>
 
 <?php snippet('footer') ?>

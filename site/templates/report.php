@@ -11,21 +11,17 @@
     </div>
   </section>
 
-  <section class="section section--white">
-    <div class="container container--narrow">
-      <?php if ($page->body()->isNotEmpty()): ?>
-        <div class="prose"><?= $page->body() ?></div>
-      <?php endif ?>
+  <?php snippet('layout') ?>
 
-      <?php if ($page->downloadButtonText()->isNotEmpty() && $page->downloadUrl()->isNotEmpty()): ?>
-        <div class="section__cta">
-          <a href="<?= $page->downloadUrl()->esc() ?>" class="btn btn--primary btn--large">
-            <?= $page->downloadButtonText()->html() ?>
-          </a>
-        </div>
-      <?php endif ?>
-    </div>
-  </section>
+  <?php if ($page->downloadButtonText()->isNotEmpty() && $page->downloadUrl()->isNotEmpty()): ?>
+    <section class="section section--white">
+      <div class="container">
+        <a href="<?= $page->downloadUrl()->esc() ?>" class="btn btn--primary btn--large">
+          <?= $page->downloadButtonText()->html() ?>
+        </a>
+      </div>
+    </section>
+  <?php endif ?>
 </main>
 
 <?php snippet('footer') ?>

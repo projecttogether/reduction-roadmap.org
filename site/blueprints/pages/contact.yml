@@ -19,3 +19,15 @@ tabs:
             type: textarea
             label: Intro Text
             help: Short text displayed above the contact form
+          layout:
+            type: layout
+            label: Additional Content
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+            fieldsets:
+              - heading
+              - text
+              - image
+              - quote
+              - list
