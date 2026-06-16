@@ -2,6 +2,7 @@
 /kirby/
 /sessions
 site/sessions/
+site/cache/
 
 # Kirby runtime storage (cache, sessions, logs, thumbnails)
 /storage/
@@ -24,3 +25,4 @@ site/sessions/
 robots.txt
 /node_modules
 /TEMP
+**/TEMP/
