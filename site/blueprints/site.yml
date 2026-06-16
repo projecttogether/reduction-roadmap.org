@@ -1,6 +1,15 @@
 title: Site
 
 tabs:
+  pages:
+    label: Pages
+    icon: page
+    sections:
+      pages:
+        type: pages
+        headline: All Pages
+        layout: list
+
   branding:
     label: Branding & Social
     icon: image
@@ -19,12 +28,3 @@ tabs:
           socialInstagram:
             type: url
             label: Instagram URL
-
-  pages:
-    label: Pages
-    icon: pages
-    sections:
-      pages:
-        type: pages
-        headline: All Pages
-        layout: list
