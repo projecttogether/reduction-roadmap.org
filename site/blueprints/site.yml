@@ -9,6 +9,7 @@ tabs:
         type: pages
         headline: All Pages
         layout: list
+        image: icon
 
   navigation:
     label: Navigation
