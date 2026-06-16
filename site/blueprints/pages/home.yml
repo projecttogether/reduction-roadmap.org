@@ -1,0 +1,29 @@
+title: Home
+icon: home
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    sections:
+      sections:
+        type: fields
+        fields:
+          sections:
+            type: blocks
+            label: Page Sections
+            fieldsets:
+              - hero
+              - announcement
+              - image-full
+              - download-cta
+              - social-section
+              - org-info
+
+  files:
+    label: Files
+    icon: image
+    sections:
+      files:
+        type: files
+        headline: Images & Assets

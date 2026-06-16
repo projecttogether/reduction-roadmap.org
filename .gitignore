@@ -1,1 +1,22 @@
+# Kirby CMS core (installed by getkirby/composer-installer)
+/kirby/
+
+# Kirby runtime storage (cache, sessions, logs, thumbnails)
+/storage/
+
+# Composer vendor directory
+/vendor/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Misc.
 robots.txt

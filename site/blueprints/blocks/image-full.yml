@@ -1,0 +1,23 @@
+name: Full-width Image
+icon: image
+preview: fields
+
+fields:
+  image:
+    type: files
+    label: Image
+    max: 1
+    width: 1/2
+  alt:
+    type: text
+    label: Alt Text
+    width: 1/2
+  theme:
+    type: select
+    label: Section Theme
+    default: white
+    width: 1/2
+    options:
+      white: White
+      light: Light grey
+      dark: Dark (green)

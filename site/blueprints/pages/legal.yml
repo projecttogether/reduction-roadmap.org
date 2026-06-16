@@ -1,0 +1,29 @@
+title: Legal / Privacy
+icon: lock
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    sections:
+      content:
+        type: fields
+        fields:
+          title:
+            type: text
+            label: Page Title
+          body:
+            type: writer
+            label: Body Text
+            inline: false
+            marks:
+              - bold
+              - italic
+              - link
+              - strike
+              - code
+            nodes:
+              - heading
+              - bulletList
+              - orderedList
+              - horizontalRule

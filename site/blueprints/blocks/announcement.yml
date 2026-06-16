@@ -1,0 +1,8 @@
+name: Announcement
+icon: bell
+preview: fields
+
+fields:
+  headline:
+    type: text
+    label: Headline

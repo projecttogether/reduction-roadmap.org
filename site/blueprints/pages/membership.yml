@@ -1,0 +1,41 @@
+title: Membership / Non-profit Association
+icon: users
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    sections:
+      content:
+        type: fields
+        fields:
+          title:
+            type: text
+            label: Page Title
+          headline:
+            type: text
+            label: Hero Headline
+          body:
+            type: writer
+            label: Body Text
+            marks:
+              - bold
+              - italic
+              - link
+              - strike
+          ctaText:
+            type: text
+            label: CTA Button Text
+            width: 1/2
+          ctaUrl:
+            type: url
+            label: CTA Button URL
+            width: 1/2
+
+  files:
+    label: Files
+    icon: image
+    sections:
+      files:
+        type: files
+        headline: Images

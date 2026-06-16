@@ -1,0 +1,30 @@
+title: About
+icon: user
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    sections:
+      content:
+        type: fields
+        fields:
+          title:
+            type: text
+            label: Page Title
+          body:
+            type: writer
+            label: Body Text
+            marks:
+              - bold
+              - italic
+              - link
+              - strike
+
+  files:
+    label: Files
+    icon: image
+    sections:
+      files:
+        type: files
+        headline: Images

@@ -1,0 +1,34 @@
+name: Organisation Info
+icon: info
+preview: fields
+
+fields:
+  headline:
+    type: text
+    label: Headline
+    width: 1/1
+  body:
+    type: writer
+    label: Body Text
+    marks:
+      - bold
+      - italic
+      - link
+    width: 1/1
+  buttonText:
+    type: text
+    label: Button Text
+    width: 1/2
+  buttonUrl:
+    type: url
+    label: Button URL
+    width: 1/2
+  theme:
+    type: select
+    label: Section Theme
+    default: dark
+    width: 1/2
+    options:
+      white: White
+      light: Light grey
+      dark: Dark green

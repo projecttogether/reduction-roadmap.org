@@ -1,0 +1,22 @@
+name: Download CTA
+icon: download
+preview: fields
+
+fields:
+  bodyText:
+    type: textarea
+    label: Body Text
+    buttons: false
+    width: 1/1
+  headline:
+    type: text
+    label: Headline (above button)
+    width: 1/1
+  buttonText:
+    type: text
+    label: Button Text
+    width: 1/2
+  buttonUrl:
+    type: url
+    label: Button URL
+    width: 1/2

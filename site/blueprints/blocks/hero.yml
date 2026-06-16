@@ -1,0 +1,22 @@
+name: Hero
+icon: star
+preview: fields
+
+fields:
+  headline:
+    type: text
+    label: Headline
+    width: 1/1
+  subheadline:
+    type: textarea
+    label: Subheadline
+    buttons: false
+    width: 1/1
+  buttonText:
+    type: text
+    label: Button Text
+    width: 1/2
+  buttonUrl:
+    type: url
+    label: Button URL
+    width: 1/2

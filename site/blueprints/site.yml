@@ -1,0 +1,30 @@
+title: Site
+
+tabs:
+  branding:
+    label: Branding & Social
+    icon: image
+    sections:
+      branding:
+        type: fields
+        fields:
+          logo:
+            type: files
+            label: Logo
+            help: Upload the site logo (PNG/SVG)
+            max: 1
+          socialLinkedin:
+            type: url
+            label: LinkedIn URL
+          socialInstagram:
+            type: url
+            label: Instagram URL
+
+  pages:
+    label: Pages
+    icon: pages
+    sections:
+      pages:
+        type: pages
+        headline: All Pages
+        layout: list

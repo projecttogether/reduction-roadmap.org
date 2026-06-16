@@ -1,0 +1,21 @@
+title: Contact
+icon: email
+
+tabs:
+  content:
+    label: Content
+    icon: text
+    sections:
+      content:
+        type: fields
+        fields:
+          title:
+            type: text
+            label: Page Title
+          headline:
+            type: text
+            label: Section Headline
+          intro:
+            type: textarea
+            label: Intro Text
+            help: Short text displayed above the contact form
