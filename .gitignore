@@ -1,7 +1,7 @@
 # Kirby CMS core (installed by getkirby/composer-installer)
 /kirby/
 /sessions
-/sessions/
+site/sessions/
 
 # Kirby runtime storage (cache, sessions, logs, thumbnails)
 /storage/
