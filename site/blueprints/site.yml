@@ -33,6 +33,7 @@ tabs:
                 label: Page
                 width: 1/2
                 max: 1
+                image: icon
           footerNavigation:
             type: structure
             label: Footer Links
@@ -48,6 +49,7 @@ tabs:
                 label: Page
                 width: 1/2
                 max: 1
+                image: icon
 
   branding:
     label: Branding & Social
