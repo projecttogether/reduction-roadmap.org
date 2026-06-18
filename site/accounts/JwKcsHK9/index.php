@@ -3,6 +3,6 @@
 return [
     'email' => 'johannes@schmoll.studio',
     'language' => 'de',
-    'name' => '',
+    'name' => 'johannes',
     'role' => 'admin'
 ];

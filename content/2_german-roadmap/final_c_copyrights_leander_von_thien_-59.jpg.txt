@@ -1,0 +1,5 @@
+Uuid: exkemsdpcjwrja84
+
+----
+
+Template: blocks/image

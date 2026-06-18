@@ -1,0 +1,21 @@
+Title: Kontakt
+
+----
+
+Headline: 
+
+----
+
+Intro: 
+
+----
+
+Layout: [{"attrs":[],"columns":[{"blocks":[{"content":{"level":"h6","text":"Kontakt"},"id":"60558a37-6142-4077-9e38-b41b9505fdcc","isHidden":false,"type":"heading"},{"content":{"level":"h1","text":"Komm mit uns ins Gespräch!"},"id":"f36e7525-cc44-454b-9160-c58219ddc284","isHidden":false,"type":"heading"},{"content":{"text":"<p>Du hast Fragen zur Roadmap Germany, möchtest uns unterstützen mit uns ins Gespräch kommen? Dann nutze unser Kontaktformular oder schreibe uns eine Nachricht an: <a href=\"mailto:hello@reductionroadmap.de\" target=\"_blank\">hello@reductionroadmap.de</a> </p><p>Wir freuen uns, von Dir zu hören!</p>"},"id":"edd0d01a-2f4d-4fac-82ca-92e4a463a9ed","isHidden":false,"type":"text"},{"content":{"text":"<p><strong><em>Baustein:</em></strong><em> Kontaktformular einfügen</em></p>"},"id":"88bebb4b-c7e5-4ccf-a17e-a8d2e47a43e0","isHidden":false,"type":"text"}],"id":"dfe5491d-89c7-4976-a4ab-6c1e219a5049","width":"1/1"}],"id":"4c4ed671-8e31-46fb-8c39-f372f1d584cd"}]
+
+----
+
+Uuid: u22ezft4cigtcice
+
+----
+
+Lock: JymnckOQ
