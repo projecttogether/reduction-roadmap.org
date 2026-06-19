@@ -27,41 +27,5 @@ fieldsets:
 
 settings:
   tabs:
-    settings:
-      label:
-        en: Settings
-        de: Einstellungen
-
-      fields:
-        w_max:
-          type: select
-          label:
-            en: Max width
-            de: Maximale Breite
-          options:
-            none: None
-            narrow: Narrow
-            wide: Wide
-          default: wide
-          width: 1/4
-
-        padd_top:
-          type: select
-          options:
-            none: None
-            sm: Small
-            md: Medium
-            lg: Large
-          default: md
-          width: 1/4
-
-        padd_bottom:
-          type: select
-          options:
-            none: None
-            sm: Small
-            md: Medium
-            lg: Large
-            xl: Extra Large
-          default: md
-          width: 1/4
+    config: tabs/layout/config
+    config_cols: tabs/layout/config_cols

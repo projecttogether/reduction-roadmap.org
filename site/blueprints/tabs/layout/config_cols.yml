@@ -1,0 +1,34 @@
+label:
+  en: Column settings
+  de: Spalteneinstellungen
+
+fields:
+  colConfigs:
+    type: structure
+    label:
+      en: Column configurations
+      de: Spaltenkonfigurationen
+    fields:
+      col:
+        type: number
+        label:
+          en: Column index
+          de: Spaltenindex
+        width: 1/4
+
+      gap-00:
+        type: gap
+        width: 3/4
+
+      justifyContent:
+        type: select
+        label:
+          en: Justify content
+          de: Inhalt ausrichten
+        options:
+          start: Start
+          center: Center
+          end: End
+          space-between: Space between
+          space-around: Space around
+        width: 1/3

@@ -7,6 +7,9 @@ if ($page->layout()->isNotEmpty()):
     $w_max    = $config->w_max()->or('wide');
     $padd_top = $config->padd_top()->or('md');
     $padd_bottom = $config->padd_bottom()->or('md');
+
+    // Column setup //
+    $colConfigs = $config->colConfigs()->toStructure();
     $colCount = $layout->columns()->count();
     ?>
     <section data-padd-top="<?= $padd_top ?>"
@@ -25,12 +28,19 @@ if ($page->layout()->isNotEmpty()):
       <div class="max-w-(--w-max) mx-auto">
         <div class="grid grid-cols-12 gap-12">
 
-          <?php foreach ($layout->columns() as $col): ?>
-                  <div class="col-span-(--span) min-w-0 flex flex-col gap-8"
-                       style="--span: <?= $col->span() ?>;">
+          <?php $i_col = 0;
+                foreach ($layout->columns() as $col): 
+                  $colConfig = $colConfigs->filter(fn($c) => $c->col()->toInt() == $i_col + 1)->first();
+                  $justify = $colConfig ? $colConfig->justifyContent()->or('FOO') : 'FOO';
+                  ?>
+                  <div data-col-index="<?= $i_col ?>"
+                       class="col-span-(--span) min-w-0 flex flex-col justify-[var(--justify)] gap-8"
+                       style="--span   : <?= $col->span() ?>;
+                              justify-content: <?= $justify ?>;">
                     <?= $col->blocks() ?>
                   </div>
-          <?php endforeach ?>
+          <?php   $i_col++; 
+                endforeach ?>
 
         </div>
       </div>
