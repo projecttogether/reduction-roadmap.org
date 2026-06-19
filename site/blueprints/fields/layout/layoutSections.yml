@@ -25,6 +25,7 @@ fieldsets:
   - button
   - slideshow
   - logo-slideshow
+  - card-grid
 
 settings:
   tabs:

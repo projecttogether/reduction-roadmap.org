@@ -1,0 +1,46 @@
+name: Card Grid
+icon: grid
+
+fields:
+  cards:
+    type: structure
+    label: Cards
+    fields:
+      eyebrow:
+        type: writer
+        label: Eyebrow
+        width: 1/2
+      gap-00:
+        type: gap
+        width: 1/2
+      title:
+        type: writer
+        label: Title
+        required: true
+        width: 1/2
+      body:
+        type: writer
+        label: Body Text
+        marks:
+          - bold
+          - italic
+          - link
+        width: 1/2
+      link:
+        type: link
+        label: Link
+        help: "Optional – shows a "Find out more" button when set"
+
+  col_count:
+    type: toggles
+    label: Columns
+    empty: false
+    default: 3
+    width: 1/3
+    options:
+      - value: 2
+        text: "2"
+      - value: 3
+        text: "3"
+      - value: 4
+        text: "4"
