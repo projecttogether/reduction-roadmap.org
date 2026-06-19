@@ -8,10 +8,15 @@ $blockId = 'splide-' . $block->id();
 
 if ($slides->isEmpty()) return;
 
+static $splideAssetsLoaded = false;
+
 ///// Markup /////
 ////////////////// ?>
 
+<?php if (!$splideAssetsLoaded): $splideAssetsLoaded = true; ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+<?php endif ?>
 
 <section class="py-8">
   <div id="<?= esc($blockId) ?>" class="splide" aria-label="Slideshow">
@@ -43,7 +48,6 @@ if ($slides->isEmpty()) return;
   </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var el = document.getElementById(<?= json_encode($blockId) ?>);

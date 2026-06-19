@@ -10,7 +10,7 @@ if ($page->layout()->isNotEmpty()):
     
     ?>
     <section class="py-16 bg-off-white"
-             style="--w-max: <?= $w_max == 'wide' ? '1100px' : '800px' ?>">
+             style="--w-max: <?= $w_max == 'wide' ? '1100px' : ($w_max == 'narrow' ? '800px' : '100%') ?>">
 
       <div class="max-w-(--w-max) mx-auto">
         <div class="grid grid-cols-12 gap-12">

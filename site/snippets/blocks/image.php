@@ -31,7 +31,7 @@ if(!$src) return;
     <?php else: ?>
             <img src="<?= $src ?>" 
                   alt="<?= $alt->esc() ?>"
-                  class="absolute inset-0 size-full object-cover">
+                  class="<?= $ratio != 'auto' ? 'absolute inset-0' : '' ?> size-full object-cover">
     <?php endif ?>
   </div>
 

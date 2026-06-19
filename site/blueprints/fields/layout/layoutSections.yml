@@ -23,6 +23,7 @@ fieldsets:
   - list
   - button
   - slideshow
+  - logo-slideshow
 
 settings:
   tabs:
