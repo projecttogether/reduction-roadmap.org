@@ -18,6 +18,7 @@ fieldsets:
   # - org-info
   - heading
   - text
+  - footnotes
   - image
   - quote
   - list

@@ -1,0 +1,20 @@
+name: Footnotes
+icon: list-numbers
+
+fields:
+  notes:
+    type: structure
+    label: Footnotes
+    columns:
+      number: true
+    fields:
+      number:
+        type: number
+        label: "№"
+        width: 1/6
+        min: 1
+      text:
+        type: textarea
+        label: Text
+        buttons: false
+        width: 5/6
