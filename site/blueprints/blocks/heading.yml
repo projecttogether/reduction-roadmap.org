@@ -28,6 +28,10 @@ fields:
       # - value: h6
       #   icon: h6
       #   text: H6
+    width: 2/3
+
+  with_hyph: fields/config/with_hyph
+
   text_eyebrow:
     label: Eyebrow-Text
     type: text

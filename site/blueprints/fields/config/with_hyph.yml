@@ -1,0 +1,6 @@
+type: toggle
+label:
+  en: With hyphenation
+  de: Mit Silbentrennung
+default: false
+width: 1/4

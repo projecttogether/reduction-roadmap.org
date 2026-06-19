@@ -32,6 +32,18 @@ settings:
         de: Einstellungen
 
       fields:
+        w_max:
+          type: select
+          label:
+            en: Max width
+            de: Maximale Breite
+          options:
+            none: None
+            narrow: Narrow
+            wide: Wide
+          default: wide
+          width: 1/4
+
         padd_top:
           type: select
           options:
