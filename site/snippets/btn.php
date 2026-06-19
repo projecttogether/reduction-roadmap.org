@@ -14,6 +14,7 @@ $size ??= 'sm';
 $mobile ??= false;
 $isActive ??= false;
 $target ??= null;
+$highlight ??= false;
 
 // Markup // 
 ////////////////// ?>
@@ -28,7 +29,7 @@ $target ??= null;
 
     flex justify-center items-center font-medium transition-colors
     rounded
-    bg-dark-green text-off-white
+    <?= $highlight ? 'bg-orange-400 text-off-white' : 'bg-dark-green text-off-white' ?>
     hover:bg-dark-green/65
     data-[active=true]:bg-dark-green/65
 

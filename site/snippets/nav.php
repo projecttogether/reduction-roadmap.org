@@ -36,6 +36,7 @@
               'url'      => $linkedPage ? $linkedPage->url() : '#',
               'label'    => $item->label()->html(),
               'isActive' => (bool)$linkedPage?->isActive(),
+              'highlight' => $item->is_cta()->isTrue(),
             ]) ?>
           <?php endforeach ?>
         <?php else: ?>
@@ -44,6 +45,7 @@
               'url'      => $item->url(),
               'label'    => $item->title()->html(),
               'isActive' => (bool)$item->isActive(),
+              'highlight' => $item->is_cta()->isTrue(),
             ]) ?>
           <?php endforeach ?>
         <?php endif ?>

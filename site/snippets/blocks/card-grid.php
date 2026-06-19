@@ -20,7 +20,9 @@ $gridClass = match($colCount) {
 <div class="grid <?= $gridClass ?> gap-6">
   <?php foreach ($cards as $card): 
       
-      $eyebrow = $card->eyebrow()->or(null);
+      $eyebrow  = $card->eyebrow()->or(null);
+      $cardUrl  = $card->link()->toUrl();
+      $isExternal = $cardUrl && parse_url($cardUrl, PHP_URL_HOST) !== parse_url($site->url(), PHP_URL_HOST);
       ?>
 
     <article class="aspect-3/3.5 flex flex-col gap-4 bg-light-bg rounded p-5">
@@ -49,9 +51,10 @@ $gridClass = match($colCount) {
       <?php if ($card->link()->isNotEmpty()): ?>
         <div class="mt-auto pt-2 flex justify-start">
           <?php snippet('btn', [
-            'label' => 'Find out more',
-            'url'   => $card->link()->toUrl(),
-            'size'  => 'sm',
+            'label'  => 'Find out more',
+            'url'    => $cardUrl,
+            'size'   => 'sm',
+            'target' => $isExternal ? '_blank' : null,
           ]) ?>
         </div>
       <?php endif ?>
