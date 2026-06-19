@@ -13,9 +13,10 @@
 $b = $block;
 
 $args_btn = [
-  'label' => $b->text(),
-  'url'   => $b->link()->or(null),
-  'size'  => $b->size()->or('sm'),
+  'label'  => $b->text(),
+  'url'    => $b->link()->toUrl(),
+  'size'   => $b->size()->or('sm'),
+  'target' => $b->is_external()->isTrue() ? '_blank' : null,
 ];
 
 ///// Markup /////

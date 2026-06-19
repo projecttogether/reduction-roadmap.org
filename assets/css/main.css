@@ -392,6 +392,18 @@
   .list-none {
     list-style-type: none;
   }
+  .columns-\(--cols\) {
+    columns: var(--cols);
+  }
+  .columns-1 {
+    columns: 1;
+  }
+  .columns-2 {
+    columns: 2;
+  }
+  .columns-3 {
+    columns: 3;
+  }
   .columns-12 {
     columns: 12;
   }
@@ -563,6 +575,12 @@
   .text-center {
     text-align: center;
   }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
   .font-body {
     font-family: var(--font-body);
   }
@@ -648,6 +666,9 @@
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
     letter-spacing: var(--tracking-wide);
+  }
+  .text-\(--text-align\) {
+    color: var(--text-align);
   }
   .text-black-green {
     color: var(--color-black-green);

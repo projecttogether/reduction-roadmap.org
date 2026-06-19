@@ -1,0 +1,40 @@
+name: field.blocks.text.name
+icon: text
+wysiwyg: true
+preview: text
+fields:
+  align:
+    type: toggles
+    empty: false
+    default: left
+    labels: false
+    options:
+      - value: left
+        icon: text-left
+        text: left
+      - value: center
+        icon: text-center
+        text: center
+      - value: right
+        icon: text-right
+        text: right
+    width: 1/2
+
+  colCount:
+    type: toggles
+    empty: false
+    default: 1
+    labels: false
+    options:
+      - value: 1
+        text: "1"
+      - value: 2
+        text: "2"
+      - value: 3
+        text: "3"
+    width: 1/2
+
+  text:
+    type: writer
+    nodes: false
+    placeholder: field.blocks.text.placeholder

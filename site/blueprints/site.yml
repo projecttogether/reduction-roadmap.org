@@ -5,11 +5,21 @@ tabs:
     label: Pages
     icon: page
     sections:
+      frontpage:
+        type: pages
+        headline: Frontpage
+        layout: cardlets
+        image: icon
+        template: home
       pages:
         type: pages
-        headline: All Pages
-        layout: list
+        headline: Subpages
+        layout: cardlets
         image: icon
+        template:
+          - default
+          - page
+          - about
 
   navigation:
     label: Navigation

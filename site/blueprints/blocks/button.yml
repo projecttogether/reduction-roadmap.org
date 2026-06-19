@@ -11,9 +11,15 @@ fields:
   text:
     type: text
     required: true
-    width: 1/2
+    width: 1/1
 
   link:
     type: link
     width: 1/2
     help: optional
+
+  is_external:
+    type: toggle
+    label: Open in new tab
+    width: 1/2
+    default: false

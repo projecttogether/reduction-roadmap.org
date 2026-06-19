@@ -13,6 +13,7 @@
 $size ??= 'sm';
 $mobile ??= false;
 $isActive ??= false;
+$target ??= null;
 
 // Markup // 
 ////////////////// ?>
@@ -37,7 +38,8 @@ $isActive ??= false;
             text-sm
     <?php endif ?>"
 
-  <?= $isActive ? 'aria-current="page"' : '' ?>>
+  <?= $isActive ? 'aria-current="page"' : '' ?>
+  <?= $target === '_blank' ? 'target="_blank" rel="noopener noreferrer"' : '' ?>>
 
   <span class="inline-flex">
     <?= $label ?>
