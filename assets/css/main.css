@@ -208,6 +208,9 @@
   .top-0 {
     top: 0;
   }
+  .top-12 {
+    top: calc(var(--spacing) * 12);
+  }
   .isolate {
     isolation: isolate;
   }
@@ -219,9 +222,6 @@
   }
   .col-span-\(--span\) {
     grid-column: span var(--span) / span var(--span);
-  }
-  .col-span-\(--span-desk\) {
-    grid-column: span var(--span-desk) / span var(--span-desk);
   }
   .container {
     width: 100%;
@@ -253,20 +253,8 @@
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
-  .mt-5 {
-    margin-top: calc(var(--spacing) * 5);
-  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
-  }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
-  .mb-4 {
-    margin-bottom: calc(var(--spacing) * 4);
-  }
-  .mb-5 {
-    margin-bottom: calc(var(--spacing) * 5);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -316,9 +304,6 @@
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
-  }
-  .h-\[20px\] {
-    height: 20px;
   }
   .h-\[22px\] {
     height: 22px;
@@ -389,19 +374,8 @@
   .max-w-\[1100px\] {
     max-width: 1100px;
   }
-  .max-w-\[1280px\] {
-    max-width: 1280px;
-  }
   .min-w-0 {
     min-width: 0;
-  }
-  .-translate-y-px {
-    --tw-translate-y: -1px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-y-px {
-    --tw-translate-y: 1px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -414,9 +388,6 @@
   }
   .columns-12 {
     columns: 12;
-  }
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -524,9 +495,6 @@
   .bg-transparent {
     background-color: transparent;
   }
-  .bg-violet-500 {
-    background-color: var(--color-violet-500);
-  }
   .fill-current {
     fill: currentcolor;
   }
@@ -560,17 +528,20 @@
   .px-\[clamp\(1\.5rem\,4vw\,4rem\)\] {
     padding-inline: clamp(1.5rem, 4vw, 4rem);
   }
-  .py-1\.5 {
-    padding-block: calc(var(--spacing) * 1.5);
-  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
   }
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
@@ -578,8 +549,17 @@
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
+  .pt-8 {
+    padding-top: calc(var(--spacing) * 8);
+  }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
+  }
+  .pt-24 {
+    padding-top: calc(var(--spacing) * 24);
+  }
+  .pb-16 {
+    padding-bottom: calc(var(--spacing) * 16);
   }
   .text-center {
     text-align: center;
@@ -669,9 +649,6 @@
   .text-off-white {
     color: var(--color-off-white);
   }
-  .uppercase {
-    text-transform: uppercase;
-  }
   .italic {
     font-style: italic;
   }
@@ -724,23 +701,6 @@
       }
     }
   }
-  .hover\:bg-dark-green\/75 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, hsl(155, 97%, 11%) 75%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-dark-green) 75%, transparent);
-        }
-      }
-    }
-  }
-  .hover\:bg-light-bg {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-light-bg);
-      }
-    }
-  }
   .hover\:text-dark-green {
     &:hover {
       @media (hover: hover) {
@@ -756,14 +716,6 @@
       }
     }
   }
-  .data-\[active\=true\]\:bg-dark-green\/75 {
-    &[data-active="true"] {
-      background-color: color-mix(in srgb, hsl(155, 97%, 11%) 75%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-dark-green) 75%, transparent);
-      }
-    }
-  }
   .md\:block {
     @media (width >= 48rem) {
       display: block;
@@ -772,16 +724,6 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
-    }
-  }
-  .md\:grid-cols-2 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .md\:grid-cols-3 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }
@@ -848,21 +790,6 @@
     transform: translateY(-7px) rotate(-45deg);
   }
 }
-@property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -918,9 +845,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
