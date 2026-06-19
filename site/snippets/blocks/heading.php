@@ -5,13 +5,13 @@
 // Setup // 
 //////////////////
 
-$b = $block;
+$b            = $block;
 $text_eyebrow = $b->text_eyebrow()->or(null);
 
 // Markup // 
 ////////////////// ?>
 
-<div class="text-6xl font-heading">
+<div class="font-heading">
 
   <?php // Eyebrow // 
         if($text_eyebrow): ?>
@@ -21,7 +21,15 @@ $text_eyebrow = $b->text_eyebrow()->or(null);
   <?php endif ?>
 
   <?php // Hdl. text // ?>
-  <<?= $level = $b->level()->or('h2') ?>>
+  <?php $level = $b->level()->or('h2')->value() ?>
+  <<?= $level ?> class="<?= match($level) {
+    'h1' => 'text-6xl',
+    'h2' => 'text-5xl',
+    'h3' => 'text-4xl',
+    'h4' => 'text-3xl',
+    'h5' => 'text-2xl',
+    default => 'text-xl',
+  } ?>">
     <?= $b->with_hyph()->isTrue() ? $b->text()->hyph() : $b->text() ?>
   </<?= $level ?>>
 </div>

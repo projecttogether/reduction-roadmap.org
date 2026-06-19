@@ -60,8 +60,8 @@ static $splideAssetsLoaded = false;
         arrows    : false,
         pagination: false,
         autoScroll: {
-          speed       : 1,
-          pauseOnHover: true,
+          speed       : 0.6,
+          pauseOnHover: false,
         },
 
         breakpoints: {

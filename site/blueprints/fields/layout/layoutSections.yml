@@ -54,3 +54,14 @@ settings:
             lg: Large
           default: md
           width: 1/4
+
+        padd_bottom:
+          type: select
+          options:
+            none: None
+            sm: Small
+            md: Medium
+            lg: Large
+            xl: Extra Large
+          default: md
+          width: 1/4

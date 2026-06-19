@@ -1,5 +1,5 @@
 <footer class="bg-off-white border-t border-light-bg py-8">
-  <div class="container flex flex-wrap items-center justify-between gap-8">
+  <div class="max-w-[1100px] mx-auto flex flex-wrap items-center justify-between gap-8">
 
     <nav aria-label="Footer navigation">
       <ul class="flex flex-wrap gap-x-8 gap-y-2 list-none m-0 p-0 text-sm" role="list">
