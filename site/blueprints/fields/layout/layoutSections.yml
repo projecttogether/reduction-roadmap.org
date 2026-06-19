@@ -1,0 +1,43 @@
+type: layout
+
+label:
+  en: Layout sections
+  de: Layout-Abschnitte
+
+layouts:
+  - "1/1"
+  - "1/2, 1/2"
+  - "1/3, 1/3, 1/3"
+
+fieldsets:
+  - hero
+  # - announcement
+  - image-full
+  # - download-cta
+  # - social-section
+  # - org-info
+  - heading
+  - text
+  - image
+  - quote
+  - list
+  - button
+  - slideshow
+
+settings:
+  tabs:
+    settings:
+      label:
+        en: Settings
+        de: Einstellungen
+
+      fields:
+        padd_top:
+          type: select
+          options:
+            none: None
+            sm: Small
+            md: Medium
+            lg: Large
+          default: md
+          width: 1/4

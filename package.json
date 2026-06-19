@@ -2,8 +2,8 @@
   "name": "reduction-roadmap",
   "private": true,
   "scripts": {
-    "watch-tw": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
-    "build-tw": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify"
+    "watch-tw": "tailwindcss -i ./assets/css/app.css -o ./assets/css/main.css --watch",
+    "build-tw": "tailwindcss -i ./assets/css/app.css -o ./assets/css/main.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.0",

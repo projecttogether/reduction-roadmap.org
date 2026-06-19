@@ -4,6 +4,7 @@
 site/sessions/
 site/cache/
 /media
+**/media/
 
 # Kirby runtime storage (cache, sessions, logs, thumbnails)
 /storage/

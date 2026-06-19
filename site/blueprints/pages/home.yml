@@ -5,29 +5,8 @@ tabs:
   content:
     label: Content
     icon: text
-    sections:
-      sections:
-        type: fields
-        fields:
-          layout:
-            type: layout
-            label: Page Layout
-            layouts:
-              - "1/1"
-              - "1/2, 1/2"
-              - "1/3, 1/3, 1/3"
-            fieldsets:
-              - hero
-              - announcement
-              - image-full
-              - download-cta
-              - social-section
-              - org-info
-              - heading
-              - text
-              - image
-              - quote
-              - list
+    fields:
+      layout: fields/layout/layoutSections
 
   files:
     label: Files

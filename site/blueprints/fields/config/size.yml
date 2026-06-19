@@ -1,0 +1,7 @@
+type: select
+options:
+  sm: Small
+  md: Medium
+  lg: Large
+default: md
+width: 1/4
