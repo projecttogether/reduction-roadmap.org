@@ -39,7 +39,7 @@ tabs:
                 width: 1/2
                 required: true
               link:
-                type: pages
+                type: link
                 label: Page
                 width: 1/2
                 max: 1
