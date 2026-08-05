@@ -1,0 +1,8 @@
+.git
+site/accounts
+site/cache
+site/sessions
+media
+storage
+vendor
+node_modules

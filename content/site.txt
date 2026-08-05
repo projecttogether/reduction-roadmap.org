@@ -6,27 +6,23 @@ Navigation:
 
 - 
   label: Roadmap Germany
-  link:
-    - page://osx3eu5kxia9rwnx
+  link: page://osx3eu5kxia9rwnx
   is_cta: 'false'
 - 
   label: Methodik
-  link:
-    - page://vobznapjakemxzvw
+  link: page://vobznapjakemxzvw
   is_cta: 'false'
 - 
   label: Leuchtturmprojekte
-  link:
-    - page://as7s2d7lubmaj9i2
+  link: page://as7s2d7lubmaj9i2
   is_cta: 'false'
 - 
   label: Kontakt
-  link:
-    - page://u22ezft4cigtcice
+  link: page://u22ezft4cigtcice
   is_cta: 'true'
 - 
   label: Unterstützen
-  link: [ ]
+  link:
   is_cta: 'true'
 
 ----
@@ -56,4 +52,4 @@ Sociallinkedin:
 
 ----
 
-Socialinstagram: 
+Socialinstagram:

@@ -5,6 +5,9 @@ return [
   'url'   => 'https://reduction-roadmap.de',
   'panel' => [
     'install' => true,
+    'vue' => [
+      'compiler' => false,
+    ],
   ],
   'thathoff.git-content' => [
     'pull'          => true,

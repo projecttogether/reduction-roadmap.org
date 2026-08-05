@@ -3,9 +3,11 @@
 /site/plugins/
 /sessions
 site/sessions/
+site/accounts/
 site/cache/
 /media
 **/media/
+/content/_changes/
 
 # Kirby runtime storage (cache, sessions, logs, thumbnails)
 /storage/

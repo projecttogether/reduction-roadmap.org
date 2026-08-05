@@ -1,7 +1,10 @@
 FROM php:8.2-apache
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+# Enable Apache mod_rewrite and suppress the startup FQDN warning. TLS and the
+# public hostname are handled by Coolify's reverse proxy.
+RUN a2enmod rewrite \
+    && printf 'ServerName localhost\n' > /etc/apache2/conf-available/servername.conf \
+    && a2enconf servername
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -42,20 +45,22 @@ RUN chown -R www-data:www-data /var/www/html \
     && chown -R www-data:www-data /var/www/html/site/accounts \
     && chown -R www-data:www-data /var/www/html/site/sessions \
     && chown -R www-data:www-data /var/www/html/content \
-    && chmod -R 775 /var/www/html/site/accounts \
-    && chmod -R 775 /var/www/html/site/sessions \
-    && chmod -R 775 /var/www/html/content
+    && find /var/www/html/site/accounts /var/www/html/site/sessions /var/www/html/content -type d -exec chmod 775 {} \; \
+    && find /var/www/html/site/accounts /var/www/html/site/sessions /var/www/html/content -type f -exec chmod 664 {} \;
 
 # Allow .htaccess overrides
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 
-# Git identity for content commits
-RUN git config --global user.email "johannes@schmoll.studio" && \
-    git config --global user.name "joh-sch" && \
-    git config --global --add safe.directory /var/www/html
+# Git identity for content commits. Apache runs as www-data, so system config
+# is used instead of root's global config.
+RUN git config --system user.email "johannes@schmoll.studio" && \
+    git config --system user.name "joh-sch" && \
+    git config --system --add safe.directory /var/www/html
 
 # Entrypoint script (writes deploy key at runtime)
 COPY docker-entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 80
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
