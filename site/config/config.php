@@ -1,10 +1,12 @@
 <?php
 
 $gitBranch = getenv('GIT_BRANCH') ?: (getenv('COOLIFY_BRANCH') ?: 'devel');
+$siteUrl = getenv('SITE_URL') ?: (getenv('COOLIFY_URL') ?: 'https://reduction-roadmap.de');
+$siteUrl = trim(explode(',', $siteUrl)[0]);
 
 return [
   'debug' => false,
-  'url'   => 'https://reduction-roadmap.de',
+  'url'   => $siteUrl,
   'panel' => [
     'install' => true,
     'vue' => [
