@@ -39,6 +39,8 @@ RUN chown -R www-data:www-data /var/www/html \
     && find /var/www/html -type f -exec chmod 644 {} \; \
     && mkdir -p /var/www/html/site/accounts \
     && mkdir -p /var/www/html/site/sessions \
+    && chown -R www-data:www-data /var/www/html/site/accounts \
+    && chown -R www-data:www-data /var/www/html/site/sessions \
     && chmod -R 775 /var/www/html/site/accounts \
     && chmod -R 775 /var/www/html/site/sessions \
     && chmod -R 775 /var/www/html/content
