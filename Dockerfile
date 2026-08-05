@@ -41,6 +41,7 @@ RUN chown -R www-data:www-data /var/www/html \
     && mkdir -p /var/www/html/site/sessions \
     && chown -R www-data:www-data /var/www/html/site/accounts \
     && chown -R www-data:www-data /var/www/html/site/sessions \
+    && chown -R www-data:www-data /var/www/html/content \
     && chmod -R 775 /var/www/html/site/accounts \
     && chmod -R 775 /var/www/html/site/sessions \
     && chmod -R 775 /var/www/html/content
