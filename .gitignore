@@ -1,5 +1,6 @@
-# Kirby CMS core (installed by getkirby/composer-installer)
+# Kirby CMS core and plugins (installed by getkirby/composer-installer)
 /kirby/
+/site/plugins/
 /sessions
 site/sessions/
 site/cache/

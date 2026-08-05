@@ -1,7 +1,8 @@
 {
     "require": {
         "getkirby/cms": "^5.0",
-        "vanderlee/syllable": "^1.9"
+        "vanderlee/syllable": "^1.9",
+        "thathoff/kirby-git-content": "^5.4"
     },
     "config": {
         "allow-plugins": {
