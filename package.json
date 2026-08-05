@@ -2,6 +2,7 @@
   "name": "reduction-roadmap",
   "private": true,
   "scripts": {
+    "dev": "php -S localhost:8000 & npm run watch-tw",
     "watch-tw": "tailwindcss -i ./assets/css/app.css -o ./assets/css/main.css --watch",
     "build-tw": "tailwindcss -i ./assets/css/app.css -o ./assets/css/main.css --minify"
   },
