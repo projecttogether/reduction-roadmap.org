@@ -20,6 +20,12 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd
 
+# Set up SSH directory for Git deploy key
+RUN mkdir -p /var/www/.ssh && \
+    chmod 700 /var/www/.ssh && \
+    ssh-keyscan github.com >> /var/www/.ssh/known_hosts && \
+    chown -R www-data:www-data /var/www/.ssh
+
 # Copy project files
 COPY . /var/www/html/
 
@@ -33,5 +39,14 @@ RUN chown -R www-data:www-data /var/www/html \
 
 # Allow .htaccess overrides
 RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+
+# Git identity for content commits
+RUN git config --global user.email "johannes@schmoll.studio" && \
+    git config --global user.name "joh-sch" && \
+    git config --global --add safe.directory /var/www/html
+
+# Entrypoint script (writes deploy key at runtime)
+COPY docker-entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 80
