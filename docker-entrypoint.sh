@@ -4,9 +4,15 @@ set -u
 
 app_dir=/var/www/html
 ssh_dir=/var/www/.ssh
+git_content_ready_file=/run/git-content-ready
 repository_url=${GIT_REPOSITORY_URL:-git@github.com:projecttogether/reduction-roadmap.org.git}
-repository_branch=${GIT_BRANCH:-devel}
+repository_branch=${GIT_BRANCH:-${COOLIFY_BRANCH:-devel}}
 git_ssh_command="ssh -o BatchMode=yes -o ConnectTimeout=10 -o ConnectionAttempts=1 -o UserKnownHostsFile=$ssh_dir/known_hosts"
+
+# The plugin stays disabled until the repository is fully usable. /run is
+# container-local, so a failed or restarted initialization cannot leave a
+# stale success marker behind.
+rm -f "$git_content_ready_file"
 
 # Write the deploy key supplied by Coolify for Git Content pull/push access.
 if [ -n "${GIT_DEPLOY_KEY:-}" ]; then
@@ -14,9 +20,12 @@ if [ -n "${GIT_DEPLOY_KEY:-}" ]; then
     chmod 600 "$ssh_dir/id_ed25519"
     chown www-data:www-data "$ssh_dir/id_ed25519"
     git_ssh_command="$git_ssh_command -i $ssh_dir/id_ed25519 -o IdentitiesOnly=yes"
+elif [[ "$repository_url" == git@* || "$repository_url" == ssh://* ]]; then
+    echo "WARNING: GIT_DEPLOY_KEY is not set; an SSH Git remote will reject private repository access." >&2
 fi
 
 export GIT_SSH_COMMAND="$git_ssh_command"
+unset GIT_DEPLOY_KEY
 
 initialize_repository() {
     if ! git -C "$app_dir" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -44,6 +53,7 @@ initialize_repository() {
     git -C "$app_dir" reset --mixed HEAD || return 1
     git -C "$app_dir" branch --set-upstream-to="origin/$repository_branch" "$repository_branch" || return 1
     chown -R www-data:www-data "$app_dir/.git" || return 1
+    touch "$git_content_ready_file" || return 1
 }
 
 # Repository setup can depend on an external SSH service. It must never delay
