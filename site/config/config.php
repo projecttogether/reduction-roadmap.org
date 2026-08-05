@@ -1,7 +1,7 @@
 <?php
 
 return [
-  'debug' => true,
+  'debug' => false,
   'url'   => 'https://reduction-roadmap.de',
   'panel' => [
     'install' => true,
