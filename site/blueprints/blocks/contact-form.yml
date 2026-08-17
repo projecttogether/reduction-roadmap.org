@@ -13,6 +13,7 @@ fields:
     label: Recipient email
     width: 1/2
     required: true
+    default: "hello@reduction-roadmap.de"
 
   intro:
     type: textarea

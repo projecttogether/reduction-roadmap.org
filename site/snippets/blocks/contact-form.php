@@ -9,9 +9,15 @@ $b           = $block;
 $status      = get('status');
 $headline    = $b->headline()->or(null);
 $intro       = $b->intro()->or(null);
-$recipient   = $b->recipient()->or(option('schmoll-studio.contact-form.recipient', 'hello@example.com'));
 $subject     = $b->subject()->or(option('schmoll-studio.contact-form.subject', 'New message from the website'));
 $submitLabel = $b->submitLabel()->or('Send message');
+
+$recipient = $b->recipient()->isNotEmpty()
+  ? $b->recipient()->value()
+  : option(
+      'schmoll-studio.contact-form.recipient',
+      'hello@reduction-roadmap.de'
+    );
 
 $args_btn_submit = [
   'label'   => 'Abschicken',
@@ -50,12 +56,12 @@ $args_btn_submit = [
   //////////////////
   
   if ($status === 'success'): ?>
-    <div class="mb-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-900">
-      Thanks for your message. We will get back to you as soon as possible.
+    <div class="mb-6 rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-900">
+      Vielen Dank für deine Nachricht. Wir melden uns so schnell wie möglich bei dir.
     </div>
   <?php elseif ($status === 'error'): ?>
-    <div class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
-      There was a problem sending your message. Please check the form and try again.
+    <div class="mb-6 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-900">
+      Beim Senden deiner Nachricht ist ein Problem aufgetreten. Bitte überprüfe das Formular und versuche es erneut.
     </div>
   <?php endif ?>
 
@@ -66,7 +72,6 @@ $args_btn_submit = [
   <form action="<?= url('contact-form') ?>" method="post" class="space-y-5" novalidate>
     <input type="hidden" name="csrf" value="<?= esc(csrf()) ?>">
     <input type="hidden" name="recipient" value="<?= esc($recipient) ?>">
-    <input type="hidden" name="subject" value="<?= esc($subject) ?>">
 
     <div class="hidden" aria-hidden="true">
       <label for="contact-form-website">Website</label>

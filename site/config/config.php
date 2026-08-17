@@ -36,6 +36,19 @@ return [
       'compiler' => false,
     ],
   ],
+
+  'email' => [
+    'transport' => [
+      'type'     => 'smtp',
+      'host'     => 'smtp.mailersend.net',
+      'port'     => 587,
+      'security' => 'tls',
+      'auth'     => true,
+      'username' => getenv('MAILERSEND_SMTP_USERNAME') ?: '',
+      'password' => getenv('MAILERSEND_SMTP_PASSWORD') ?: '',
+    ],
+  ],
+
   'thathoff.git-content' => [
     'disable'       => !is_file('/run/git-content-ready'),
     'pull'          => true,
@@ -46,9 +59,10 @@ return [
     'branch'        => $gitBranch,
   ],
   'schmoll-studio.contact-form' => [
-    'recipient'  => 'hello@reduction-roadmap.de',
-    'subject'    => 'New message from the website',
-    'from-name'  => 'Reduction Roadmap',
-    'from-email' => 'noreply@reduction-roadmap.de',
+    'recipient'            => 'hello@reduction-roadmap.de',
+    'subject'              => 'Neue Nachricht über reduction-roadmap.de',
+    'confirmation-subject' => 'Vielen Dank für deine Nachricht',
+    'from-name'            => 'Reduction Roadmap',
+    'from-email'           => 'noreply@reduction-roadmap.de',
   ],
 ];
