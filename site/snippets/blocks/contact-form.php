@@ -69,7 +69,7 @@ $args_btn_submit = [
   // Form //
   ////////////////// ?>
 
-  <form action="<?= url('contact-form') ?>" method="post" class="space-y-5" novalidate>
+  <form action="<?= esc(parse_url(url('contact-form'), PHP_URL_PATH)) ?>" method="post" class="space-y-5" novalidate>
     <input type="hidden" name="csrf" value="<?= esc(csrf()) ?>">
     <input type="hidden" name="recipient" value="<?= esc($recipient) ?>">
 
