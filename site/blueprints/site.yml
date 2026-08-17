@@ -20,6 +20,7 @@ tabs:
           - default
           - page
           - about
+          - contact
 
   navigation:
     label: Navigation

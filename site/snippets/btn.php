@@ -10,19 +10,24 @@
 // Setup //
 //////////////////
 
-$size ??= 'sm';
-$mobile ??= false;
-$isActive ??= false;
-$target ??= null;
+$is_link   ??= true;
+$url       = $is_link ? ($url ? $url : 'NO URL PROVIDED') : null;
+$size      ??= 'sm';
+$mobile    ??= false;
+$isActive  ??= false;
+$target    ??= null;
 $highlight ??= false;
+$type      ??= null;
 
 // Markup // 
 ////////////////// ?>
 
-<a
-  href ="<?= $url ?>"
+<?php if($is_link): ?> <a <?php else: ?> <button <?php endif ?>
+
+  <?php if($is_link): ?> href="<?= $url ?>" <?php endif ?>
   data-active="<?= $isActive ? 'true' : 'false' ?>"
-  class="
+  <?= $type ? 'data-type="' . $type . '"' : '' ?>
+  class      ="
     <?= $size == 'sm' ? 'px-3 h-[30px]' : '' ?>
     <?= $size == 'md' ? 'px-6 h-[40px]' : '' ?>
     <?= $size == 'lg' ? 'px-9 h-[50px]' : '' ?>
@@ -46,4 +51,4 @@ $highlight ??= false;
     <?= $label ?>
   </span>
 
-</a>
+<?php if($is_link): ?> </a> <?php else: ?> </button> <?php endif ?>

@@ -1,0 +1,36 @@
+name: Contact Form
+icon: email
+
+fields:
+  headline:
+    type: text
+    label: Headline
+    help: optional
+    width: 1/2
+
+  recipient:
+    type: email
+    label: Recipient email
+    width: 1/2
+    required: true
+
+  intro:
+    type: textarea
+    label: Intro text
+    buttons: false
+    help: optional
+    width: 1/1
+
+  subject:
+    type: text
+    label: Email subject
+    help: optional
+    width: 1/2
+    default: "Neue E-Mail von reduction-roadmap.de"
+
+  submitLabel:
+    type: text
+    label: Submit button label
+    help: optional
+    width: 1/2
+    default: "Abschicken"

@@ -23,6 +23,7 @@ fieldsets:
   - quote
   - list
   - button
+  - contact-form
   - slideshow
   - logo-slideshow
   - card-grid
