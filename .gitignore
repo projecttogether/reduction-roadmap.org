@@ -1,6 +1,8 @@
 # Kirby CMS core and plugins (installed by getkirby/composer-installer)
 /kirby/
-/site/plugins/
+/site/plugins/*
+!/site/plugins/schmoll-studio-contact-form/
+!/site/plugins/schmoll-studio-contact-form/**
 /sessions
 site/sessions/
 site/accounts/
