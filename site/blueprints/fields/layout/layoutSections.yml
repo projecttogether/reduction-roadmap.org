@@ -24,6 +24,7 @@ fieldsets:
   - list
   - button
   - contact-form
+  - best-practices-project-grid
   - slideshow
   - logo-slideshow
   - card-grid

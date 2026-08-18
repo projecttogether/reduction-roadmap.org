@@ -1,0 +1,49 @@
+Title: Holzbauhochhaus Roots
+
+----
+
+Location: Hamburg
+
+----
+
+Year: 2018
+
+----
+
+Area: 36000
+
+----
+
+Function: Wohngebäude
+
+----
+
+Constructiontype: Neubau
+
+----
+
+Co2range: 20-30
+
+----
+
+Co2value: 
+
+----
+
+Detaillink: 
+
+----
+
+Cover: 
+
+----
+
+Description: »Roots« ist der­zeit das höchste Deut­sche Holz­hoch­haus. Ins­gesamt wur­den hier 181 Woh­nun­gen rea­lisiert sowie Aus­stel­lungs­räume und die Ver­wal­tung der Deut­schen Wild­tier Stif­tung. Alle Ober­geschosse wur­den mit Mas­siv­holz­decken und -innen­wän­den errich­tet, nur Unter- und Erd­geschoss sowie die Erschlie­ßungs­kerne des Hybrid­baus wer­den als Stahl­beton­kon­struk­tion geplant. Diese Bau­weise trägt nicht nur zur Reduk­tion des CO2-Fuß­abdrucks bei, son­dern begrenzt auch Lärm­emis­sio­nen bei der Umset­zung und lässt ein gesun­des Raum­klima ent­ste­hen. Ins­gesamt wer­den im Rah­men der Rea­lisie­rung 5.500 m³ Nadel­holz ver­baut.
+
+----
+
+Layout: 
+
+----
+
+Uuid: 7khtiu3srtknm21a

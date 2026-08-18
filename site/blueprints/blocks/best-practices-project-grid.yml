@@ -1,0 +1,21 @@
+name: Best Practices Project Grid
+icon: dashboard
+preview: fields
+
+fields:
+  source:
+    type: pages
+    label: Best Practices page
+    # query: site.find('best-practices')
+    max: 1
+    help: Leave empty to use the Best Practices page.
+    width: 1/2
+
+  columns:
+    type: select
+    label: Columns
+    default: 2
+    width: 1/2
+    options:
+      2: Two columns
+      3: Three columns

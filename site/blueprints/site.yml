@@ -21,6 +21,14 @@ tabs:
           - page
           - about
           - contact
+          - roadmap
+      pages_collections:
+        type: pages
+        headline: Collections
+        layout: cardlets
+        image: icon
+        template:
+          - best-practices
 
   navigation:
     label: Navigation

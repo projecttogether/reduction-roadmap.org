@@ -1,0 +1,12 @@
+title: Best Practices
+icon: dashboard
+
+sections:
+  projects:
+    type: pages
+    label: Best Practice Projects
+    template: best-practice-project
+    layout: cards
+    image: cover
+    info: "{{page.location}} · {{page.year}}"
+    empty: No projects yet
