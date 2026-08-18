@@ -9,23 +9,6 @@ tabs:
       content:
         type: fields
         fields:
-          title:
-            type: text
-            label: Page Title
-          version:
-            type: select
-            label: Version
-            default: "2.0"
-            options:
-              "1.0": "Reduction Roadmap 1.0"
-              "2.0": "Reduction Roadmap 2.0"
-          headline:
-            type: text
-            label: Hero Headline
-          heroImage:
-            type: files
-            label: Hero Image
-            max: 1
           layout: fields/layout/layoutSections
 
   files:

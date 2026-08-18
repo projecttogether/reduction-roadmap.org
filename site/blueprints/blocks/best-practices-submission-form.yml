@@ -1,0 +1,30 @@
+name: Best Practices Submission Form
+icon: inbox
+
+fields:
+  parent:
+    type: pages
+    label: Best Practices parent page
+    query: site.find('best-practices')
+    max: 1
+    help: Submitted projects will be filed as drafts under this page.
+    width: 1/2
+
+  triggerLabel:
+    type: text
+    label: Start button label
+    default: Submit new project
+    width: 1/2
+
+  intro:
+    type: textarea
+    label: Intro text
+    buttons: false
+    help: Optional.
+    width: 1/1
+
+  submitLabel:
+    type: text
+    label: Submit button label
+    default: Submit project
+    width: 1/2

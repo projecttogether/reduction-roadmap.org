@@ -1,0 +1,53 @@
+Title: test
+
+----
+
+Location: test
+
+----
+
+Year: 1234
+
+----
+
+Area: 42
+
+----
+
+Function: test
+
+----
+
+Constructiontype: test
+
+----
+
+Co2range: below-10
+
+----
+
+Co2value: -420
+
+----
+
+Description: this is a test
+
+----
+
+Sourceurl: http://wikipedia.org/
+
+----
+
+Submittername: johannes
+
+----
+
+Submitteremail: johannes@schmoll.studio
+
+----
+
+Submittedat: 2026-08-18 05:10:24
+
+----
+
+Uuid: lrnwfxq6h4dr0rxt

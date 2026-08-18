@@ -1,12 +1,26 @@
 title: Best Practices
 icon: dashboard
 
-sections:
-  projects:
-    type: pages
-    label: Best Practice Projects
-    template: best-practice-project
-    layout: cards
-    image: cover
-    info: "{{page.location}} · {{page.year}}"
-    empty: No projects yet
+tabs:
+  content:
+    label: Content
+    icon: text
+    sections:
+      projects:
+        type: pages
+        label: Best Practice Projects
+        template: best-practice-project
+        layout: cards
+        image: cover
+        info: "{{page.location}} · {{page.year}}"
+        empty: No projects yet
+
+  submissions:
+    label: Submissions
+    icon: inbox
+    sections:
+      submissions:
+        type: pages
+        label: Incoming submissions
+        template: best-practice-submission
+        empty: No submissions yet
