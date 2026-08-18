@@ -15,13 +15,12 @@ $styles = [
   'info'    => 'border-blue-200 bg-blue-50 text-blue-900',
 ];
 
-if ($message === '' || isset($styles[$type]) === false) {
-  return;
-}
+if ($message === '' || isset($styles[$type]) === false) return;
 ?>
 
 <div
-  class="mb-6 rounded-md border px-4 py-3 text-sm <?= esc($styles[$type]) ?>"
+  class="mb-6 rounded-md border px-4 py-3 text-sm <?= esc($styles[$type]) ?>
+         inline-flex"
   role="status"
 >
   <?= esc($message) ?>

@@ -48,11 +48,14 @@ $args_btn_submit    = ['label'   => 'Abschicken', 'is_link' => false, 'type' => 
   endif;
 
   // Notifs. //
-  //////////////////
+  ////////////////// ?>
 
-  if     ($status === 'success') snippet('notifications/alert', $args_notif_success);
-  elseif ($status === 'error')   snippet('notifications/alert', $args_notif_error);
-
+  <div class="flex justify-start items-start">
+    <?php if     ($status === 'success') snippet('notifications/alert', $args_notif_success);
+          elseif ($status === 'error')   snippet('notifications/alert', $args_notif_error); ?>
+  </div>
+  
+  <?php
   // Form //
   ////////////////// ?>
 
