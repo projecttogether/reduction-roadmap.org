@@ -28,7 +28,7 @@ $siteUrl = trim(explode(',', $siteUrl)[0]);
 ////////////////////////////////////
 
 return [
-  'debug' => false,
+  'debug' => true,
   'url'   => $siteUrl,
   'panel' => [
     'install' => true,
@@ -36,7 +36,6 @@ return [
       'compiler' => false,
     ],
   ],
-
   'email' => [
     'transport' => [
       'type'     => 'smtp',

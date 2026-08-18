@@ -1,10 +1,16 @@
 title: Best Practice Submission
 icon: inbox
 
+buttons:
+  - preview
+  - "-"
+  - convertBestPracticeSubmission
+  - settings
+  - status
+
 status:
   draft: Pending review
   unlisted: In review
-  listed: Converted to project
 
 tabs:
   submission:
@@ -25,13 +31,10 @@ tabs:
           year:
             type: number
             label: Year
-            min: 1900
-            max: 2100
 
           area:
             type: number
             label: Building area
-            min: 0
             step: 0.01
             help: Area in square meters.
 

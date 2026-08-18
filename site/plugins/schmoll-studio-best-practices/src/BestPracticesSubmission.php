@@ -1,6 +1,6 @@
 <?php
 
-namespace SchmollStudio\ContactForm;
+namespace SchmollStudio\BestPractices;
 
 use Kirby\Cms\App;
 use Kirby\Cms\Page;
@@ -25,34 +25,23 @@ class BestPracticesSubmission
     }
     if ($description === '') $errors['description'] = 'Bitte beschreibe das Projekt.';
 
-    return [
-      'valid' => $errors === [],
-      'errors' => $errors,
-    ];
+    return ['valid' => $errors === [], 'errors' => $errors];
   }
 
   public static function create(array $data, App $kirby): Page
   {
     $result = static::validate($data);
-    if ($result['valid'] !== true) {
-      throw new RuntimeException('The Best Practices submission is invalid.');
-    }
+    if ($result['valid'] !== true) throw new RuntimeException('The Best Practices submission is invalid.');
 
     $parentId = trim((string)($data['parent'] ?? ''));
-    $parent = $parentId !== ''
-      ? $kirby->site()->find($parentId)
-      : $kirby->site()->find('best-practices');
-
-    if ($parent === null || $parent->template()->name() !== 'best-practices') {
+    $parent = $parentId !== '' ? $kirby->site()->find($parentId) : $kirby->site()->find('best-practices');
+    if ($parent === null || $parent->intendedTemplate()->name() !== 'best-practices') {
       throw new RuntimeException('The selected Best Practices parent is invalid.');
     }
 
     $title = trim((string)$data['title']);
-    $slug = static::uniqueSlug($parent, $title);
-    $submittedAt = date('Y-m-d H:i:s');
-
     return $parent->createChild([
-      'slug' => $slug,
+      'slug' => static::uniqueSlug($parent, $title),
       'template' => 'best-practice-submission',
       'content' => [
         'title' => $title,
@@ -67,36 +56,20 @@ class BestPracticesSubmission
         'sourceUrl' => trim((string)($data['sourceUrl'] ?? '')),
         'submitterName' => trim((string)$data['submitterName']),
         'submitterEmail' => trim((string)$data['submitterEmail']),
-        'submittedAt' => $submittedAt,
+        'submittedAt' => date('Y-m-d H:i:s'),
       ],
     ]);
   }
 
   public static function notify(Page $submission, App $kirby): bool
   {
-    $recipient = trim((string)$kirby->option(
-      'schmoll-studio.contact-form.recipient',
-      'hello@reduction-roadmap.de'
-    ));
-    $fromName = trim((string)$kirby->option(
-      'schmoll-studio.contact-form.from-name',
-      'Reduction Roadmap'
-    ));
-    $fromEmail = trim((string)$kirby->option(
-      'schmoll-studio.contact-form.from-email',
-      'noreply@reduction-roadmap.de'
-    ));
-    $confirmationSubject = trim((string)$kirby->option(
-      'schmoll-studio.contact-form.confirmation-subject',
-      'Vielen Dank für deine Einreichung'
-    ));
+    $recipient = trim((string)$kirby->option('schmoll-studio.contact-form.recipient', 'hello@reduction-roadmap.de'));
+    $fromName = trim((string)$kirby->option('schmoll-studio.contact-form.from-name', 'Reduction Roadmap'));
+    $fromEmail = trim((string)$kirby->option('schmoll-studio.contact-form.from-email', 'noreply@reduction-roadmap.de'));
+    $confirmationSubject = trim((string)$kirby->option('schmoll-studio.contact-form.confirmation-subject', 'Vielen Dank für deine Einreichung'));
 
-    if (filter_var($recipient, FILTER_VALIDATE_EMAIL) === false) {
-      throw new RuntimeException('Invalid submission recipient.');
-    }
-    if (filter_var($fromEmail, FILTER_VALIDATE_EMAIL) === false) {
-      throw new RuntimeException('Invalid submission sender.');
-    }
+    if (filter_var($recipient, FILTER_VALIDATE_EMAIL) === false) throw new RuntimeException('Invalid submission recipient.');
+    if (filter_var($fromEmail, FILTER_VALIDATE_EMAIL) === false) throw new RuntimeException('Invalid submission sender.');
 
     $fields = [
       'Projekt' => $submission->title()->value(),
@@ -113,19 +86,12 @@ class BestPracticesSubmission
     ];
 
     $staffText = "Neue Best-Practice-Einreichung\n\n";
-    foreach ($fields as $label => $value) {
-      if ($value !== '') $staffText .= $label . ': ' . $value . "\n";
-    }
+    foreach ($fields as $label => $value) if ($value !== '') $staffText .= $label . ': ' . $value . "\n";
     $staffText .= "\nBeschreibung:\n" . $submission->description()->value();
 
     $staffHtml = '<h1>Neue Best-Practice-Einreichung</h1><dl>';
-    foreach ($fields as $label => $value) {
-      if ($value !== '') {
-        $staffHtml .= '<dt><strong>' . html($label) . '</strong></dt><dd>' . html($value) . '</dd>';
-      }
-    }
-    $staffHtml .= '</dl><p><strong>Beschreibung:</strong></p><p>'
-      . nl2br(html($submission->description()->value()), false) . '</p>';
+    foreach ($fields as $label => $value) if ($value !== '') $staffHtml .= '<dt><strong>' . html($label) . '</strong></dt><dd>' . html($value) . '</dd>';
+    $staffHtml .= '</dl><p><strong>Beschreibung:</strong></p><p>' . nl2br(html($submission->description()->value()), false) . '</p>';
 
     $email = $kirby->email([
       'from' => $fromEmail,
@@ -135,30 +101,13 @@ class BestPracticesSubmission
       'subject' => 'Neue Best-Practice-Einreichung: ' . $submission->title()->value(),
       'body' => ['text' => $staffText, 'html' => $staffHtml],
     ]);
-
     if ($email->isSent() !== true) return false;
 
     $name = $submission->submitterName()->value();
     $submitterEmail = $submission->submitterEmail()->value();
     $title = $submission->title()->value();
-    $confirmationText = implode("\n", [
-      'Hallo ' . $name . ',',
-      '',
-      'vielen Dank für deine Einreichung von „' . $title . '“.',
-      'Wir haben die Informationen erhalten und prüfen das Projekt nun.',
-      '',
-      'Viele Grüße',
-      'Reduction Roadmap',
-    ]);
-    $confirmationHtml = sprintf(
-      '<p>Hallo %s,</p>
-       <p>vielen Dank für deine Einreichung von „%s“.</p>
-       <p>Wir haben die Informationen erhalten und prüfen das Projekt nun.</p>
-       <p>Viele Grüße<br>Reduction Roadmap</p>',
-      html($name),
-      html($title)
-    );
-
+    $confirmationText = implode("\n", ['Hallo ' . $name . ',', '', 'vielen Dank für deine Einreichung von „' . $title . '“.', 'Wir haben die Informationen erhalten und prüfen das Projekt nun.', '', 'Viele Grüße', 'Reduction Roadmap']);
+    $confirmationHtml = sprintf('<p>Hallo %s,</p><p>vielen Dank für deine Einreichung von „%s“.</p><p>Wir haben die Informationen erhalten und prüfen das Projekt nun.</p><p>Viele Grüße<br>Reduction Roadmap</p>', html($name), html($title));
     $confirmation = $kirby->email([
       'from' => $fromEmail,
       'fromName' => $fromName,
@@ -176,11 +125,7 @@ class BestPracticesSubmission
     $base = \Kirby\Toolkit\Str::slug($title) ?: 'submission';
     $slug = $base . '-' . date('YmdHis');
     $counter = 1;
-
-    while ($parent->children()->find($slug)) {
-      $slug = $base . '-' . date('YmdHis') . '-' . $counter++;
-    }
-
+    while ($parent->children()->find($slug)) $slug = $base . '-' . date('YmdHis') . '-' . $counter++;
     return $slug;
   }
 }

@@ -3,6 +3,8 @@
 /site/plugins/*
 !/site/plugins/schmoll-studio-contact-form/
 !/site/plugins/schmoll-studio-contact-form/**
+!/site/plugins/schmoll-studio-best-practices/
+!/site/plugins/schmoll-studio-best-practices/**
 /sessions
 site/sessions/
 site/accounts/
