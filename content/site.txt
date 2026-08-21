@@ -30,7 +30,7 @@ Navigation:
 Footernavigation:
 
 - 
-  label: About
+  label: Über uns
   link:
     - page://osx3eu5kxia9rwnx
 - 
