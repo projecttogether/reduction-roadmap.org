@@ -1,0 +1,38 @@
+/* Text size utils. */
+/* ------------------------------------ */
+
+.text-fließtext-sm {
+  @apply text-[16px] leading-normal tracking-[0em];
+
+  /* Resp. sizes */
+  /* ... */
+}
+
+/* Shared styles */
+/* ------------------------------------ */
+
+.text-fließtext-xs,
+.text-fließtext-sm,
+.text-fließtext-md {
+  @apply lg:[column-count:var(--col-count)];
+
+  /* Nested elements */
+  @apply [&_p]:mb-[1.4em] [&_p:last-child]:mb-[0em];
+
+  @apply [&_strong]:font-[700];
+  @apply [&_i]:[font-style:normal] [&_i]:italic;
+
+  @apply [&_ul]:list-none;
+  @apply [&_ul]:ml-[0];
+  @apply [&_li]:mb-[1.45em] [&_ul:last-child_li:last-child]:mb-0;
+  @apply [&_li]:flex [&_li]:items-baseline [&_li]:gap-x-6;
+  @apply [&_li:before]:content-['_'];
+  @apply [&_li:before]:w-[0.7em] [&_li:before]:h-[2px] [&_li:before]:shrink-0 [&_li:before]:rounded-md;
+  @apply [&_li:before]:translate-y-[-6px];
+  @apply [&_li:before]:inline-flex [&_li:before]:bg-black;
+
+  @apply [&_a]:border-b [&_a]:border-dark-green [&_a]:transition-[border,color] [&_a]:duration-300;
+  @apply [&_a:hover]:text-dark-green [&_a:hover]:border-transparent;
+
+  @apply [&_sup]:text-[length:66%] [&_sup]:top-[-0.6em];
+}

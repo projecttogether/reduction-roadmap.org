@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "./typo.css";
 /* Scan all PHP templates and snippets for utility classes */
 @source "../../site";
 
@@ -9,21 +9,20 @@
    ============================================================ */
 @theme {
   /* Colours */
-  --color-dark-green:  hsl(155, 97%, 11%);   /* #023319 — brand primary */
-  --color-black-green: hsl(122, 21%, 23%);   /* body text */
-  --color-off-white:   hsl(0,   0%,  99%);   /* page background */
-  --color-light-bg:    hsl(0,   0%,  94%);   /* alternate section bg */
+  --color-dark-green: hsl(155, 97%, 11%); /* #023319 — brand primary */
+  --color-black-green: hsl(122, 21%, 23%); /* body text */
+  --color-off-white: hsl(0, 0%, 99%); /* page background */
+  --color-light-bg: hsl(0, 0%, 94%); /* alternate section bg */
 
   /* Typography — Tailwind v4: --font-{name} → generates font-{name} utility */
-  --font-heading: 'Martel', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-heading: "Martel", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 /* ============================================================
    Component classes — keep PHP markup readable
    ============================================================ */
 @layer components {
-
   /* Horizontal container with clamped gutters */
   .container {
     max-width: 1200px;
@@ -45,7 +44,10 @@
     cursor: pointer;
     padding: 0.75rem 1.75rem;
     font-size: 0.9375rem;
-    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
   }
 
   .btn-primary {
@@ -69,7 +71,6 @@
    Utility overrides and stateful patterns
    ============================================================ */
 @layer utilities {
-
   /* Accessible skip link */
   .skip-link {
     position: absolute;
@@ -88,7 +89,9 @@
     height: 2px;
     background-color: var(--color-black-green);
     transform-origin: center;
-    transition: transform 200ms ease, opacity 200ms ease;
+    transition:
+      transform 200ms ease,
+      opacity 200ms ease;
   }
   [aria-expanded="true"] .hamburger-bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);

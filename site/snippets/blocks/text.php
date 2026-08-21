@@ -10,7 +10,7 @@ $colCount = $block->colCount()->or(1);
 // Markup //
 ////////////////// ?>
 
-<div class="text-(--text-align) columns-(--cols) gap-12"
+<div class="text-fließtext-sm text-(--text-align) columns-(--cols) gap-12"
      style="--text-align: <?= $align ?>;
             --cols      : <?= $colCount ?>;">
   <?= $block->text(); ?>

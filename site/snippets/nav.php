@@ -29,26 +29,31 @@
       <div
           class="flex gap-1 list-none m-0 p-0"
           role ="list">
-        <?php if ($site->navigation()->isNotEmpty()): ?>
-          <?php foreach ($site->navigation()->toStructure() as $item): ?>
-            <?php $linkedPage = $item->link()->toPage() ?>
-            <?php snippet('btn', [
-              'url'      => $linkedPage ? $linkedPage->url() : '#',
-              'label'    => $item->label()->html(),
-              'isActive' => (bool)$linkedPage?->isActive(),
-              'highlight' => $item->is_cta()->isTrue(),
-            ]) ?>
-          <?php endforeach ?>
-        <?php else: ?>
-          <?php foreach ($site->children()->listed() as $item): ?>
-            <?php snippet('btn', [
-              'url'      => $item->url(),
-              'label'    => $item->title()->html(),
-              'isActive' => (bool)$item->isActive(),
-              'highlight' => $item->is_cta()->isTrue(),
-            ]) ?>
-          <?php endforeach ?>
-        <?php endif ?>
+        <?php
+          if ($site->navigation()->isNotEmpty()) {
+            foreach ($site->navigation()->toStructure() as $item) {
+              $linkedPage = $item->link()->toPage();
+              $linkedUrl  = $item->link()->toUrl();
+              $isExternal = !$linkedPage && preg_match('/^(https?:)?\/\//i', (string)$linkedUrl) === 1;
+              snippet('btn', [
+                'url'       => $linkedUrl ?: ($linkedPage ? $linkedPage->url() : '#'),
+                'label'     => $item->label()->html(),
+                'isActive'  => $linkedPage ? $linkedPage->isActive() : false,
+                'highlight' => $item->is_cta()->isTrue(),
+                'target'    => $isExternal ? '_blank' : null,
+              ]);
+            }
+          } else {
+            foreach ($site->children()->listed() as $item) {
+              snippet('btn', [
+                'url'       => $item->url(),
+                'label'     => $item->title()->html(),
+                'isActive'  => (bool)$item->isActive(),
+                'highlight' => $item->is_cta()->isTrue(),
+              ]);
+            }
+          }
+        ?>
       </div>
 
     </nav>
@@ -74,26 +79,32 @@
     <ul
         class="list-none m-0 p-0 text-center"
         role ="list">
-      <?php if ($site->navigation()->isNotEmpty()): ?>
-        <?php foreach ($site->navigation()->toStructure() as $item): ?>
-          <?php $linkedPage = $item->link()->toPage() ?>
-          <?php snippet('btn', [
-            'url'      => $linkedPage ? $linkedPage->url() : '#',
-            'label'    => $item->label()->html(),
-            'isActive' => (bool)$linkedPage?->isActive(),
-            'mobile'   => true,
-          ]) ?>
-        <?php endforeach ?>
-      <?php else: ?>
-        <?php foreach ($site->children()->listed() as $item): ?>
-          <?php snippet('btn', [
-            'url'      => $item->url(),
-            'label'    => $item->title()->html(),
-            'isActive' => (bool)$item->isActive(),
-            'mobile'   => true,
-          ]) ?>
-        <?php endforeach ?>
-      <?php endif ?>
+      <?php
+        if ($site->navigation()->isNotEmpty()) {
+          foreach ($site->navigation()->toStructure() as $item) {
+            $linkedPage = $item->link()->toPage();
+            $linkedUrl  = $item->link()->toUrl();
+            $isExternal = !$linkedPage && preg_match('/^(https?:)?\/\//i', (string)$linkedUrl) === 1;
+
+            snippet('btn', [
+              'url'      => $linkedUrl ?: ($linkedPage ? $linkedPage->url() : '#'),
+              'label'    => $item->label()->html(),
+              'isActive' => $linkedPage ? $linkedPage->isActive() : false,
+              'mobile'   => true,
+              'target'   => $isExternal ? '_blank' : null,
+            ]);
+          }
+        } else {
+          foreach ($site->children()->listed() as $item) {
+            snippet('btn', [
+              'url'      => $item->url(),
+              'label'    => $item->title()->html(),
+              'isActive' => (bool)$item->isActive(),
+              'mobile'   => true,
+            ]);
+          }
+        }
+      ?>
     </ul>
   </nav>
 
