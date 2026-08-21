@@ -22,7 +22,7 @@ Navigation:
   is_cta: 'true'
 - 
   label: Unterstützen
-  link:
+  link: https://tally.so/r/mZMAza
   is_cta: 'true'
 
 ----
@@ -44,7 +44,7 @@ Footernavigation:
 
 ----
 
-Logo: - file://cer8ng9inwaoegzd
+Logo: - file://bnko0lr4xpfv6cvl
 
 ----
 
@@ -52,4 +52,4 @@ Sociallinkedin:
 
 ----
 
-Socialinstagram:
+Socialinstagram: 
