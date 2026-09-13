@@ -619,11 +619,11 @@
   .gap-\[5px\] {
     gap: 5px;
   }
-  .space-y-1 {
+  .space-y-2\.5 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
-      margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
-      margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+      margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
   .space-y-5 {
@@ -1380,6 +1380,13 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+}
+.text-fließtext-xs {
+  font-size: 11px;
+  --tw-leading: 1.6;
+  line-height: 1.6;
+  --tw-tracking: 0.00475em;
+  letter-spacing: 0.00475em;
 }
 .text-fließtext-sm {
   font-size: 15.5px;

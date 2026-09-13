@@ -1,6 +1,13 @@
 /* Text size utils. */
 /* ------------------------------------ */
 
+.text-fließtext-xs {
+  @apply text-[11px] leading-[1.6] tracking-[0.00475em];
+
+  /* Resp. sizes */
+  /* ... */
+}
+
 .text-fließtext-sm {
   @apply text-[15.5px] leading-[1.6] tracking-[0.00475em];
 
