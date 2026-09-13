@@ -1,14 +1,10 @@
 <?php
 
 require __DIR__ . '/src/BestPracticesSubmission.php';
-require __DIR__ . '/src/BestPracticesProjectConversion.php';
 
 use SchmollStudio\BestPractices\BestPracticesSubmission;
 
 Kirby::plugin('schmoll-studio/best-practices', [
-  'areas' => [
-    'best-practices' => require __DIR__ . '/src/areas/best-practices.php',
-  ],
   'routes' => [
     [
       'pattern' => 'best-practices-submission',

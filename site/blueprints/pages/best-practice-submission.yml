@@ -4,7 +4,6 @@ icon: inbox
 buttons:
   - preview
   - "-"
-  - convertBestPracticeSubmission
   - settings
   - status
 

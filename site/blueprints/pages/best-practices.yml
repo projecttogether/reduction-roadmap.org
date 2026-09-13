@@ -22,6 +22,8 @@ tabs:
       submissions:
         type: pages
         label: Incoming submissions
-        template: best-practice-submission
+        template:
+          - best-practice-project
+          - best-practice-submission
         info: "Eingereicht am {{page.submittedAt}}"
         empty: No submissions yet

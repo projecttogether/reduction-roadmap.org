@@ -22,10 +22,8 @@ tabs:
             label: Location
 
           year:
-            type: number
+            type: text
             label: Year
-            min: 1900
-            max: 2100
 
           area:
             type: number
@@ -78,6 +76,67 @@ tabs:
             label: Project description
             buttons: false
             size: large
+
+  submission:
+    label: Submission details
+    icon: info
+    columns:
+      - width: 1/2
+        fields:
+          projectSponsor:
+            type: text
+            label: Project sponsor or client
+          participatingOrganizations:
+            type: textarea
+            label: Participating organizations
+          projectStatus:
+            type: text
+            label: Project status
+          projectPeriod:
+            type: text
+            label: Project period
+          buildingUse:
+            type: text
+            label: Building use
+          grossFloorArea:
+            type: text
+            label: Gross floor area
+          thgTarget:
+            type: text
+            label: THG target
+          thgValue:
+            type: text
+            label: THG value
+          areaReference:
+            type: text
+            label: Area reference
+      - width: 1/2
+        fields:
+          submitterName:
+            type: text
+            label: Submitter name
+          submitterRole:
+            type: text
+            label: Submitter role
+          submitterOrganization:
+            type: text
+            label: Submitter organization
+          submitterEmail:
+            type: email
+            label: Submitter email
+          submitterPhone:
+            type: tel
+            label: Submitter phone
+          contactPermission:
+            type: text
+            label: Contact permission
+          internalNotes:
+            type: textarea
+            label: Internal notes
+          submittedAt:
+            type: text
+            label: Submitted at
+            readonly: true
 
   files:
     label: Project files

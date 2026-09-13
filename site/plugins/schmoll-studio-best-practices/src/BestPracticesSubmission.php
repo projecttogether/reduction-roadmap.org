@@ -51,7 +51,8 @@ class BestPracticesSubmission
     $title = trim((string)$data['title']);
     $submission = $parent->createChild([
       'slug' => static::uniqueSlug($parent, $title),
-      'template' => 'best-practice-submission',
+      'template' => 'best-practice-project',
+      'status' => 'draft',
       'content' => [
         'title' => $title,
         'projectSponsor' => trim((string)($data['projectSponsor'] ?? '')),
