@@ -18,3 +18,5 @@ tabs:
       files:
         type: files
         headline: Images & Downloads
+
+  settings: tabs/page-settings

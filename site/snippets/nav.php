@@ -1,5 +1,7 @@
 <?php
 $hasHero = false;
+$logoWhite = $site->logoWhite()->toFile();
+$transparentNavigation = $page->transparentNavigation()->isTrue();
 foreach ($page->layout()->toLayouts() as $layout)
   foreach ($layout->columns() as $column)
     foreach ($column->blocks() as $block)
@@ -10,10 +12,12 @@ foreach ($page->layout()->toLayouts() as $layout)
 ?>
 
 <header
-  class="<?= $hasHero ? 'fixed inset-x-0' : 'sticky' ?> top-0 z-50 bg-off-white border-b border-transparent"
+  class="<?= $hasHero || $transparentNavigation ? 'fixed inset-x-0 bg-transparent' : 'sticky bg-off-white' ?> top-0 z-50 border-b border-transparent transition-colors duration-300"
+  data-hero-nav="<?= $hasHero || $transparentNavigation ? 'true' : 'false' ?>"
+  data-white-logo="<?= $logoWhite ? 'true' : 'false' ?>"
   id   ="header">
 
-  <div class="max-w-[1100px] mx-auto py-6 flex items-center justify-between gap-8">
+  <div class="mx-auto px-16 py-6 flex items-center justify-between gap-8">
 
     <div>
       <a
@@ -21,12 +25,20 @@ foreach ($page->layout()->toLayouts() as $layout)
           class     ="block no-underline leading-none"
           aria-label="<?= $site->title()->html() ?> – Home">
         <?php if ($logo = $site->logo()->toFile()): ?>
-                <img
-                    src   ="<?= $logo->url() ?>"
-                    alt   ="<?= $site->title()->html() ?>"
-                    class ="h-12 w-auto"
-                    width ="<?= $logo->width() ?>"
-                    height="<?= $logo->height() ?>">
+                <span class="grid h-12">
+                  <img
+                      src   ="<?= $logo->url() ?>"
+                      alt   ="<?= $site->title()->html() ?>"
+                      class ="nav-logo nav-logo-regular col-start-1 row-start-1 h-12 w-auto"
+                      width ="<?= $logo->width() ?>"
+                      height="<?= $logo->height() ?>">
+                  <?php if ($logoWhite): ?><img
+                      src   ="<?= $logoWhite->url() ?>"
+                      alt   ="<?= $site->title()->html() ?>"
+                      class ="nav-logo nav-logo-white col-start-1 row-start-1 h-12 w-auto"
+                      width ="<?= $logoWhite->width() ?>"
+                      height="<?= $logoWhite->height() ?>"><?php endif ?>
+                </span>
         <?php else: ?>
                 <span class="font-heading font-black text-lg text-dark-green"><?= $site->title()->html() ?></span>
         <?php endif ?>
@@ -125,7 +137,18 @@ foreach ($page->layout()->toLayouts() as $layout)
   (function () {
     var toggle = document.getElementById('nav-toggle');
     var nav    = document.getElementById('mobile-nav');
-    if (!toggle || !nav) return;
+    var header = document.getElementById('header');
+    if (!toggle || !nav || !header) return;
+
+    if (header.dataset.heroNav === 'true') {
+      var updateHeader = function () {
+        header.classList.toggle('nav-scrolled', window.scrollY > 150);
+      };
+
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+    }
+
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') === 'true';
       if (open) {

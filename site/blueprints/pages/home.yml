@@ -15,3 +15,5 @@ tabs:
       files:
         type: files
         headline: Images & Assets
+
+  settings: tabs/page-settings

@@ -50,3 +50,5 @@ tabs:
       files:
         type: files
         headline: Images
+
+  settings: tabs/page-settings

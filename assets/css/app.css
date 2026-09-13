@@ -9,10 +9,10 @@
    ============================================================ */
 @theme {
   /* Colours */
-  --color-dark-green: hsl(155, 97%, 11%); /* #023319 — brand primary */
-  --color-black-green: hsl(122, 21%, 23%); /* body text */
-  --color-off-white: hsl(0, 0%, 99%); /* page background */
-  --color-light-bg: hsl(0, 0%, 94%); /* alternate section bg */
+  --color-dark-green: #023319; /* brand primary */
+  --color-black-green: #2e472f; /* body text */
+  --color-off-white: #fcfcfc; /* page background */
+  --color-light-bg: #f0f0f0; /* alternate section bg */
 
   /* Typography — Tailwind v4: --font-{name} → generates font-{name} utility */
   --font-heading: "Martel", Georgia, serif;
@@ -101,5 +101,26 @@
   }
   [aria-expanded="true"] .hamburger-bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-scrolled {
+    background-color: var(--color-off-white);
+    border-bottom-color: var(--color-dark-green);
+  }
+
+  .nav-logo {
+    transition: opacity 300ms ease;
+  }
+  header[data-hero-nav="true"][data-white-logo="true"] .nav-logo-regular {
+    opacity: 0;
+  }
+  header[data-hero-nav="true"][data-white-logo="true"] .nav-logo-white {
+    opacity: 1;
+  }
+  header[data-hero-nav="true"][data-white-logo="true"].nav-scrolled .nav-logo-regular {
+    opacity: 1;
+  }
+  header[data-hero-nav="true"][data-white-logo="true"].nav-scrolled .nav-logo-white {
+    opacity: 0;
   }
 }

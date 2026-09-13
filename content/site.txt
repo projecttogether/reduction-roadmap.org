@@ -48,6 +48,10 @@ Logo: - file://bnko0lr4xpfv6cvl
 
 ----
 
+Logowhite: - file://65q0nicjiyuvo6hy
+
+----
+
 Sociallinkedin: 
 
 ----

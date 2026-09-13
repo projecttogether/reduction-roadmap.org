@@ -90,6 +90,11 @@ tabs:
             label: Logo
             help: Upload the site logo (PNG/SVG)
             max: 1
+          logoWhite:
+            type: files
+            label: White logo
+            help: Optional. Shown over the transparent navigation on Hero pages.
+            max: 1
           socialLinkedin:
             type: url
             label: LinkedIn URL

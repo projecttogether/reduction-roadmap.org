@@ -1,0 +1,12 @@
+label: Settings
+icon: settings
+
+fields:
+  transparentNavigation:
+    type: toggle
+    label: Transparent navigation
+    text:
+      - Disabled
+      - Enabled
+    default: false
+    help: Start with a transparent navigation and switch to the off-white background after scrolling 150px. Hero pages enable this automatically.

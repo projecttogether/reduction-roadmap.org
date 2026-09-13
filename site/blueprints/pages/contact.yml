@@ -33,3 +33,5 @@ tabs:
               - quote
               - list
               - contact-form
+
+  settings: tabs/page-settings

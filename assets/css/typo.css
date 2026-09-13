@@ -8,6 +8,13 @@
   /* ... */
 }
 
+.text-fließtext-md {
+  @apply text-[18px] leading-normal tracking-[0em];
+
+  /* Resp. sizes */
+  /* ... */
+}
+
 /* Shared styles */
 /* ------------------------------------ */
 

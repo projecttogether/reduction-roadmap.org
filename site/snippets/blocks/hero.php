@@ -12,7 +12,7 @@ $alt = $block->alt()->or($image?->alt() ?? '');
   <div class="grid min-h-screen w-full grid-cols-1 lg:grid-cols-2">
 
     <?php // Left col. // ?>
-    <div class="flex items-center px-6 py-16 md:px-12 md:py-24 lg:px-16 bg-dark-green">
+    <div class="flex flex-col justify-end items-center_ px-6 py-16 md:px-12 md:py-16 lg:px-16 bg-dark-green">
       <div class="w-full max-w-2xl">
         <?php if ($headline->isNotEmpty())
           snippet('hdl/hdl', [
@@ -20,10 +20,11 @@ $alt = $block->alt()->or($image?->alt() ?? '');
             'level' => 'h1',
             'size'  => 'hero',
             'color' => 'off-white',
+            'class' => 'select-none',
           ]) ?>
 
         <?php if ($text->isNotEmpty()): ?>
-          <div class="mt-8 max-w-xl text-lg leading-relaxed text-black-green/80 md:text-xl">
+          <div class="mt-8 text-fließtext-md text-off-white">
             <?= $text->kt() ?>
           </div>
         <?php endif ?>
