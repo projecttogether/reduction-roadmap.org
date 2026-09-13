@@ -20,7 +20,7 @@
         href       ="https://fonts.gstatic.com"
         crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Martel:wght@700;900&family=Inter:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Martel:wght@700;900&family=Martel+Sans:wght@400;500;700&display=swap"
         rel ="stylesheet">
     <link
         rel ="stylesheet"

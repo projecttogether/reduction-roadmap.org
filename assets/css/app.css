@@ -16,7 +16,7 @@
 
   /* Typography — Tailwind v4: --font-{name} → generates font-{name} utility */
   --font-heading: "Martel", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-body: "Martel Sans", system-ui, sans-serif;
 }
 
 /* ============================================================
