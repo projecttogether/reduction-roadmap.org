@@ -97,11 +97,19 @@ foreach ($page->layout()->toLayouts() as $layout)
 
   <!-- Mobile nav: starts hidden; JS toggles the 'hidden' class -->
   <nav
-      class     ="hidden fixed inset-0 bg-off-white z-40 items-center justify-center px-[clamp(1.5rem,4vw,4rem)]"
+      class     ="hidden fixed inset-0 bg-off-white z-40 flex-col items-start justify-end px-6 pb-10"
       id        ="mobile-nav"
       aria-label="Mobile navigation">
+    <button
+      type       ="button"
+      id         ="mobile-nav-close"
+      class      ="absolute right-6 top-6 inline-flex h-10 w-10 items-center justify-center border-0 bg-transparent text-4xl leading-none text-dark-green"
+      aria-label  ="Close navigation"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
     <ul
-        class="list-none m-0 p-0 text-center"
+        class="m-0 flex w-full list-none flex-col items-start gap-2 p-0 text-left"
         role ="list">
       <?php
         if ($site->navigation()->isNotEmpty()) {
@@ -139,6 +147,7 @@ foreach ($page->layout()->toLayouts() as $layout)
   (function () {
     var toggle = document.getElementById('nav-toggle');
     var nav    = document.getElementById('mobile-nav');
+    var close  = document.getElementById('mobile-nav-close');
     var header = document.getElementById('header');
     if (!toggle || !nav || !header) return;
 
@@ -165,17 +174,15 @@ foreach ($page->layout()->toLayouts() as $layout)
       updateHeader();
     }
 
+    var setOpen = function (open) {
+      nav.classList.toggle('hidden', !open);
+      nav.classList.toggle('flex', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
     toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      if (open) {
-        nav.classList.remove('flex');
-        nav.classList.add('hidden');
-        toggle.setAttribute('aria-expanded', 'false');
-      } else {
-        nav.classList.remove('hidden');
-        nav.classList.add('flex');
-        toggle.setAttribute('aria-expanded', 'true');
-      }
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
     });
+    if (close) close.addEventListener('click', function () { setOpen(false); });
   })();
 </script>

@@ -17,7 +17,7 @@ if ($backgroundColor === '') $backgroundColor = 'var(--color-dark-green)';
   style="min-height: <?= $minHeight ?>vh; background-color: <?= esc($backgroundColor) ?>;
         --w-max    : 1100px;"
 >
-  <div class="w-full max-w-(--w-max) mx-auto py-16 md:py-24">
+  <div class="w-full max-w-(--w-max) mx-auto px-4 py-16 md:px-0 md:py-24">
     <div class="flex pl-5 pt-2 border-l-[10px] border-off-white">
       <?php if ($headline->isNotEmpty())
               snippet('hdl/hdl', ['text'  => $headline->html(), 'level' => 'h1', 'size' => 'hero', 'color' => 'off-white']) ?>

@@ -15,7 +15,7 @@ $gridClass    = $layout === 'text-wide' ? 'lg:grid-cols-[2fr_1fr]' : 'lg:grid-co
   <div class="grid min-h-screen w-full grid-cols-1 <?= $gridClass ?>">
 
     <?php // Left col. // ?>
-    <div class="flex flex-col justify-end px-6 py-16 md:px-12 md:py-16 lg:px-16 bg-dark-green">
+    <div class="flex flex-col justify-end bg-dark-green px-6 pb-16 pt-40 md:px-12 md:py-16 lg:px-16">
       <div class="w-full">
         <?php if ($headline->isNotEmpty())
           snippet('hdl/hdl', [

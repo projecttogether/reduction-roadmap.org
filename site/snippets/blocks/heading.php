@@ -37,9 +37,9 @@ $borderClass = implode(' ', array_filter($borderClassList));
   <<?= $level ?> class="font-black
   <?= match($level) 
   {
-    'h1' => 'text-7xl tracking-[-0.0125em]',
-    'h2' => 'text-7xl tracking-[-0.0125em]',
-    'h3' => 'text-4xl tracking-[-0.0125em]',
+    'h1' => 'text-3xl md:text-4xl tracking-[-0.0125em]',
+    'h2' => 'text-3xl md:text-4xl tracking-[-0.0125em]',
+    'h3' => 'text-3xl md:text-4xl tracking-[-0.0125em]',
     'h4' => 'text-3xl tracking-[-0.0125em]',
     'h5' => 'text-2xl tracking-[-0.0125em]',
     default => 'text-xl tracking-[-0.0125em]',

@@ -16,11 +16,11 @@ $class ??= '';
 
 $levels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 $sizes  = [
-  'hero' => 'text-[clamp(2.5rem,7vw,5rem)]',
-  'fluid-3rem' => 'text-[clamp(2rem,3.43vw,3rem)]',
-  'xl'   => 'text-6xl',
-  'lg'   => 'text-5xl',
-  'md'   => 'text-4xl',
+  'hero' => 'text-[clamp(2rem,7vw,5rem)] md:text-[clamp(2.5rem,7vw,5rem)]',
+  'fluid-3rem' => 'text-[clamp(1.75rem,3.43vw,3rem)] md:text-[clamp(2rem,3.43vw,3rem)]',
+  'xl'   => 'text-4xl md:text-6xl',
+  'lg'   => 'text-3xl md:text-5xl',
+  'md'   => 'text-2xl md:text-4xl',
   'sm'   => 'text-3xl',
   'xs'   => 'text-2xl',
 ];

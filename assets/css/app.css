@@ -102,6 +102,12 @@
       transform 200ms ease,
       opacity 200ms ease;
   }
+  header[data-hero-nav="true"] .hamburger-bar {
+    background-color: var(--color-off-white);
+  }
+  header[data-hero-nav="true"].nav-scrolled .hamburger-bar {
+    background-color: var(--color-black-green);
+  }
   [aria-expanded="true"] .hamburger-bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
