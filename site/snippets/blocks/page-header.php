@@ -14,11 +14,14 @@ if ($backgroundColor === '') $backgroundColor = 'var(--color-dark-green)';
 // Markup // ?>
 <section
   class="page-header flex w-screen -ml-[calc((100vw-100%)/2)] items-center bg-dark-green text-off-white"
-  style="min-height: <?= $minHeight ?>vh; background-color: <?= esc($backgroundColor) ?>;"
+  style="min-height: <?= $minHeight ?>vh; background-color: <?= esc($backgroundColor) ?>;
+        --w-max    : 1100px;"
 >
-  <div class="container w-full py-16 md:py-24">
-    <?php if ($headline->isNotEmpty())
-            snippet('hdl/hdl', ['text'  => $headline->html(), 'level' => 'h1', 'size' => 'hero', 'color' => 'off-white']) ?>
+  <div class="w-full max-w-(--w-max) mx-auto py-16 md:py-24">
+    <div class="flex pl-5 pt-2 border-l-[10px] border-off-white">
+      <?php if ($headline->isNotEmpty())
+              snippet('hdl/hdl', ['text'  => $headline->html(), 'level' => 'h1', 'size' => 'hero', 'color' => 'off-white']) ?>
+    </div>
 
     <?php if ($subheadline->isNotEmpty()): ?>
       <p class="mt-6 max-w-3xl text-[clamp(1.25rem,2.5vw,2rem)] leading-snug">
