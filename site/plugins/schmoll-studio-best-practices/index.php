@@ -35,7 +35,8 @@ Kirby::plugin('schmoll-studio/best-practices', [
           $redirect = $referer . (str_contains($referer, '?') ? '&' : '?') . 'submission-status=' . $status;
         } catch (\Throwable $e) {
           error_log(sprintf('[Best Practices submission] %s in %s:%d', $e->getMessage(), $e->getFile(), $e->getLine()));
-          if ($kirby->option('debug') === true) throw $e;
+          $isValidationError = str_starts_with($e->getMessage(), 'The Best Practices submission is invalid:');
+          if ($kirby->option('debug') === true && $isValidationError === false) throw $e;
         }
 
         return go($redirect);

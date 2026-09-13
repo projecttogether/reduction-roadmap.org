@@ -242,47 +242,80 @@ $args_btn = [
       <input id="best-practices-submission-website" name="website" type="text" tabindex="-1" autocomplete="off">
     </div>
 
-    <p class="text-sm leading-relaxed text-dark-green/80">Die übermittelten Informationen werden nach Prüfung und gesonderter Freigabe auf der Website erscheinen.</p>
-    <h2 class="font-heading text-2xl font-bold text-black-green">Teil A: Angaben zum Praxisbeispiel</h2>
-    <?php snippet('form-fields/input', $args_field_title) ?>
-
-    <div class="grid gap-5 md:grid-cols-2">
-      <?php snippet('form-fields/input', $args_field_sponsor) ?>
-      <?php snippet('form-fields/select', $args_field_status) ?>
-      <?php snippet('form-fields/input', $args_field_period) ?>
-      <?php snippet('form-fields/input', $args_field_location) ?>
-      <?php snippet('form-fields/select', $args_field_construction) ?>
-      <?php snippet('form-fields/select', $args_field_building_use) ?>
-      <?php snippet('form-fields/input', $args_field_area) ?>
-      <?php snippet('form-fields/select', $args_field_target) ?>
-      <?php snippet('form-fields/input', $args_field_value) ?>
-      <?php snippet('form-fields/select', $args_field_area_reference) ?>
-      <?php snippet('form-fields/input', $args_field_source) ?>
+    <div class="hidden border border-red-300 bg-red-50 px-4 py-4 text-sm text-red-900" data-submission-errors role="alert" tabindex="-1">
+      <p class="font-bold">Bitte überprüfe die folgenden Angaben:</p>
+      <ul class="mt-2 list-disc pl-5" data-submission-error-list></ul>
     </div>
 
-    <?php snippet('form-fields/textarea', $args_field_organizations) ?>
-    <?php snippet('form-fields/textarea', $args_field_description) ?>
+    <details class="group border border-dark-green/20 bg-off-white">
+      <summary class="cursor-pointer list-none px-5 py-4 font-heading text-2xl font-bold text-black-green marker:hidden">
+        Teil A: Angaben zum Praxisbeispiel
+        <span class="float-right flex items-center gap-3">
+          <span class="inline-flex size-6 items-center justify-center rounded-full border-2 border-slate-300 text-transparent transition-colors" data-section-valid aria-label="Teil A ist noch nicht vollständig">
+            <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8.5 6.25 12 13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+        </span>
+      </summary>
+      <div class="space-y-5 border-t border-dark-green/20 px-5 py-5">
+        <p class="text-sm leading-relaxed text-dark-green/80">Die übermittelten Informationen werden nach Prüfung und gesonderter Freigabe auf der Website erscheinen.</p>
+        <?php snippet('form-fields/input', $args_field_title) ?>
 
-    <label class="block">
-      <span class="mb-2 block text-sm font-medium text-dark-green">Darstellungen oder Bilder vom Projekt</span>
-      <input type="file" name="projectImages[]" multiple accept="image/*" class="block w-full rounded-md border border-slate-300 bg-off-white px-4 py-3 text-base text-black-green">
-      <span class="mt-2 block text-sm text-dark-green/70">Bitte nur Bilder hochladen, deren Weitergabe erlaubt ist. Fotograf:in, Bildquelle und gewünschte Bildunterschrift bitte im Hinweisfeld angeben.</span>
-    </label>
+        <div class="grid gap-5 md:grid-cols-2">
+          <?php snippet('form-fields/input', $args_field_sponsor) ?>
+          <?php snippet('form-fields/select', $args_field_status) ?>
+          <?php snippet('form-fields/input', $args_field_period) ?>
+          <?php snippet('form-fields/input', $args_field_location) ?>
+          <?php snippet('form-fields/select', $args_field_construction) ?>
+          <?php snippet('form-fields/select', $args_field_building_use) ?>
+          <?php snippet('form-fields/input', $args_field_area) ?>
+          <?php snippet('form-fields/select', $args_field_target) ?>
+          <?php snippet('form-fields/input', $args_field_value) ?>
+          <?php snippet('form-fields/select', $args_field_area_reference) ?>
+          <?php snippet('form-fields/input', $args_field_source) ?>
+        </div>
 
-    <h2 class="font-heading text-2xl font-bold text-black-green">Teil B: Kontakte und interne Hinweise</h2>
-    <p class="text-sm leading-relaxed text-dark-green/80">Diese Angaben dienen ausschließlich der Rückfrage und internen Bearbeitung. Sie werden nicht auf der Website veröffentlicht.</p>
-    <div class="grid gap-5 md:grid-cols-2">
-      <?php snippet('form-fields/input', $args_field_name) ?>
-      <?php snippet('form-fields/input', $args_field_role) ?>
-      <?php snippet('form-fields/input', $args_field_organization) ?>
-      <?php snippet('form-fields/input', $args_field_email) ?>
-      <?php snippet('form-fields/input', $args_field_phone) ?>
-    </div>
+        <?php snippet('form-fields/textarea', $args_field_organizations) ?>
+        <?php snippet('form-fields/textarea', $args_field_description) ?>
 
-    <?php snippet('form-fields/select', $args_field_submit_permission) ?>
-    <?php snippet('form-fields/select', $args_field_image_rights) ?>
-    <?php snippet('form-fields/select', $args_field_contact_permission) ?>
-    <?php snippet('form-fields/textarea', $args_field_internal_notes) ?>
+        <label class="block">
+          <span class="mb-2 block text-sm font-medium text-dark-green">Darstellungen oder Bilder vom Projekt</span>
+          <input type="file" name="projectImages[]" multiple accept="image/*" class="block w-full rounded-md border border-slate-300 bg-off-white px-4 py-3 text-base text-black-green">
+          <span class="mt-2 block text-sm text-dark-green/70">Bitte nur Bilder hochladen, deren Weitergabe erlaubt ist. Fotograf:in, Bildquelle und gewünschte Bildunterschrift bitte im Hinweisfeld angeben.</span>
+        </label>
+      </div>
+    </details>
+
+    <details class="group border border-dark-green/20 bg-off-white">
+      <summary class="cursor-pointer list-none px-5 py-4 font-heading text-2xl font-bold text-black-green marker:hidden">
+        Teil B: Kontakte und interne Hinweise
+        <span class="float-right flex items-center gap-3">
+          <span class="inline-flex size-6 items-center justify-center rounded-full border-2 border-slate-300 text-transparent transition-colors" data-section-valid aria-label="Teil B ist noch nicht vollständig">
+            <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8.5 6.25 12 13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+        </span>
+      </summary>
+      <div class="space-y-5 border-t border-dark-green/20 px-5 py-5">
+        <p class="text-sm leading-relaxed text-dark-green/80">Diese Angaben dienen ausschließlich der Rückfrage und internen Bearbeitung. Sie werden nicht auf der Website veröffentlicht.</p>
+        <div class="grid gap-5 md:grid-cols-2">
+          <?php snippet('form-fields/input', $args_field_name) ?>
+          <?php snippet('form-fields/input', $args_field_role) ?>
+          <?php snippet('form-fields/input', $args_field_organization) ?>
+          <?php snippet('form-fields/input', $args_field_email) ?>
+          <?php snippet('form-fields/input', $args_field_phone) ?>
+        </div>
+
+        <?php snippet('form-fields/select', $args_field_submit_permission) ?>
+        <?php snippet('form-fields/select', $args_field_image_rights) ?>
+        <?php snippet('form-fields/select', $args_field_contact_permission) ?>
+        <?php snippet('form-fields/textarea', $args_field_internal_notes) ?>
+      </div>
+    </details>
 
     <div>
       <?php snippet('btn', $args_btn) ?>
@@ -291,3 +324,114 @@ $args_btn = [
 </div>
 
 <?php snippet('best-practices/submission-form-toggle', ['blockId' => $block->id()]) ?>
+
+<script>
+  (function () {
+    var form = document.getElementById('best-practices-submission-fields-<?= esc($block->id()) ?>');
+    if (!form) return;
+
+    var summary = form.querySelector('[data-submission-errors]');
+    var errorList = form.querySelector('[data-submission-error-list]');
+    var sections = Array.from(form.querySelectorAll('details'));
+
+    function labelFor(field) {
+      var label = field.closest('label');
+      return label ? label.querySelector('span')?.textContent.trim() : field.name;
+    }
+
+    function clearErrors() {
+      form.querySelectorAll('[aria-invalid="true"]').forEach(function (field) {
+        field.removeAttribute('aria-invalid');
+      });
+      form.querySelectorAll('[data-field-error]').forEach(function (error) {
+        error.remove();
+      });
+      summary.classList.add('hidden');
+      errorList.replaceChildren();
+    }
+
+    function fieldMessage(field, includeOptional = false) {
+      if (!includeOptional && !field.required) return '';
+      if (field.required && !field.value.trim()) return 'Bitte fülle dieses Feld aus.';
+      if (field.type === 'email' && field.value && !field.validity.valid) return 'Bitte gib eine gültige E-Mail-Adresse ein.';
+      if (field.type === 'url' && field.value && !field.validity.valid) return 'Bitte gib eine gültige URL ein.';
+      if (field.name === 'description' && field.value.trim().split(/\s+/).filter(Boolean).length > 100) return 'Maximal 100 Wörter erlaubt.';
+      return '';
+    }
+
+    function sectionIsValid(section) {
+      var fields = Array.from(section.querySelectorAll('input[required], select[required], textarea[required]'));
+      var valid = fields.every(function (field) { return fieldMessage(field) === ''; });
+      var fileInput = form.querySelector('input[type="file"][name="projectImages[]"]');
+      var imageRights = form.querySelector('[name="imageRights"]');
+      if (section.contains(imageRights) && fileInput?.files.length && !imageRights.value) valid = false;
+      return valid;
+    }
+
+    function updateSectionStatus() {
+      sections.forEach(function (section) {
+        var indicator = section.querySelector('[data-section-valid]');
+        if (!indicator) return;
+        var valid = sectionIsValid(section);
+        indicator.classList.toggle('border-green-700', valid);
+        indicator.classList.toggle('bg-green-700', valid);
+        indicator.classList.toggle('text-off-white', valid);
+        indicator.classList.toggle('border-slate-300', !valid);
+        indicator.classList.toggle('text-transparent', !valid);
+        indicator.setAttribute('aria-label', valid ? 'Abschnitt vollständig ausgefüllt' : 'Abschnitt noch nicht vollständig');
+      });
+    }
+
+    function validate() {
+      clearErrors();
+      var invalid = [];
+      var fields = Array.from(form.querySelectorAll('input, select, textarea')).filter(function (field) {
+        return field.name && field.name !== 'csrf' && field.name !== 'parent' && field.name !== 'website' && field.type !== 'file';
+      });
+
+      fields.forEach(function (field) {
+        var message = fieldMessage(field);
+        if (!message) return;
+
+        field.setAttribute('aria-invalid', 'true');
+        var error = document.createElement('p');
+        error.dataset.fieldError = 'true';
+        error.className = 'mt-2 text-sm text-red-700';
+        error.textContent = message;
+        field.closest('label')?.append(error);
+        invalid.push({ field: field, label: labelFor(field), message: message });
+      });
+
+      var hasImages = form.querySelector('input[type="file"][name="projectImages[]"]')?.files.length > 0;
+      var imageRights = form.querySelector('[name="imageRights"]');
+      if (hasImages && imageRights && !imageRights.value) {
+        imageRights.setAttribute('aria-invalid', 'true');
+        invalid.push({ field: imageRights, label: labelFor(imageRights), message: 'Bitte bestätige die Bildrechte.' });
+      }
+
+      if (invalid.length) {
+        invalid.forEach(function (item) {
+          var li = document.createElement('li');
+          li.textContent = item.label + ': ' + item.message;
+          errorList.append(li);
+          item.field.closest('details')?.setAttribute('open', '');
+        });
+        summary.classList.remove('hidden');
+        summary.focus();
+        invalid[0].field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        invalid[0].field.focus({ preventScroll: true });
+        return false;
+      }
+
+      return true;
+    }
+
+    form.addEventListener('input', updateSectionStatus);
+    form.addEventListener('change', updateSectionStatus);
+    updateSectionStatus();
+
+    form.addEventListener('submit', function (event) {
+      if (!validate()) event.preventDefault();
+    });
+  })();
+</script>

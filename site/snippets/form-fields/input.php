@@ -20,6 +20,7 @@ $required ??= true;
 <label class="block">
   <span class="mb-2 block text-sm font-medium text-dark-green">
     <?= esc($label) ?>
+    <?php if ($required): ?><span class="ml-1 text-red-700" aria-hidden="true">*</span><?php endif ?>
   </span>
   <input
     type="<?= esc($type) ?>"

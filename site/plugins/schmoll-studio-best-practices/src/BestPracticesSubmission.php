@@ -38,7 +38,9 @@ class BestPracticesSubmission
   public static function create(array $data, App $kirby): Page
   {
     $result = static::validate($data);
-    if ($result['valid'] !== true) throw new RuntimeException('The Best Practices submission is invalid.');
+    if ($result['valid'] !== true) {
+      throw new RuntimeException('The Best Practices submission is invalid: ' . implode(', ', array_keys($result['errors'])));
+    }
 
     $parentId = trim((string)($data['parent'] ?? ''));
     $parent = $parentId !== '' ? $kirby->site()->find($parentId) : $kirby->site()->find('best-practices');

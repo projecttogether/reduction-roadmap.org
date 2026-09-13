@@ -16,6 +16,7 @@ class BestPracticesProjectConversion
     $project = $parent->createChild([
       'slug' => static::uniqueSlug($parent, $submission->title()->value()),
       'template' => 'best-practice-project',
+      'status' => 'listed',
       'content' => [
         'title' => $submission->title()->value(),
         'location' => $submission->location()->value(),

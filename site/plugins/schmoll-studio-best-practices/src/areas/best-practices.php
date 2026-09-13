@@ -27,7 +27,7 @@ return [
         return [
           'component' => 'k-remove-dialog',
           'props' => [
-            'text' => 'Create a draft Best Practice Project from this submission? The original submission will be kept for reference.',
+            'text' => 'Create a published Best Practice Project from this submission? The original submission will be kept for reference.',
             'submitButton' => 'Convert to project',
             'icon' => 'copy',
           ],
