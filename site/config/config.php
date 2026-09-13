@@ -57,6 +57,24 @@ return [
     'author'        => 'Johannes Schmoll <johannes@schmoll.studio>',
     'branch'        => $gitBranch,
   ],
+  
+  'hooks' => [
+    'thathoff.git-content.pull:after' => function () {
+      $kirby = kirby();
+      $models = [$kirby->site(), ...$kirby->site()->index(true)];
+
+      foreach ($models as $model) {
+        foreach ($model->files() as $file) {
+          if (is_file($file->root()) && is_file($file->mediaRoot()) === false) {
+            \Kirby\Cms\Media::publish($file, $file->mediaRoot());
+          }
+        }
+      }
+    },
+    'thathoff.git-content.reset:after' => function () {
+      kirby()->trigger('thathoff.git-content.pull:after');
+    },
+  ],
   'schmoll-studio.contact-form' => [
     'recipient'            => 'hello@reduction-roadmap.de',
     'subject'              => 'Neue Nachricht über reduction-roadmap.de',
