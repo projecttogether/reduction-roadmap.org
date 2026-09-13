@@ -38,3 +38,6 @@ tabs:
 
   admin:
     extends: tabs/admin
+
+  popup:
+    extends: tabs/popup

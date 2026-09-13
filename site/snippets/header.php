@@ -29,3 +29,4 @@
   <body class="font-body text-black-green bg-off-white antialiased">
     
     <?php snippet('nav') ?>
+    <?php snippet('page-popup') ?>

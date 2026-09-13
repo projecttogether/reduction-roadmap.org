@@ -15,7 +15,7 @@ Navigation:
   footer: 'false'
   is_cta: 'false'
 - 
-  label: Leuchtturmprojekte
+  label: Praxisbeispiel
   link: page://as7s2d7lubmaj9i2
   footer: 'false'
   is_cta: 'false'
@@ -118,3 +118,27 @@ Backgroundcolors:
 - 
   label: dark green
   value: '#023319'
+
+----
+
+Popupenabled: true
+
+----
+
+Popupposition: right
+
+----
+
+Popupheadline: Nimm Kontakt auf
+
+----
+
+Popuptext: Solltest du Feedback zur Berechnungsmethode haben oder in der Arbeitsgruppe mitarbeiten wollen, melde Dich gerne bei uns.
+
+----
+
+Popupbuttonlabel: Kontakt aufnehmen
+
+----
+
+Popupbuttonlink: page://u22ezft4cigtcice

@@ -1,0 +1,38 @@
+label: Pop-Up
+icon: bell
+sections:
+  popup:
+    type: fields
+    fields:
+      popupEnabled:
+        type: toggle
+        label: Enable popup
+        text:
+          - Disabled
+          - Enabled
+        default: false
+      popupPosition:
+        type: select
+        label: Popup position
+        options:
+          left: Left
+          right: Right
+        default: right
+        width: 1/2
+      popupHeadline:
+        type: text
+        label: Popup headline
+        width: 1/1
+      popupText:
+        type: textarea
+        label: Popup text
+        buttons: false
+        width: 1/1
+      popupButtonLabel:
+        type: text
+        label: Popup button label
+        width: 1/2
+      popupButtonLink:
+        type: link
+        label: Popup button link
+        width: 1/2

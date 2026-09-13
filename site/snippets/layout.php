@@ -45,6 +45,7 @@ if ($page->layout()->isNotEmpty()):
     <section
       data-padd-top="<?= $padd_top ?>"
       class        ="
+        max-[1099px]:px-4
         <?= $padd_top == 'sm' ? 'pt-8'  : '' ?>
         <?= $padd_top == 'md' ? 'pt-16' : '' ?>
         <?= $padd_top == 'lg' ? 'pt-24' : '' ?>
