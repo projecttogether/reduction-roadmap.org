@@ -2,43 +2,50 @@ name: field.blocks.heading.name
 icon: title
 wysiwyg: true
 preview: heading
-fields:
-  level:
-    label: field.blocks.heading.level
-    type: toggles
-    empty: false
-    default: "h2"
-    labels: false
-    options:
-      - value: h1
-        icon: h1
-        text: H1
-      - value: h2
-        icon: h2
-        text: H2
-      - value: h3
-        icon: h3
-        text: H3
-      - value: h4
-        icon: h4
-        text: H4
-      - value: h5
-        icon: h5
-        text: H5
-      # - value: h6
-      #   icon: h6
-      #   text: H6
-    width: 2/3
+tabs:
+  content:
+    label: Content
+    icon: text
+    fields:
+      level:
+        label: field.blocks.heading.level
+        type: toggles
+        empty: false
+        default: "h2"
+        labels: false
+        options:
+          - value: h1
+            icon: h1
+            text: H1
+          - value: h2
+            icon: h2
+            text: H2
+          - value: h3
+            icon: h3
+            text: H3
+          - value: h4
+            icon: h4
+            text: H4
+          - value: h5
+            icon: h5
+            text: H5
+          # - value: h6
+          #   icon: h6
+          #   text: H6
+        width: 2/3
 
-  with_hyph: fields/config/with_hyph
+      with_hyph: fields/config/with_hyph
 
-  text_eyebrow:
-    label: Eyebrow-Text
-    type: text
-    width: 1/2
-    help: optional
-  text:
-    label: field.blocks.heading.text
-    type: writer
-    inline: true
-    placeholder: field.blocks.heading.placeholder
+      text_eyebrow:
+        label: Eyebrow-Text
+        type: text
+        width: 1/2
+        help: optional
+      text:
+        label: field.blocks.heading.text
+        type: writer
+        inline: true
+        placeholder: field.blocks.heading.placeholder
+
+  borders: blocks/border-settings
+  layout: blocks/layout-settings

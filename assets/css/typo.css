@@ -2,14 +2,14 @@
 /* ------------------------------------ */
 
 .text-fließtext-sm {
-  @apply text-[16px] leading-normal tracking-[0em];
+  @apply text-[16px] leading-[1.55] tracking-[0.005em];
 
   /* Resp. sizes */
   /* ... */
 }
 
 .text-fließtext-md {
-  @apply text-[18px] leading-normal tracking-[0em];
+  @apply text-[18px] leading-[1.55] tracking-[0em];
 
   /* Resp. sizes */
   /* ... */
@@ -21,7 +21,7 @@
 .text-fließtext-xs,
 .text-fließtext-sm,
 .text-fließtext-md {
-  @apply lg:[column-count:var(--col-count)];
+  @apply lg:[column-count:var(--cols)];
 
   /* Nested elements */
   @apply [&_p]:mb-[1.4em] [&_p:last-child]:mb-[0em];

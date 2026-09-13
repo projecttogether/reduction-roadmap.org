@@ -5,6 +5,8 @@
 !/site/plugins/schmoll-studio-contact-form/**
 !/site/plugins/schmoll-studio-best-practices/
 !/site/plugins/schmoll-studio-best-practices/**
+!/site/plugins/schmoll-studio-block-borders/
+!/site/plugins/schmoll-studio-block-borders/**
 /sessions
 site/sessions/
 site/accounts/

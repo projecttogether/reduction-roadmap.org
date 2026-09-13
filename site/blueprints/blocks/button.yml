@@ -1,25 +1,29 @@
 name: Button
 icon: button
 
-fields:
-  size: fields/config/size
+tabs:
+  content:
+    fields:
+      size: fields/config/size
 
-  gap-00:
-    type: gap
-    width: 2/3
+      gap-00:
+        type: gap
+        width: 2/3
 
-  text:
-    type: text
-    required: true
-    width: 1/1
+      text:
+        type: text
+        required: true
+        width: 1/1
 
-  link:
-    type: link
-    width: 1/2
-    help: optional
+      link:
+        type: link
+        width: 1/2
+        help: optional
 
-  is_external:
-    type: toggle
-    label: Open in new tab
-    width: 1/2
-    default: false
+      is_external:
+        type: toggle
+        label: Open in new tab
+        width: 1/2
+        default: false
+
+  layout: blocks/layout-settings

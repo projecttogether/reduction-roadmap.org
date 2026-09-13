@@ -1,28 +1,33 @@
 name: Image Marquee
 icon: images
+
 preview: fields
 
-fields:
-  slideHeight:
-    type: select
-    label: Slide height
-    default: 400
-    options:
-      400: 400px (klein)
-      500: 500px (mittel)
-      600: 600px (groß)
-    width: 1/2
-  slides:
-    type: structure
-    label: Images
+tabs:
+  content:
     fields:
-      image:
-        type: files
-        label: Image
-        max: 1
+      slideHeight:
+        type: select
+        label: Slide height
+        default: 400
+        options:
+          400: 400px (klein)
+          500: 500px (mittel)
+          600: 600px (groß)
         width: 1/2
-      caption:
-        type: textarea
-        label: Caption
-        buttons: false
-        width: 1/2
+      slides:
+        type: structure
+        label: Images
+        fields:
+          image:
+            type: files
+            label: Image
+            max: 1
+            width: 1/2
+          caption:
+            type: textarea
+            label: Caption
+            buttons: false
+            width: 1/2
+
+  layout: blocks/layout-settings

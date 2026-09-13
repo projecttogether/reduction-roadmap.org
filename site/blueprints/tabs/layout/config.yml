@@ -15,6 +15,9 @@ fields:
     default: wide
     width: 1/4
 
+  gap-00:
+    type: gap
+
   padd_top:
     type: select
     options:
@@ -22,6 +25,8 @@ fields:
       sm: Small
       md: Medium
       lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
     default: md
     width: 1/4
 
@@ -33,5 +38,87 @@ fields:
       md: Medium
       lg: Large
       xl: Extra Large
+      xxl: Extra Extra Large
     default: md
+    width: 1/4
+
+  margin_top:
+    type: select
+    label: Margin top
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xxl: Extra Extra Large
+    default: none
+    width: 1/4
+
+  margin_bottom:
+    type: select
+    label: Margin bottom
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+    default: none
+    width: 1/4
+
+  backgroundColor:
+    type: select
+    label: Background color
+    options:
+      type: query
+      query: site.backgroundColors.toStructure
+      text: "{{ structure.label }}"
+      value: "{{ structure.value }}"
+    empty: Default
+    default: "var(--color-off-white)"
+    width: 1/4
+
+  borderTop:
+    type: select
+    label: Top border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4
+
+  borderRight:
+    type: select
+    label: Right border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4
+
+  borderBottom:
+    type: select
+    label: Bottom border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4
+
+  borderLeft:
+    type: select
+    label: Left border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
     width: 1/4

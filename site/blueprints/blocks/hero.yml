@@ -1,24 +1,29 @@
 name: Hero
 icon: star
+
 preview: fields
 
-fields:
-  headline:
-    type: text
-    label: Headline
-    width: 1/1
-    help: Leave empty to use the page title.
-  text:
-    type: textarea
-    label: Text
-    buttons: false
-    width: 1/1
-  image:
-    type: files
-    label: Image
-    max: 1
-    width: 1/2
-  alt:
-    type: text
-    label: Image alt text
-    width: 1/2
+tabs:
+  content:
+    fields:
+      headline:
+        type: text
+        label: Headline
+        width: 1/1
+        help: Leave empty to use the page title.
+      text:
+        type: textarea
+        label: Text
+        buttons: false
+        width: 1/1
+      image:
+        type: files
+        label: Image
+        max: 1
+        width: 1/2
+      alt:
+        type: text
+        label: Image alt text
+        width: 1/2
+
+  layout: blocks/layout-settings

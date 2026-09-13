@@ -1,14 +1,19 @@
 name: Social Media
 icon: heart
+
 preview: fields
 
-fields:
-  headline:
-    type: text
-    label: Headline
-    width: 1/1
-  mockupImage:
-    type: files
-    label: Mockup Image
-    max: 1
-    width: 1/2
+tabs:
+  content:
+    fields:
+      headline:
+        type: text
+        label: Headline
+        width: 1/1
+      mockupImage:
+        type: files
+        label: Mockup Image
+        max: 1
+        width: 1/2
+
+  layout: blocks/layout-settings

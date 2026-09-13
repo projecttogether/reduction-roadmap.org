@@ -1,0 +1,43 @@
+label: Borders
+icon: menu
+fields:
+  borderTop:
+    type: select
+    label: Top border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4
+  borderRight:
+    type: select
+    label: Right border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4
+  borderBottom:
+    type: select
+    label: Bottom border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4
+  borderLeft:
+    type: select
+    label: Left border
+    options:
+      none: None
+      sm: Thin (1px)
+      md: Medium (2px)
+      lg: Thick (4px)
+    default: none
+    width: 1/4

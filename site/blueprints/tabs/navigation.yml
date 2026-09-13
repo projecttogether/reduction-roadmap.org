@@ -1,0 +1,46 @@
+label: Navigation
+icon: menu
+sections:
+  navigation:
+    type: fields
+    fields:
+      navigation:
+        type: structure
+        label: Navigation Links
+        help: Add, remove, and reorder the links shown in the header navigation.
+        fields:
+          label:
+            type: text
+            label: Label
+            width: 1/2
+            required: true
+          link:
+            type: link
+            label: Page
+            width: 1/2
+            max: 1
+            image: icon
+          is_cta:
+            type: toggle
+            label: Call to Action
+            width: 1/2
+            default: false
+            help:
+              en: Link will be highlighted as a call to action in the navigation.
+              de: Link wird als Call to Action in der Navigation hervorgehoben.
+      footerNavigation:
+        type: structure
+        label: Footer Links
+        help: Links shown in the dark-green footer. Falls back to About, Contact and Privacy if empty.
+        fields:
+          label:
+            type: text
+            label: Label
+            width: 1/2
+            required: true
+          link:
+            type: pages
+            label: Page
+            width: 1/2
+            max: 1
+            image: icon

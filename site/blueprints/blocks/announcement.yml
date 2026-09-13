@@ -1,8 +1,13 @@
 name: Announcement
 icon: bell
+
 preview: fields
 
-fields:
-  headline:
-    type: text
-    label: Headline
+tabs:
+  content:
+    fields:
+      headline:
+        type: text
+        label: Headline
+
+  layout: blocks/layout-settings

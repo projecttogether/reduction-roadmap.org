@@ -2,6 +2,7 @@
 @import "./typo.css";
 /* Scan all PHP templates and snippets for utility classes */
 @source "../../site";
+@source inline("pt-8 pt-16 pt-24 pt-48 pt-64 pr-8 pr-16 pr-24 pr-48 pr-64 pb-8 pb-16 pb-24 pb-48 pb-64 pl-8 pl-16 pl-24 pl-48 pl-64 mt-8 mt-16 mt-24 mt-48 mt-64 mr-8 mr-16 mr-24 mr-48 mr-64 mb-8 mb-16 mb-24 mb-48 mb-64 ml-8 ml-16 ml-24 ml-48 ml-64");
 
 /* ============================================================
    Design tokens — accessible as Tailwind utilities, e.g.
@@ -9,7 +10,7 @@
    ============================================================ */
 @theme {
   /* Colours */
-  --color-dark-green: #023319; /* brand primary */
+  --color-dark-green: #2e472f; /* brand primary */
   --color-black-green: #2e472f; /* body text */
   --color-off-white: #fcfcfc; /* page background */
   --color-light-bg: #f0f0f0; /* alternate section bg */

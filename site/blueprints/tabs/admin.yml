@@ -1,0 +1,21 @@
+label: Admin
+icon: settings
+sections:
+  design:
+    type: fields
+    fields:
+      backgroundColors:
+        type: structure
+        label: Layout background colors
+        help: Colors available for layout section backgrounds. Use valid CSS color values, such as var(--color-off-white) or #ffffff.
+        fields:
+          label:
+            type: text
+            label: Label
+            required: true
+            width: 1/2
+          value:
+            type: color
+            label: CSS color value
+            required: true
+            width: 1/2

@@ -1,32 +1,36 @@
 name: Page Header
 icon: layout-top
 
-fields:
-  headline:
-    type: text
-    label: Headline
-    help: Leave empty to use the page title.
-    width: 1/1
-  subheadline:
-    type: text
-    label: Subheadline
-    width: 1/1
-  introduction:
-    type: textarea
-    label: Introduction
-    buttons: false
-    width: 1/1
-  minHeight:
-    type: number
-    label: Minimum height (vh)
-    default: 50
-    min: 0
-    max: 100
-    step: 1
-    width: 1/2
-  backgroundColor:
-    type: text
-    label: Background color
-    default: "var(--color-dark-green)"
-    help: Use a CSS color value, for example var(--color-dark-green) or #023319.
-    width: 1/2
+tabs:
+  content:
+    fields:
+      headline:
+        type: text
+        label: Headline
+        help: Leave empty to use the page title.
+        width: 1/1
+      subheadline:
+        type: text
+        label: Subheadline
+        width: 1/1
+      introduction:
+        type: textarea
+        label: Introduction
+        buttons: false
+        width: 1/1
+      minHeight:
+        type: number
+        label: Minimum height (vh)
+        default: 50
+        min: 0
+        max: 100
+        step: 1
+        width: 1/2
+      backgroundColor:
+        type: text
+        label: Background color
+        default: "var(--color-dark-green)"
+        help: Use a CSS color value, for example var(--color-dark-green) or #023319.
+        width: 1/2
+
+  layout: blocks/layout-settings

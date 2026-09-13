@@ -33,7 +33,6 @@ $type      ??= null;
     <?= $size == 'lg' ? 'px-9 h-[50px]' : '' ?>
 
     flex justify-center items-center font-medium transition-colors
-    rounded
     <?= $highlight ? 'bg-orange-400 text-off-white' : 'bg-dark-green text-off-white' ?>
     hover:bg-dark-green/65
     data-[active=true]:bg-dark-green/65
@@ -47,7 +46,7 @@ $type      ??= null;
   <?= $isActive ? 'aria-current="page"' : '' ?>
   <?= $target === '_blank' ? 'target="_blank" rel="noopener noreferrer"' : '' ?>>
 
-  <span class="inline-flex">
+  <span class="inline-flex pt-0.5">
     <?= $label ?>
   </span>
 

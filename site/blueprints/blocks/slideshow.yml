@@ -1,17 +1,21 @@
 name: Slideshow
 icon: image
 
-fields:
-  slides:
-    type: structure
-    label: Slides
+tabs:
+  content:
     fields:
-      image:
-        type: files
-        label: Image
-        max: 1
-        width: 1/2
-      caption:
-        type: text
-        label: Caption
-        width: 1/2
+      slides:
+        type: structure
+        label: Slides
+        fields:
+          image:
+            type: files
+            label: Image
+            max: 1
+            width: 1/2
+          caption:
+            type: text
+            label: Caption
+            width: 1/2
+
+  layout: blocks/layout-settings
