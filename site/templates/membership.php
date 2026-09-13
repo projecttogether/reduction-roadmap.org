@@ -24,4 +24,4 @@
   <?php endif ?>
 </main>
 
-<?php snippet('footer') ?>
+<?php snippet('page-footer') ?>

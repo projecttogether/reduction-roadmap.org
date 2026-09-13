@@ -28,6 +28,7 @@ fieldsets:
   - best-practices-submission-form
   - best-practices-project-grid
   - slideshow
+  - image-marquee
   - logo-slideshow
   - card-grid
 

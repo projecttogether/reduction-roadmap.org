@@ -64,7 +64,7 @@ tabs:
           footerNavigation:
             type: structure
             label: Footer Links
-            help: Links shown in the footer. Falls back to About, Contact and Privacy if empty.
+            help: Links shown in the dark-green footer. Falls back to About, Contact and Privacy if empty.
             fields:
               label:
                 type: text

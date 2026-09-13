@@ -78,4 +78,4 @@ $image = $page->cover()->toFile() ?? $page->images()->first();
   <?php snippet('layout') ?>
 </main>
 
-<?php snippet('footer') ?>
+<?php snippet('page-footer') ?>

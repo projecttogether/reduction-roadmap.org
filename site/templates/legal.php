@@ -10,4 +10,4 @@
   <?php snippet('layout') ?>
 </main>
 
-<?php snippet('footer') ?>
+<?php snippet('page-footer') ?>
