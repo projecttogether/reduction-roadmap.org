@@ -16,6 +16,7 @@ site/cache/
 /media
 **/media/
 /content/_changes/
+**/_changes/
 
 # Kirby runtime storage (cache, sessions, logs, thumbnails)
 /storage/
