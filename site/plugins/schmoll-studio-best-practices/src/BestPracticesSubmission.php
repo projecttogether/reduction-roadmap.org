@@ -16,6 +16,7 @@ class BestPracticesSubmission
     $name = trim((string)($data['submitterName'] ?? ''));
     $email = trim((string)($data['submitterEmail'] ?? ''));
     $description = trim((string)($data['description'] ?? ''));
+    $hasImages = static::hasUploadedImages();
 
     if ($honeypot !== '') $errors['website'] = 'Invalid request.';
     if ($title === '') $errors['title'] = 'Bitte gib einen Projekttitel ein.';
@@ -24,6 +25,12 @@ class BestPracticesSubmission
       $errors['submitterEmail'] = 'Bitte gib eine gültige E-Mail-Adresse ein.';
     }
     if ($description === '') $errors['description'] = 'Bitte beschreibe das Projekt.';
+    if (str_word_count($description) > 100) $errors['description'] = 'Die Projektbeschreibung darf maximal 100 Wörter enthalten.';
+    foreach (['projectSponsor', 'projectStatus', 'location', 'constructionType', 'buildingUse', 'thgTarget', 'areaReference', 'contactPermission'] as $field) {
+      if (trim((string)($data[$field] ?? '')) === '') $errors[$field] = 'Dieses Feld ist erforderlich.';
+    }
+    if (($data['submitPermission'] ?? '') !== 'yes') $errors['submitPermission'] = 'Bitte bestätige die Übermittlung der Angaben.';
+    if ($hasImages && ($data['imageRights'] ?? '') !== 'yes') $errors['imageRights'] = 'Bitte bestätige die Bildrechte.';
 
     return ['valid' => $errors === [], 'errors' => $errors];
   }
@@ -40,25 +47,45 @@ class BestPracticesSubmission
     }
 
     $title = trim((string)$data['title']);
-    return $parent->createChild([
+    $submission = $parent->createChild([
       'slug' => static::uniqueSlug($parent, $title),
       'template' => 'best-practice-submission',
       'content' => [
         'title' => $title,
+        'projectSponsor' => trim((string)($data['projectSponsor'] ?? '')),
+        'participatingOrganizations' => trim((string)($data['participatingOrganizations'] ?? '')),
+        'projectStatus' => trim((string)($data['projectStatus'] ?? '')),
+        'projectPeriod' => trim((string)($data['projectPeriod'] ?? '')),
         'location' => trim((string)($data['location'] ?? '')),
-        'year' => trim((string)($data['year'] ?? '')),
-        'area' => trim((string)($data['area'] ?? '')),
-        'function' => trim((string)($data['function'] ?? '')),
+        'buildingUse' => trim((string)($data['buildingUse'] ?? '')),
+        'grossFloorArea' => trim((string)($data['grossFloorArea'] ?? '')),
         'constructionType' => trim((string)($data['constructionType'] ?? '')),
-        'co2Range' => trim((string)($data['co2Range'] ?? '')),
-        'co2Value' => trim((string)($data['co2Value'] ?? '')),
+        'thgTarget' => trim((string)($data['thgTarget'] ?? '')),
+        'thgValue' => trim((string)($data['thgValue'] ?? '')),
+        'areaReference' => trim((string)($data['areaReference'] ?? '')),
         'description' => trim((string)$data['description']),
         'sourceUrl' => trim((string)($data['sourceUrl'] ?? '')),
         'submitterName' => trim((string)$data['submitterName']),
+        'submitterRole' => trim((string)($data['submitterRole'] ?? '')),
+        'submitterOrganization' => trim((string)($data['submitterOrganization'] ?? '')),
         'submitterEmail' => trim((string)$data['submitterEmail']),
+        'submitterPhone' => trim((string)($data['submitterPhone'] ?? '')),
+        'submitPermission' => trim((string)($data['submitPermission'] ?? '')),
+        'imageRights' => trim((string)($data['imageRights'] ?? '')),
+        'contactPermission' => trim((string)($data['contactPermission'] ?? '')),
+        'internalNotes' => trim((string)($data['internalNotes'] ?? '')),
         'submittedAt' => date('Y-m-d H:i:s'),
       ],
     ]);
+
+    foreach (static::uploadedImages() as $file) {
+      $submission->createFile([
+        'source' => $file['tmp_name'],
+        'filename' => basename($file['name']),
+      ]);
+    }
+
+    return $submission;
   }
 
   public static function notify(Page $submission, App $kirby): bool
@@ -72,26 +99,35 @@ class BestPracticesSubmission
     if (filter_var($fromEmail, FILTER_VALIDATE_EMAIL) === false) throw new RuntimeException('Invalid submission sender.');
 
     $fields = [
-      'Projekt' => $submission->title()->value(),
-      'Ort' => $submission->location()->value(),
-      'Jahr' => $submission->year()->value(),
-      'Fläche' => $submission->area()->value() . ' m²',
-      'Funktion' => $submission->function()->value(),
+      'Projekttitel' => $submission->title()->value(),
+      'Projektträger:in / Auftraggeber:in' => $submission->projectSponsor()->value(),
+      'Beteiligte Organisationen' => $submission->participatingOrganizations()->value(),
+      'Projektstatus' => $submission->projectStatus()->value(),
+      'Projektzeitraum' => $submission->projectPeriod()->value(),
+      'Projektstandort' => $submission->location()->value(),
       'Baumaßnahme' => $submission->constructionType()->value(),
-      'CO₂-Bereich' => $submission->co2Range()->value(),
-      'CO₂-Wert' => $submission->co2Value()->value(),
-      'Quelle' => $submission->sourceUrl()->value(),
-      'Eingereicht von' => $submission->submitterName()->value(),
+      'Gebäudenutzung' => $submission->buildingUse()->value(),
+      'Brutto-Grundfläche' => $submission->grossFloorArea()->value() . ' m²',
+      'THG-Zielwert' => $submission->thgTarget()->value(),
+      'THG-Kennwert' => $submission->thgValue()->value(),
+      'Flächenbezug' => $submission->areaReference()->value(),
+      'Projektwebseite / Quelle' => $submission->sourceUrl()->value(),
+      'Name' => $submission->submitterName()->value(),
+      'Funktion / Bezug' => $submission->submitterRole()->value(),
+      'Organisation' => $submission->submitterOrganization()->value(),
       'E-Mail' => $submission->submitterEmail()->value(),
+      'Telefon' => $submission->submitterPhone()->value(),
+      'Kontaktaufnahme erlaubt' => $submission->contactPermission()->value(),
     ];
 
     $staffText = "Neue Best-Practice-Einreichung\n\n";
     foreach ($fields as $label => $value) if ($value !== '') $staffText .= $label . ': ' . $value . "\n";
-    $staffText .= "\nBeschreibung:\n" . $submission->description()->value();
+    $staffText .= "\nProjektbeschreibung:\n" . $submission->description()->value();
+    $staffText .= "\n\nInterne Hinweise:\n" . $submission->internalNotes()->value();
 
     $staffHtml = '<h1>Neue Best-Practice-Einreichung</h1><dl>';
     foreach ($fields as $label => $value) if ($value !== '') $staffHtml .= '<dt><strong>' . html($label) . '</strong></dt><dd>' . html($value) . '</dd>';
-    $staffHtml .= '</dl><p><strong>Beschreibung:</strong></p><p>' . nl2br(html($submission->description()->value()), false) . '</p>';
+    $staffHtml .= '</dl><p><strong>Projektbeschreibung:</strong></p><p>' . nl2br(html($submission->description()->value()), false) . '</p><p><strong>Interne Hinweise:</strong></p><p>' . nl2br(html($submission->internalNotes()->value()), false) . '</p>';
 
     $email = $kirby->email([
       'from' => $fromEmail,
@@ -127,5 +163,35 @@ class BestPracticesSubmission
     $counter = 1;
     while ($parent->children()->find($slug)) $slug = $base . '-' . date('YmdHis') . '-' . $counter++;
     return $slug;
+  }
+
+  protected static function uploadedImages(): array
+  {
+    $files = $_FILES['projectImages'] ?? [];
+    if (!is_array($files) || !is_array($files['name'] ?? null)) return [];
+
+    $uploads = [];
+    foreach ($files['name'] as $index => $name) {
+      $error = $files['error'][$index] ?? UPLOAD_ERR_NO_FILE;
+      if ($error === UPLOAD_ERR_NO_FILE) continue;
+      if ($error !== UPLOAD_ERR_OK || !is_uploaded_file($files['tmp_name'][$index] ?? '')) {
+        throw new RuntimeException('An uploaded image could not be processed.');
+      }
+      $mime = mime_content_type($files['tmp_name'][$index]);
+      if (!in_array($mime, ['image/jpeg', 'image/png', 'image/gif', 'image/webp'], true)) {
+        throw new RuntimeException('Only JPEG, PNG, GIF, and WebP images are allowed.');
+      }
+      $uploads[] = [
+        'name' => (string)$name,
+        'tmp_name' => $files['tmp_name'][$index],
+      ];
+    }
+
+    return $uploads;
+  }
+
+  protected static function hasUploadedImages(): bool
+  {
+    return static::uploadedImages() !== [];
   }
 }

@@ -21,78 +21,147 @@ tabs:
         fields:
           title:
             type: text
-            label: Project title
+            label: Projekttitel
             required: true
+
+          projectSponsor:
+            type: text
+            label: Projektträger:in oder Auftraggeber:in
+
+          participatingOrganizations:
+            type: textarea
+            label: Beteiligte Organisationen
+
+          projectStatus:
+            type: select
+            label: Projektstatus
+            options:
+              planning: In Planung
+              under-construction: Im Bau
+              completed: Fertiggestellt
+
+          projectPeriod:
+            type: text
+            label: Projektzeitraum
 
           location:
             type: text
-            label: Location
+            label: Projektstandort
 
-          year:
-            type: number
-            label: Year
+          buildingUse:
+            type: select
+            label: Gebäudenutzung
+            options:
+              residential: Wohngebäude
+              non-residential: Nichtwohngebäude
+              neighborhood: Quartier oder Siedlung
+              mixed: Gemischte Nutzung
+              other: Andere Nutzung
 
-          area:
+          grossFloorArea:
             type: number
-            label: Building area
+            label: Brutto-Grundfläche (BGF) in m²
             step: 0.01
-            help: Area in square meters.
-
-          function:
-            type: text
-            label: Function
 
           constructionType:
-            type: text
-            label: Construction type
-
-          co2Range:
             type: select
-            label: CO₂ range
-            empty: Not provided
+            label: Baumaßnahme
             options:
-              below-10: "Below 10 kgCO₂/m²/year"
-              10-20: "10–20 kgCO₂/m²/year"
-              20-30: "20–30 kgCO₂/m²/year"
-              above-30: "Above 30 kgCO₂/m²/year"
+              new-build: Neubau
+              existing-building: Bauen im Bestand
+              combined: Kombination mehrerer Maßnahmen
+              other: Andere Maßnahme
 
-          co2Value:
-            type: number
-            label: CO₂ value
-            step: 0.1
+          thgTarget:
+            type: select
+            label: THG-Zielwert in der Planung
+            options:
+              below-10: Unter 10
+              10-20: 10 bis unter 20
+              20-30: 20 bis unter 30
+              30-plus: 30 oder mehr
+              none: Kein Zielwert festgelegt
+              unknown: Unbekannt
 
-      - width: 2/3
-        fields:
-          description:
-            type: textarea
-            label: Project description
-            buttons: false
-            size: large
+          thgValue:
+            type: text
+            label: THG-Kennwert bei Projektabschluss
+
+          areaReference:
+            type: select
+            label: Flächenbezug der THG-Werte
+            options:
+              gross-floor-area: Brutto-Grundfläche (BGF)
+              net-room-area: Nettoraumfläche (NRF)
+              living-area: Wohnfläche (WoFl)
+              usable-area: Nutzfläche (NUF)
+              other: Andere
+              unknown: Nicht bekannt
 
           sourceUrl:
             type: url
-            label: Project or source URL
+            label: Projektwebseite oder andere Quelle
 
+          description:
+            type: textarea
+            label: Projektbeschreibung
+            buttons: false
+            size: large
+
+      - width: 2/3
+        fields:
           submitterName:
             type: text
-            label: Submitted by
+            label: Name
             readonly: true
+
+          submitterRole:
+            type: text
+            label: Funktion oder Bezug zum Projekt
+
+          submitterOrganization:
+            type: text
+            label: Organisation oder Institution
 
           submitterEmail:
             type: email
-            label: Submitter email
+            label: E-Mail-Adresse
             readonly: true
+
+          submitterPhone:
+            type: tel
+            label: Telefonnummer
+
+          submitPermission:
+            type: text
+            label: Übermittlung bestätigt
+            readonly: true
+
+          imageRights:
+            type: text
+            label: Bildrechte bestätigt
+            readonly: true
+
+          contactPermission:
+            type: text
+            label: Kontaktaufnahme erlaubt
+            readonly: true
+
+          internalNotes:
+            type: textarea
+            label: Interne Hinweise und Ergänzungen
+            buttons: false
 
           submittedAt:
             type: text
-            label: Submitted at
+            label: Eingereicht am
             readonly: true
 
   files:
-    label: Files
+    label: Dateien
     icon: image
     sections:
       images:
         type: files
-        label: Submission files
+        label: Darstellungen oder Bilder vom Projekt
         layout: cards

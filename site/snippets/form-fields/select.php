@@ -5,12 +5,14 @@
  * @var string $name
  * @var array $options
  * @var string $empty
+ * @var bool $required
  */
 
 $label ??= '';
 $name ??= '';
 $options ??= [];
 $empty ??= 'Bitte auswählen';
+$required ??= true;
 ?>
 
 <label class="block">
@@ -19,6 +21,7 @@ $empty ??= 'Bitte auswählen';
   </span>
   <select
     name="<?= esc($name) ?>"
+    <?= $required ? 'required' : '' ?>
     class="min-h-12 w-full rounded-md border border-slate-300 bg-off-white px-4 py-3 text-base text-black-green focus:border-dark-green focus:outline-none focus:ring-2 focus:ring-dark-green/20"
   >
     <option value=""><?= esc($empty) ?></option>

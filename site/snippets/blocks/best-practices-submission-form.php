@@ -19,6 +19,84 @@ $args_field_title = [
   'autocomplete' => 'off',
   'placeholder' => 'Name des Projekts',
 ];
+$args_field_sponsor = [
+  'label' => 'Projektträger:in oder Auftraggeber:in',
+  'name' => 'projectSponsor',
+  'type' => 'text',
+  'placeholder' => 'Hauptverantwortliche Organisation',
+];
+$args_field_organizations = [
+  'label' => 'Beteiligte Organisationen',
+  'name' => 'participatingOrganizations',
+  'rows' => 4,
+  'placeholder' => 'Planungsbüros, Bauunternehmen, Kooperationspartner',
+  'required' => false,
+];
+$args_field_status = [
+  'label' => 'Projektstatus',
+  'name' => 'projectStatus',
+  'options' => [
+    'planning' => 'In Planung',
+    'under-construction' => 'Im Bau',
+    'completed' => 'Fertiggestellt',
+  ],
+];
+$args_field_period = [
+  'label' => 'Projektzeitraum',
+  'name' => 'projectPeriod',
+  'type' => 'text',
+  'placeholder' => '2019 - 2024; Fertigstellung geplant für 2027',
+  'required' => false,
+];
+$args_field_building_use = [
+  'label' => 'Gebäudenutzung',
+  'name' => 'buildingUse',
+  'options' => [
+    'residential' => 'Wohngebäude',
+    'non-residential' => 'Nichtwohngebäude',
+    'neighborhood' => 'Quartier oder Siedlung',
+    'mixed' => 'Gemischte Nutzung',
+    'other' => 'Andere Nutzung',
+  ],
+];
+$args_field_area = [
+  'label' => 'Brutto-Grundfläche (BGF) des Projekts in m²',
+  'name' => 'grossFloorArea',
+  'type' => 'number',
+  'placeholder' => '36000',
+  'required' => false,
+];
+$args_field_target = [
+  'label' => 'THG-Zielwert in der Planung in kgCO₂e/m²a',
+  'name' => 'thgTarget',
+  'options' => [
+    'below-10' => 'Unter 10',
+    '10-20' => '10 bis unter 20',
+    '20-30' => '20 bis unter 30',
+    '30-plus' => '30 oder mehr',
+    'none' => 'Kein Zielwert festgelegt',
+    'unknown' => 'Unbekannt',
+  ],
+];
+$args_field_value = [
+  'label' => 'THG-Kennwert bei Projektabschluss in kgCO₂e/m²a',
+  'name' => 'thgValue',
+  'type' => 'text',
+  'placeholder' => '23,4',
+  'required' => false,
+];
+$args_field_area_reference = [
+  'label' => 'Flächenbezug der angegebenen THG-Werte',
+  'name' => 'areaReference',
+  'options' => [
+    'gross-floor-area' => 'Brutto-Grundfläche (BGF)',
+    'net-room-area' => 'Nettoraumfläche (NRF)',
+    'living-area' => 'Wohnfläche (WoFl)',
+    'usable-area' => 'Nutzfläche (NUF)',
+    'other' => 'Andere',
+    'unknown' => 'Nicht bekannt',
+  ],
+];
 $args_field_name = [
   'label' => 'Dein Name',
   'name' => 'submitterName',
@@ -34,66 +112,46 @@ $args_field_email = [
   'placeholder' => 'name@beispiel.org',
 ];
 $args_field_location = [
-  'label' => 'Ort',
+  'label' => 'Projektstandort',
   'name' => 'location',
   'type' => 'text',
   'autocomplete' => 'address-level2',
   'placeholder' => 'Stadt, Land',
-  'required' => false,
 ];
-$args_field_year = [
-  'label' => 'Jahr',
-  'name' => 'year',
-  'type' => 'number',
-  'autocomplete' => 'off',
-  'placeholder' => '2024',
-  'required' => false,
-];
-$args_field_area = [
-  'label' => 'Fläche in m²',
-  'name' => 'area',
-  'type' => 'number',
-  'autocomplete' => 'off',
-  'placeholder' => '36.000',
-  'required' => false,
-];
-$args_field_function = [
-  'label' => 'Funktion',
-  'name' => 'function',
+$args_field_role = [
+  'label' => 'Deine Funktion oder Bezug zum Projekt',
+  'name' => 'submitterRole',
   'type' => 'text',
-  'autocomplete' => 'off',
-  'placeholder' => 'Wohnen, Bildung, Büro',
+  'placeholder' => 'Bauherr:in, Projektbeteiligte:r, Kooperationspartner',
+  'required' => false,
+];
+$args_field_organization = [
+  'label' => 'Deine Organisation oder Institution',
+  'name' => 'submitterOrganization',
+  'type' => 'text',
+  'placeholder' => 'Name der Organisation',
+  'required' => false,
+];
+$args_field_phone = [
+  'label' => 'Deine Telefonnummer',
+  'name' => 'submitterPhone',
+  'type' => 'tel',
+  'autocomplete' => 'tel',
+  'placeholder' => '+49 015 12345678',
   'required' => false,
 ];
 $args_field_construction = [
   'label' => 'Baumaßnahme',
   'name' => 'constructionType',
-  'type' => 'text',
-  'autocomplete' => 'off',
-  'placeholder' => 'Neubau, Sanierung, Umbau',
-  'required' => false,
-];
-$args_field_co2_range = [
-  'label' => 'CO₂-Bereich',
-  'name' => 'co2Range',
   'options' => [
-    'below-10' => 'Unter 10 kgCO₂/m²/Jahr',
-    '10-20' => '10–20 kgCO₂/m²/Jahr',
-    '20-30' => '20–30 kgCO₂/m²/Jahr',
-    'above-30' => 'Über 30 kgCO₂/m²/Jahr',
+    'new-build' => 'Neubau',
+    'existing-building' => 'Bauen im Bestand',
+    'combined' => 'Kombination mehrerer Maßnahmen',
+    'other' => 'Andere Maßnahme',
   ],
-  'empty' => 'Nicht bekannt',
-];
-$args_field_co2_value = [
-  'label' => 'CO₂-Wert',
-  'name' => 'co2Value',
-  'type' => 'number',
-  'autocomplete' => 'off',
-  'placeholder' => '20',
-  'required' => false,
 ];
 $args_field_source = [
-  'label' => 'Quelle oder Projektwebsite',
+  'label' => 'Projektwebseite oder andere Quelle',
   'name' => 'sourceUrl',
   'type' => 'url',
   'autocomplete' => 'url',
@@ -104,7 +162,30 @@ $args_field_description = [
   'label' => 'Projektbeschreibung',
   'name' => 'description',
   'rows' => 7,
-  'placeholder' => 'Was macht dieses Projekt zu einem Best Practice?',
+  'placeholder' => 'Besondere Lösung, Materialität und Bauweise, Ambitionsniveau oder Learning. Maximal 100 Wörter.',
+];
+$args_field_internal_notes = [
+  'label' => 'Hinweise und Ergänzungen',
+  'name' => 'internalNotes',
+  'rows' => 5,
+  'placeholder' => 'Nur für das Roadmap Germany Team bestimmte Hinweise',
+  'required' => false,
+];
+$args_field_submit_permission = [
+  'label' => 'Ich darf die Angaben zur fachlichen Prüfung an die Roadmap Germany übermitteln.',
+  'name' => 'submitPermission',
+  'options' => ['yes' => 'Ja'],
+];
+$args_field_image_rights = [
+  'label' => 'Falls ich Bilder hochgeladen habe, liegen die erforderlichen Rechte zur Weitergabe vor.',
+  'name' => 'imageRights',
+  'options' => ['yes' => 'Ja'],
+  'required' => false,
+];
+$args_field_contact_permission = [
+  'label' => 'Dürfen wir Dich bei Rückfragen kontaktieren?',
+  'name' => 'contactPermission',
+  'options' => ['yes' => 'Ja', 'no' => 'Nein'],
 ];
 $args_btn = [
   'label' => $submitLabel->html(),
@@ -146,6 +227,7 @@ $args_btn = [
     id="best-practices-submission-fields-<?= esc($block->id()) ?>"
     action="<?= esc(parse_url(url('best-practices-submission'), PHP_URL_PATH)) ?>"
     method="post"
+    enctype="multipart/form-data"
     class="space-y-5"
     <?= $formOpen ? '' : 'hidden' ?>
     novalidate
@@ -158,22 +240,47 @@ $args_btn = [
       <input id="best-practices-submission-website" name="website" type="text" tabindex="-1" autocomplete="off">
     </div>
 
+    <p class="text-sm leading-relaxed text-dark-green/80">Die übermittelten Informationen werden nach Prüfung und gesonderter Freigabe auf der Website erscheinen.</p>
+    <h2 class="font-heading text-2xl font-bold text-black-green">Teil A: Angaben zum Praxisbeispiel</h2>
     <?php snippet('form-fields/input', $args_field_title) ?>
 
     <div class="grid gap-5 md:grid-cols-2">
-      <?php snippet('form-fields/input', $args_field_name) ?>
-      <?php snippet('form-fields/input', $args_field_email) ?>
+      <?php snippet('form-fields/input', $args_field_sponsor) ?>
+      <?php snippet('form-fields/select', $args_field_status) ?>
+      <?php snippet('form-fields/input', $args_field_period) ?>
       <?php snippet('form-fields/input', $args_field_location) ?>
-      <?php snippet('form-fields/input', $args_field_year) ?>
+      <?php snippet('form-fields/select', $args_field_construction) ?>
+      <?php snippet('form-fields/select', $args_field_building_use) ?>
       <?php snippet('form-fields/input', $args_field_area) ?>
-      <?php snippet('form-fields/input', $args_field_function) ?>
-      <?php snippet('form-fields/input', $args_field_construction) ?>
-      <?php snippet('form-fields/select', $args_field_co2_range) ?>
-      <?php snippet('form-fields/input', $args_field_co2_value) ?>
+      <?php snippet('form-fields/select', $args_field_target) ?>
+      <?php snippet('form-fields/input', $args_field_value) ?>
+      <?php snippet('form-fields/select', $args_field_area_reference) ?>
       <?php snippet('form-fields/input', $args_field_source) ?>
     </div>
 
+    <?php snippet('form-fields/textarea', $args_field_organizations) ?>
     <?php snippet('form-fields/textarea', $args_field_description) ?>
+
+    <label class="block">
+      <span class="mb-2 block text-sm font-medium text-dark-green">Darstellungen oder Bilder vom Projekt</span>
+      <input type="file" name="projectImages[]" multiple accept="image/*" class="block w-full rounded-md border border-slate-300 bg-off-white px-4 py-3 text-base text-black-green">
+      <span class="mt-2 block text-sm text-dark-green/70">Bitte nur Bilder hochladen, deren Weitergabe erlaubt ist. Fotograf:in, Bildquelle und gewünschte Bildunterschrift bitte im Hinweisfeld angeben.</span>
+    </label>
+
+    <h2 class="font-heading text-2xl font-bold text-black-green">Teil B: Kontakte und interne Hinweise</h2>
+    <p class="text-sm leading-relaxed text-dark-green/80">Diese Angaben dienen ausschließlich der Rückfrage und internen Bearbeitung. Sie werden nicht auf der Website veröffentlicht.</p>
+    <div class="grid gap-5 md:grid-cols-2">
+      <?php snippet('form-fields/input', $args_field_name) ?>
+      <?php snippet('form-fields/input', $args_field_role) ?>
+      <?php snippet('form-fields/input', $args_field_organization) ?>
+      <?php snippet('form-fields/input', $args_field_email) ?>
+      <?php snippet('form-fields/input', $args_field_phone) ?>
+    </div>
+
+    <?php snippet('form-fields/select', $args_field_submit_permission) ?>
+    <?php snippet('form-fields/select', $args_field_image_rights) ?>
+    <?php snippet('form-fields/select', $args_field_contact_permission) ?>
+    <?php snippet('form-fields/textarea', $args_field_internal_notes) ?>
 
     <div>
       <?php snippet('btn', $args_btn) ?>
