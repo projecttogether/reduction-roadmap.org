@@ -1,3 +1,7 @@
+<?php
+$cssPath = kirby()->root('index') . '/assets/css/main.css';
+$assetVersion = getenv('GIT_COMMIT') ?: (is_file($cssPath) ? (string)filemtime($cssPath) : 'dev');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +28,7 @@
         rel ="stylesheet">
     <link
         rel ="stylesheet"
-        href="<?= url('assets/css/main.css') ?>">
+        href="<?= url('assets/css/main.css') ?>?v=<?= esc($assetVersion) ?>">
   </head>
   <body class="font-body text-black-green bg-off-white antialiased">
     
