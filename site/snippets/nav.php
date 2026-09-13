@@ -57,13 +57,14 @@ foreach ($page->layout()->toLayouts() as $layout)
             foreach ($site->navigation()->toStructure() as $item) {
               $linkedPage = $item->link()->toPage();
               $linkedUrl  = $item->link()->toUrl();
+              $footerLink = $item->footer()->isTrue();
               $isExternal = !$linkedPage && preg_match('/^(https?:)?\/\//i', (string)$linkedUrl) === 1;
               snippet('btn', [
-                'url'       => $linkedUrl ?: ($linkedPage ? $linkedPage->url() : '#'),
+                'url'       => $footerLink ? '#page-footer' : ($linkedUrl ?: ($linkedPage ? $linkedPage->url() : '#')),
                 'label'     => $item->label()->html(),
                 'isActive'  => $linkedPage ? $linkedPage->isActive() : false,
                 'highlight' => $item->is_cta()->isTrue(),
-                'target'    => $isExternal ? '_blank' : null,
+                'target'    => $footerLink || !$isExternal ? null : '_blank',
               ]);
             }
           } else {
@@ -107,14 +108,15 @@ foreach ($page->layout()->toLayouts() as $layout)
           foreach ($site->navigation()->toStructure() as $item) {
             $linkedPage = $item->link()->toPage();
             $linkedUrl  = $item->link()->toUrl();
+            $footerLink = $item->footer()->isTrue();
             $isExternal = !$linkedPage && preg_match('/^(https?:)?\/\//i', (string)$linkedUrl) === 1;
 
             snippet('btn', [
-              'url'      => $linkedUrl ?: ($linkedPage ? $linkedPage->url() : '#'),
+              'url'      => $footerLink ? '#page-footer' : ($linkedUrl ?: ($linkedPage ? $linkedPage->url() : '#')),
               'label'    => $item->label()->html(),
               'isActive' => $linkedPage ? $linkedPage->isActive() : false,
               'mobile'   => true,
-              'target'   => $isExternal ? '_blank' : null,
+              'target'   => $footerLink || !$isExternal ? null : '_blank',
             ]);
           }
         } else {
@@ -139,6 +141,20 @@ foreach ($page->layout()->toLayouts() as $layout)
     var nav    = document.getElementById('mobile-nav');
     var header = document.getElementById('header');
     if (!toggle || !nav || !header) return;
+
+    document.querySelectorAll('a[href="#page-footer"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var footer = document.getElementById('page-footer');
+        if (!footer) return;
+
+        event.preventDefault();
+        footer.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start',
+        });
+        history.replaceState(null, '', '#page-footer');
+      });
+    });
 
     if (header.dataset.heroNav === 'true') {
       var updateHeader = function () {

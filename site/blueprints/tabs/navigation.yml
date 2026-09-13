@@ -20,6 +20,14 @@ sections:
             width: 1/2
             max: 1
             image: icon
+          footer:
+            type: toggle
+            label: Link to footer
+            text:
+              - No
+              - Yes
+            default: false
+            width: 1/2
           is_cta:
             type: toggle
             label: Call to Action
@@ -67,3 +75,8 @@ sections:
                 label: Link
                 required: true
                 width: 1/2
+      footerInfo:
+        type: textarea
+        label: Footer info text
+        buttons: false
+        help: Optional text shown below the footer logo.

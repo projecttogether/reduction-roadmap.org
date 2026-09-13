@@ -1,6 +1,6 @@
-<footer class="bg-dark-green py-16 text-off-white md:py-24">
-  <div class="mx-auto flex flex-wrap items-start justify-between gap-12 px-6 md:px-16 lg:px-16">
-    <div>
+<footer id="page-footer" class="bg-dark-green py-16 text-off-white md:py-24">
+  <div class="mx-auto grid grid-cols-12 gap-12 px-6 md:px-16 lg:px-16">
+    <div class="col-span-12 lg:col-span-3">
       <a
         href      ="<?= $site->url() ?>"
         class     ="block no-underline leading-none"
@@ -19,7 +19,7 @@
     </div>
 
     <nav
-      class     ="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+      class     ="col-span-12 grid gap-8 sm:grid-cols-2 lg:col-span-9 lg:grid-cols-4"
       aria-label="Footer navigation"
     >
       <?php if ($site->footerSections()->isNotEmpty()): ?>
@@ -64,6 +64,12 @@
         </section>
       <?php endif ?>
     </nav>
+
+    <?php if ($site->footerInfo()->isNotEmpty()): ?>
+      <div class="col-span-12 lg:col-span-6 text-sm leading-relaxed text-off-white/80">
+        <?= $site->footerInfo()->kt() ?>
+      </div>
+    <?php endif ?>
   </div>
 </footer>
 
