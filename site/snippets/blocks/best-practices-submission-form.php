@@ -207,6 +207,8 @@ $args_btn = [
 
   <?php if ($status === 'success'): ?>
     <?php snippet('notifications/alert', ['type' => 'success', 'message' => 'Vielen Dank! Deine Einreichung wurde übermittelt und wird nun geprüft.']) ?>
+  <?php elseif ($status === 'success-email-error'): ?>
+    <?php snippet('notifications/alert', ['type' => 'warning', 'message' => 'Deine Einreichung wurde erfolgreich gespeichert und wird nun geprüft. Die Benachrichtigungs-E-Mail konnte jedoch nicht versendet werden.']) ?>
   <?php elseif ($status === 'error'): ?>
     <?php snippet('notifications/alert', ['type' => 'error', 'message' => 'Beim Übermitteln ist ein Fehler aufgetreten. Bitte überprüfe deine Angaben und versuche es erneut.']) ?>
   <?php endif ?>

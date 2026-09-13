@@ -90,11 +90,16 @@ class BestPracticesSubmission
 
   public static function notify(Page $submission, App $kirby): bool
   {
+    $smtpUsername = getenv('MAILERSEND_SMTP_USERNAME') ?: '';
+    $smtpPassword = getenv('MAILERSEND_SMTP_PASSWORD') ?: '';
     $recipient = trim((string)$kirby->option('schmoll-studio.contact-form.recipient', 'hello@reduction-roadmap.de'));
     $fromName = trim((string)$kirby->option('schmoll-studio.contact-form.from-name', 'Reduction Roadmap'));
     $fromEmail = trim((string)$kirby->option('schmoll-studio.contact-form.from-email', 'noreply@reduction-roadmap.de'));
     $confirmationSubject = trim((string)$kirby->option('schmoll-studio.contact-form.confirmation-subject', 'Vielen Dank für deine Einreichung'));
 
+    if ($smtpUsername === '' || $smtpPassword === '') {
+      throw new RuntimeException('MailerSend SMTP credentials are not configured. Set MAILERSEND_SMTP_USERNAME and MAILERSEND_SMTP_PASSWORD.');
+    }
     if (filter_var($recipient, FILTER_VALIDATE_EMAIL) === false) throw new RuntimeException('Invalid submission recipient.');
     if (filter_var($fromEmail, FILTER_VALIDATE_EMAIL) === false) throw new RuntimeException('Invalid submission sender.');
 

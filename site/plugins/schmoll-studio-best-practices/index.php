@@ -23,10 +23,16 @@ Kirby::plugin('schmoll-studio/best-practices', [
 
         try {
           $submission = BestPracticesSubmission::create($data, $kirby);
-          if (BestPracticesSubmission::notify($submission, $kirby) !== true) {
-            throw new \RuntimeException('The submission notification could not be sent.');
+          $emailSent = false;
+
+          try {
+            $emailSent = BestPracticesSubmission::notify($submission, $kirby) === true;
+          } catch (\Throwable $e) {
+            error_log(sprintf('[Best Practices submission email] %s in %s:%d', $e->getMessage(), $e->getFile(), $e->getLine()));
           }
-          $redirect = $referer . (str_contains($referer, '?') ? '&' : '?') . 'submission-status=success';
+
+          $status = $emailSent ? 'success' : 'success-email-error';
+          $redirect = $referer . (str_contains($referer, '?') ? '&' : '?') . 'submission-status=' . $status;
         } catch (\Throwable $e) {
           error_log(sprintf('[Best Practices submission] %s in %s:%d', $e->getMessage(), $e->getFile(), $e->getLine()));
           if ($kirby->option('debug') === true) throw $e;
