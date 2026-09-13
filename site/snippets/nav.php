@@ -1,5 +1,16 @@
+<?php
+$hasHero = false;
+foreach ($page->layout()->toLayouts() as $layout)
+  foreach ($layout->columns() as $column)
+    foreach ($column->blocks() as $block)
+      if ($block->type() === 'hero') {
+        $hasHero = true;
+        break 3;
+      }
+?>
+
 <header
-  class="sticky top-0 z-50 bg-off-white border-b border-transparent"
+  class="<?= $hasHero ? 'fixed inset-x-0' : 'sticky' ?> top-0 z-50 bg-off-white border-b border-transparent"
   id   ="header">
 
   <div class="max-w-[1100px] mx-auto py-6 flex items-center justify-between gap-8">

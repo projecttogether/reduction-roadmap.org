@@ -1,5 +1,5 @@
 name: Page Header
-icon: title
+icon: layout-top
 
 fields:
   headline:

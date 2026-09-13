@@ -7,16 +7,18 @@ fields:
     type: text
     label: Headline
     width: 1/1
-  subheadline:
+    help: Leave empty to use the page title.
+  text:
     type: textarea
-    label: Subheadline
+    label: Text
     buttons: false
     width: 1/1
-  buttonText:
-    type: text
-    label: Button Text
+  image:
+    type: files
+    label: Image
+    max: 1
     width: 1/2
-  buttonUrl:
-    type: url
-    label: Button URL
+  alt:
+    type: text
+    label: Image alt text
     width: 1/2
