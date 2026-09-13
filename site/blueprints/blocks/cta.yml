@@ -1,0 +1,32 @@
+name: CTA Block
+icon: megaphone
+preview: fields
+
+tabs:
+  content:
+    fields:
+      headline:
+        type: text
+        label: Headline
+        width: 1/1
+      text:
+        type: textarea
+        label: Text
+        buttons: false
+        width: 1/1
+      buttonText:
+        type: text
+        label: Button label
+        width: 1/2
+      buttonLink:
+        type: link
+        label: Button link
+        width: 1/2
+      backgroundColor:
+        type: text
+        label: Background color
+        default: "var(--color-dark-green)"
+        help: Use a CSS color value, for example var(--color-dark-green) or #023319.
+        width: 1/1
+
+  layout: blocks/layout-settings

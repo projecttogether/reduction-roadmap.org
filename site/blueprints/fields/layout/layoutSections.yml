@@ -12,6 +12,7 @@ layouts:
 
 fieldsets:
   - page-header
+  - cta
   - hero
   # - announcement
   - image-full
