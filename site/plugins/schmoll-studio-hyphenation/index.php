@@ -7,6 +7,7 @@ Kirby::plugin('schmoll-studio/hyphenation', [
     'hyph' => function ($field, $lang = null) {
       $lang = $lang ?? option('hyphenation.language', 'de');
       $text = $field->kt(); // Process KirbyText first
+      $minPartLength = max(2, (int)option('hyphenation.minPartLength', 3));
 
       // TeX-based hyphenation via vanderlee/syllable
       // Set cache directory before constructing (constructor triggers language load)
@@ -21,7 +22,22 @@ Kirby::plugin('schmoll-studio/hyphenation', [
       // Only hyphenate text content inside HTML, not tags/attributes
       $text = preg_replace_callback(
         '/(?<=>)[^<]+(?=<)/',
-        fn($match) => $syllable->hyphenateText($match[0]),
+        function ($match) use ($syllable, $minPartLength) {
+          $hyphenated = $syllable->hyphenateText($match[0]);
+
+          return preg_replace_callback(
+            '/(?<![\p{L}])([\p{L}]+(?:&shy;[\p{L}]+)+)(?![\p{L}])/u',
+            function ($word) use ($minPartLength) {
+              $parts = explode('&shy;', $word[1]);
+              foreach ($parts as $part) {
+                if (mb_strlen($part) < $minPartLength) return implode('', $parts);
+              }
+
+              return $word[1];
+            },
+            $hyphenated
+          );
+        },
         $text
      );
 
