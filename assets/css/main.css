@@ -1382,18 +1382,18 @@
   }
 }
 .text-fließtext-sm {
-  font-size: 16px;
-  --tw-leading: 1.55;
-  line-height: 1.55;
-  --tw-tracking: 0.005em;
-  letter-spacing: 0.005em;
+  font-size: 15.5px;
+  --tw-leading: 1.6;
+  line-height: 1.6;
+  --tw-tracking: 0.00475em;
+  letter-spacing: 0.00475em;
 }
 .text-fließtext-md {
   font-size: 18px;
-  --tw-leading: 1.55;
-  line-height: 1.55;
-  --tw-tracking: 0em;
-  letter-spacing: 0em;
+  --tw-leading: 1.6;
+  line-height: 1.6;
+  --tw-tracking: 0.007em;
+  letter-spacing: 0.007em;
 }
 .text-fließtext-xs, .text-fließtext-sm, .text-fließtext-md {
   @media (width >= 64rem) {

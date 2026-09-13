@@ -2,14 +2,14 @@
 /* ------------------------------------ */
 
 .text-fließtext-sm {
-  @apply text-[16px] leading-[1.55] tracking-[0.005em];
+  @apply text-[15.5px] leading-[1.6] tracking-[0.00475em];
 
   /* Resp. sizes */
   /* ... */
 }
 
 .text-fließtext-md {
-  @apply text-[18px] leading-[1.55] tracking-[0em];
+  @apply text-[18px] leading-[1.6] tracking-[0.007em];
 
   /* Resp. sizes */
   /* ... */
