@@ -51,7 +51,7 @@ $gridClass = match($colCount) {
       <?php if ($card->link()->isNotEmpty()): ?>
         <div class="mt-auto pt-2 flex justify-start">
           <?php snippet('btn', [
-            'label'  => 'Find out more',
+            'label'  => 'Mehr erfahren',
             'url'    => $cardUrl,
             'size'   => 'sm',
             'target' => $isExternal ? '_blank' : null,
