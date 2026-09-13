@@ -1,0 +1,163 @@
+label: Layout
+icon: dashboard
+fields:
+  paddingTop:
+    type: select
+    label: Padding top
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  paddingTopCustom:
+    type: text
+    label: Custom padding top
+    placeholder: 1.5rem
+    when:
+      paddingTop: manual
+    width: 1/4
+  paddingRight:
+    type: select
+    label: Padding right
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  paddingRightCustom:
+    type: text
+    label: Custom padding right
+    placeholder: 1.5rem
+    when:
+      paddingRight: manual
+    width: 1/4
+  paddingBottom:
+    type: select
+    label: Padding bottom
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  paddingBottomCustom:
+    type: text
+    label: Custom padding bottom
+    placeholder: 1.5rem
+    when:
+      paddingBottom: manual
+    width: 1/4
+  paddingLeft:
+    type: select
+    label: Padding left
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  paddingLeftCustom:
+    type: text
+    label: Custom padding left
+    placeholder: 1.5rem
+    when:
+      paddingLeft: manual
+    width: 1/4
+  marginTop:
+    type: select
+    label: Margin top
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  marginTopCustom:
+    type: text
+    label: Custom margin top
+    placeholder: 1.5rem
+    when:
+      marginTop: manual
+    width: 1/4
+  marginRight:
+    type: select
+    label: Margin right
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  marginRightCustom:
+    type: text
+    label: Custom margin right
+    placeholder: 1.5rem
+    when:
+      marginRight: manual
+    width: 1/4
+  marginBottom:
+    type: select
+    label: Margin bottom
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  marginBottomCustom:
+    type: text
+    label: Custom margin bottom
+    placeholder: 1.5rem
+    when:
+      marginBottom: manual
+    width: 1/4
+  marginLeft:
+    type: select
+    label: Margin left
+    options:
+      none: None
+      sm: Small
+      md: Medium
+      lg: Large
+      xl: Extra Large
+      xxl: Extra Extra Large
+      manual: Manual
+    default: none
+    width: 1/4
+  marginLeftCustom:
+    type: text
+    label: Custom margin left
+    placeholder: 1.5rem
+    when:
+      marginLeft: manual
+    width: 1/4

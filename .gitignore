@@ -7,6 +7,8 @@
 !/site/plugins/schmoll-studio-best-practices/**
 !/site/plugins/schmoll-studio-block-borders/
 !/site/plugins/schmoll-studio-block-borders/**
+!/site/plugins/schmoll-studio-block-layout/
+!/site/plugins/schmoll-studio-block-layout/**
 /sessions
 site/sessions/
 site/accounts/
