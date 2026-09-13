@@ -109,6 +109,16 @@
     border-bottom-color: var(--color-dark-green);
   }
 
+  .footnote-marker {
+    vertical-align: super;
+    font-size: 0.7em;
+    line-height: 0;
+    top: -0.4em;
+  }
+  .footnote-marker a {
+    text-decoration: none !important;
+  }
+
   .nav-logo {
     transition: opacity 300ms ease;
   }

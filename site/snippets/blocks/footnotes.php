@@ -12,7 +12,7 @@ if ($notes->isEmpty()) return;
 
 <ol class="list-none m-0 p-0 text-sm space-y-1">
   <?php foreach ($notes as $note): ?>
-    <li class="flex gap-6 leading-snug">
+    <li id="footnote-<?= esc($note->number()) ?>" class="flex gap-6 leading-snug">
       <span class="shrink-0 font-medium"><?= $note->number()->html() ?>.</span>
       <span><?= $note->text()->kt() ?></span>
     </li>

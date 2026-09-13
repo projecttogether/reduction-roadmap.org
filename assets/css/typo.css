@@ -38,8 +38,9 @@
   @apply [&_li:before]:translate-y-[-6px];
   @apply [&_li:before]:inline-flex [&_li:before]:bg-black;
 
-  @apply [&_a]:border-b [&_a]:border-dark-green [&_a]:transition-[border,color] [&_a]:duration-300;
-  @apply [&_a:hover]:text-dark-green [&_a:hover]:border-transparent;
+  /* @apply [&_a]:border-b [&_a]:border-dark-green [&_a]:transition-[border,color] [&_a]:duration-300; */
+  @apply [&_a]:underline [&_a]:underline-offset-4;
+  @apply [&_a:hover]:text-dark-green [&_a:hover]:no-underline;
 
   @apply [&_sup]:text-[length:66%] [&_sup]:top-[-0.6em];
 }
