@@ -21,7 +21,7 @@ $borderClass = implode(' ', array_filter($borderClassList));
 // Markup //
 ////////////////// ?>
 
-<div class="text-fließtext-sm text-(--text-align) columns-(--cols) gap-12 <?= esc($borderClass) ?>"
+<div class="text-fließtext-sm text-(--text-align) gap-12 <?= esc($borderClass) ?>"
      style="--text-align: <?= $align ?>;
             --cols      : <?= $colCount ?>;">
   <?= $block->text()->kt()->hyph(); ?>

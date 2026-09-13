@@ -20,6 +20,14 @@
   --font-body: "Martel Sans", system-ui, sans-serif;
 }
 
+@layer base {
+  html,
+  body {
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+  }
+}
+
 /* ============================================================
    Component classes — keep PHP markup readable
    ============================================================ */

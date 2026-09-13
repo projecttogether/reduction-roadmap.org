@@ -1,5 +1,5 @@
 <footer id="page-footer" class="bg-dark-green py-16 text-off-white md:py-24">
-  <div class="mx-auto grid grid-cols-12 gap-12 px-6 md:px-16 lg:px-16">
+  <div class="mx-auto grid grid-cols-12 max-lg:gap-y-12 lg:gap-12 px-6 md:px-16 lg:px-16">
     <div class="col-span-12 lg:col-span-3">
       <a
         href      ="<?= $site->url() ?>"

@@ -77,7 +77,7 @@ if ($page->layout()->isNotEmpty()):
         class="max-w-(--w-max) mx-auto <?= esc($borderClass) ?>"
         style="--w-max: <?= $w_max == 'wide' ? '1100px' : ($w_max == 'narrow' ? '800px' : '100%') ?>;"
       >
-        <div class="grid grid-cols-12 gap-12">
+        <div class="grid grid-cols-12 lg:gap-12">
 
           <?php $i_col = 0;
                 foreach ($layout->columns() as $col): 
@@ -85,7 +85,7 @@ if ($page->layout()->isNotEmpty()):
                   $justify = $colConfig ? $colConfig->justifyContent()->or('FOO') : 'FOO';
                   ?>
                   <div data-col-index="<?= $i_col ?>"
-                       class="col-span-(--span) min-w-0 flex flex-col justify-[var(--justify)] gap-8"
+                       class="col-span-12 lg:col-span-(--span) min-w-0 flex flex-col justify-[var(--justify)] gap-8"
                        style="--span   : <?= $col->span() ?>;
                               justify-content: <?= $justify ?>;">
                     <?php foreach ($col->blocks() as $block):
