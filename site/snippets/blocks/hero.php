@@ -2,23 +2,26 @@
 
 /** @var \Kirby\Cms\Block $block */
 
-$headline = $block->headline()->or($page->title());
-$text = $block->text();
-$image = $block->image()->toFile();
-$alt = $block->alt()->or($image?->alt() ?? '');
+$headline     = $block->headline()->or($page->title());
+$text         = $block->text();
+$image        = $block->image()->toFile();
+$alt          = $block->alt()->or($image?->alt() ?? '');
+$layout       = $block->layout()->or('equal')->value();
+$headlineSize = $block->headlineSize()->or('hero')->value();
+$gridClass    = $layout === 'text-wide' ? 'lg:grid-cols-[2fr_1fr]' : 'lg:grid-cols-2';
 ?>
 
 <section class="hero flex min-h-screen w-screen -ml-[calc((100vw-100%)/2)] bg-off-white text-black-green">
-  <div class="grid min-h-screen w-full grid-cols-1 lg:grid-cols-2">
+  <div class="grid min-h-screen w-full grid-cols-1 <?= $gridClass ?>">
 
     <?php // Left col. // ?>
-    <div class="flex flex-col justify-end items-center_ px-6 py-16 md:px-12 md:py-16 lg:px-16 bg-dark-green">
-      <div class="w-full max-w-2xl">
+    <div class="flex flex-col justify-end px-6 py-16 md:px-12 md:py-16 lg:px-16 bg-dark-green">
+      <div class="w-full">
         <?php if ($headline->isNotEmpty())
           snippet('hdl/hdl', [
             'text'  => $headline->html(),
             'level' => 'h1',
-            'size'  => 'hero',
+            'size'  => $headlineSize,
             'color' => 'off-white',
             'class' => 'select-none',
           ]) ?>

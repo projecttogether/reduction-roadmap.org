@@ -537,14 +537,8 @@
   .max-w-\[260px\] {
     max-width: 260px;
   }
-  .max-w-\[1200px\] {
-    max-width: 1200px;
-  }
   .max-w-\[min\(50\%\,24rem\)\] {
     max-width: min(50%, 24rem);
-  }
-  .max-w-sm {
-    max-width: var(--container-sm);
   }
   .min-w-0 {
     min-width: 0;
@@ -1039,6 +1033,9 @@
   .text-\[clamp\(2\.5rem\,7vw\,5rem\)\] {
     font-size: clamp(2.5rem, 7vw, 5rem);
   }
+  .text-\[clamp\(2rem\,3\.43vw\,3rem\)\] {
+    font-size: clamp(2rem, 3.43vw, 3rem);
+  }
   .text-\[clamp\(2rem\,5vw\,3\.5rem\)\] {
     font-size: clamp(2rem, 5vw, 3.5rem);
   }
@@ -1046,9 +1043,9 @@
     --tw-leading: 1.1;
     line-height: 1.1;
   }
-  .leading-\[1\.05\] {
-    --tw-leading: 1.05;
-    line-height: 1.05;
+  .leading-\[1\.25\] {
+    --tw-leading: 1.25;
+    line-height: 1.25;
   }
   .leading-none {
     --tw-leading: 1;
@@ -1455,6 +1452,11 @@
   .lg\:grid-cols-12 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+  .lg\:grid-cols-\[2fr_1fr\] {
+    @media (width >= 64rem) {
+      grid-template-columns: 2fr 1fr;
     }
   }
   .lg\:items-start {
