@@ -31,7 +31,7 @@ sections:
       footerNavigation:
         type: structure
         label: Footer Links
-        help: Links shown in the dark-green footer. Falls back to About, Contact and Privacy if empty.
+        help: Legacy flat footer links. Use Footer sections for the grouped footer navigation.
         fields:
           label:
             type: text
@@ -44,3 +44,26 @@ sections:
             width: 1/2
             max: 1
             image: icon
+      footerSections:
+        type: structure
+        label: Footer sections
+        help: Grouped link sections shown in the dark-green footer.
+        fields:
+          title:
+            type: text
+            label: Section title
+            required: true
+          links:
+            type: structure
+            label: Links
+            fields:
+              label:
+                type: text
+                label: Label
+                required: true
+                width: 1/2
+              link:
+                type: link
+                label: Link
+                required: true
+                width: 1/2

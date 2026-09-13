@@ -40,6 +40,47 @@ Footernavigation:
 
 ----
 
+Footersections:
+
+- 
+  title: Kontakt
+  links:
+    - 
+      label: hello@reductionroadmap.de
+      link: mailto:hello@reductionroadmap.de
+- 
+  title: Social Media
+  links:
+    - 
+      label: Instagram
+      link: https://www.instagram.com/reductionroadmap/
+    - 
+      label: LinkedIn
+      link: https://www.linkedin.com/company/reductionroadmap/
+- 
+  title: Rechtliches
+  links:
+    - 
+      label: Impressum
+      link: /impressum
+    - 
+      label: Datenschutzerklärung
+      link: page://rklwizzzmiesn7jm
+- 
+  title: Roadmaps anderer Länder
+  links:
+    - 
+      label: Reduction Roadmap Dänemark
+      link: https://reductionroadmap.dk/
+    - 
+      label: Reduction Roadmap Schweden
+      link: https://reductionroadmap.se/
+    - 
+      label: Reduction Roadmap Australien
+      link: https://reductionroadmap.au/
+
+----
+
 Logo: - file://bnko0lr4xpfv6cvl
 
 ----
