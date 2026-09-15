@@ -31,7 +31,8 @@ Navigation:
   is_cta: 'true'
 - 
   label: Unterstützen
-  link: https://tally.so/r/mZMAza
+  link: >
+    https://forms.projecttogether.org/roadmap-germany
   footer: 'false'
   is_cta: 'true'
 
