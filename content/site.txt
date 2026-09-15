@@ -94,7 +94,11 @@ Footersections:
 
 ----
 
-Footerinfo: Wir sind ein Zusammenschluss aus Akteur:innen aus Planung, Wissenschaft, Industrie und Zivilgesellschaft. Dazu gehören Buro Happold, Bauhaus Erde, Concular, Karlsruher Institut für Technologie (KIT), Weberbrunner, Gropyus, Universität Leipzig, Partner und Partner Architekten, Transsolar, BPIE, iDiv, Potsdam-Institut für Klimafolgenforschung (PIK), NBL Berlin, Madaster, Sustina AG, IBRI, Wooden Valley, EPEA, ee concept, Störmer Murphy and Partners sowie die TU Dortmund. Gemeinsam setzen wir uns dafür ein, das Bauen innerhalb planetarer Grenzen zu gestalten und Lebensqualität, Bezahlbarkeit sowie Baukultur zu sichern. Unsere Arbeit wird unterstützt von der Bauwende Allianz, die durch ProjectTogether initiiert wurde.
+Footerinfo:
+
+Über das Projekt
+
+Die Roadmap Germany ein Zusammenschluss aus Akteur:innen aus Planung, Wissenschaft, Industrie und Zivilgesellschaft. Dazu gehören Buro Happold, Bauhaus Erde, Concular, Karlsruher Institut für Technologie (KIT), Weberbrunner, Gropyus, Universität Leipzig, Partner und Partner Architekten, Transsolar, BPIE, iDiv, Potsdam-Institut für Klimafolgenforschung (PIK), NBL Berlin, Madaster, Sustina AG, IBRI, Wooden Valley, EPEA, ee concept, Störmer Murphy and Partners sowie die TU Dortmund. Gemeinsam setzt sich die Roadmap Germany dafür ein, das Bauen innerhalb planetarer Grenzen zu gestalten und Lebensqualität, Bezahlbarkeit sowie Baukultur zu sichern. Die Arbeit der Roadmap Germany wird unterstützt von der Bauwende Allianz, die durch ProjectTogether initiiert wurde.
 
 ----
 
