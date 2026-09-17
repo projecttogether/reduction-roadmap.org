@@ -57,8 +57,8 @@ Footersections:
   title: Kontakt
   links:
     - 
-      label: hello@reductionroadmap.de
-      link: mailto:hello@reductionroadmap.de
+      label: hello@reduction-roadmap.de
+      link: mailto:hello@reduction-roadmap.de
 - 
   title: Social Media
   links:
