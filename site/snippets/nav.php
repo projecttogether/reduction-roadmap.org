@@ -19,7 +19,8 @@ foreach ($page->layout()->toLayouts() as $layout)
 
   <div class="mx-auto px-16 py-6 flex items-center justify-between gap-8">
 
-    <div>
+    <?php // Logo // ?>
+    <div class="flex-shrink-0">
       <a
           href      ="<?= $site->url() ?>"
           class     ="block no-underline leading-none"
@@ -45,12 +46,13 @@ foreach ($page->layout()->toLayouts() as $layout)
       </a>
     </div>
 
+    <?php // Nav links/menu // ?>
     <nav
         class     ="hidden md:block"
         aria-label="Main navigation">
 
       <div
-          class="flex gap-1 list-none m-0 p-0"
+          class="flex flex-wrap justify-end gap-1 list-none m-0 p-0"
           role ="list">
         <?php
           if ($site->navigation()->isNotEmpty()) {

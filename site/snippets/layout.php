@@ -77,17 +77,17 @@ if ($page->layout()->isNotEmpty()):
         class="max-w-(--w-max) mx-auto <?= esc($borderClass) ?>"
         style="--w-max: <?= $w_max == 'wide' ? '1100px' : ($w_max == 'narrow' ? '800px' : '100%') ?>;"
       >
-        <div class="grid grid-cols-12 lg:gap-12">
+        <div class="grid grid-cols-12 max-lg:gap-y-6 lg:gap-12">
 
           <?php $i_col = 0;
                 foreach ($layout->columns() as $col): 
                   $colConfig = $colConfigs->filter(fn($c) => $c->col()->toInt() == $i_col + 1)->first();
-                  $justify = $colConfig ? $colConfig->justifyContent()->or('FOO') : 'FOO';
-                  ?>
-                  <div data-col-index="<?= $i_col ?>"
-                       class="col-span-12 lg:col-span-(--span) min-w-0 flex flex-col justify-[var(--justify)] gap-8"
-                       style="--span   : <?= $col->span() ?>;
-                              justify-content: <?= $justify ?>;">
+                  $justify   = $colConfig ? $colConfig->justifyContent()->or('') : ''; ?>
+                  <div 
+                    data-col-index="<?= $i_col ?>"
+                    class="col-span-12 lg:col-span-(--span) min-w-0 flex flex-col justify-[var(--justify)] gap-8"
+                    style="--span   : <?= $col->span() ?>; justify-content: <?= $justify ?>;">
+
                     <?php foreach ($col->blocks() as $block):
                       $blockStyles = [];
                       foreach (['Top', 'Right', 'Bottom', 'Left'] as $side) {
@@ -101,6 +101,7 @@ if ($page->layout()->isNotEmpty()):
                         <?= $block ?>
                       </div>
                     <?php endforeach ?>
+
                   </div>
           <?php   $i_col++; 
                 endforeach ?>
