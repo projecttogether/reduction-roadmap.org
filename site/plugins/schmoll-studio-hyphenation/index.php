@@ -28,12 +28,24 @@ Kirby::plugin('schmoll-studio/hyphenation', [
           return preg_replace_callback(
             '/(?<![\p{L}])([\p{L}]+(?:&shy;[\p{L}]+)+)(?![\p{L}])/u',
             function ($word) use ($minPartLength) {
+              // Merge each too-short syllable into its neighbour instead of
+              // discarding all break points for the whole word.
               $parts = explode('&shy;', $word[1]);
+              $merged = [];
+              $buffer = '';
               foreach ($parts as $part) {
-                if (mb_strlen($part) < $minPartLength) return implode('', $parts);
+                $buffer .= $part;
+                if (mb_strlen($buffer) >= $minPartLength) {
+                  $merged[] = $buffer;
+                  $buffer = '';
+                }
+              }
+              if ($buffer !== '') { // too-short trailing fragment
+                if ($merged) $merged[count($merged) - 1] .= $buffer;
+                else $merged[] = $buffer;
               }
 
-              return $word[1];
+              return implode('&shy;', $merged);
             },
             $hyphenated
           );
