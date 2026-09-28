@@ -3,9 +3,12 @@
 /** @var \Kirby\Cms\Block $block */
 
 $status = get('submission-status');
-$parent = $block->parent()->toPage() ?? site()->find('best-practices');
+$parent = $block->parent();
+if ($parent === null || $parent->intendedTemplate()->name() !== 'best-practices') {
+  $parent = site()->find('best-practices');
+}
 $intro = $block->intro()->or(null);
-$triggerLabel = $block->triggerLabel()->or('Submit new project');
+$triggerLabel = $block->triggerLabel()->or('Neues Projekt einreichen');
 $submitLabel = $block->submitLabel()->or('Projekt einreichen');
 
 if ($parent === null) return;
@@ -236,6 +239,7 @@ $args_btn = [
   >
     <input type="hidden" name="csrf" value="<?= esc(csrf()) ?>">
     <input type="hidden" name="parent" value="<?= esc($parent->id()) ?>">
+    <input type="hidden" name="anchor" value="best-practices-submission-<?= esc($block->id()) ?>">
 
     <div class="hidden" aria-hidden="true">
       <label for="best-practices-submission-website">Website</label>
