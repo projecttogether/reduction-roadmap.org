@@ -49,6 +49,24 @@ class BestPracticesSubmission
     }
 
     $title = trim((string)$data['title']);
+
+    // Front-end submissions are anonymous, so Kirby's permission system
+    // would deny page and file creation (error.page.create.permission).
+    // Elevate to the almighty "kirby" user just for the creation, then
+    // drop back to the visitor's (empty) auth state — even on error.
+    $kirby->impersonate('kirby');
+
+    try {
+      $submission = static::store($parent, $title, $data);
+    } finally {
+      $kirby->impersonate(null);
+    }
+
+    return $submission;
+  }
+
+  protected static function store(Page $parent, string $title, array $data): Page
+  {
     $submission = $parent->createChild([
       'slug' => static::uniqueSlug($parent, $title),
       'template' => 'best-practice-project',
