@@ -3,27 +3,14 @@ icon: dashboard
 
 tabs:
   content:
-    label: Content
+    label: Inhalt
     icon: text
     sections:
       projects:
         type: pages
-        label: Best Practice Projects
+        label: Praxisbeispiele
         template: best-practice-project
         layout: cards
         image: cover
-        info: "{{page.location}} · {{page.year}}"
-        empty: No projects yet
-
-  submissions:
-    label: Submissions
-    icon: inbox
-    sections:
-      submissions:
-        type: pages
-        label: Incoming submissions
-        template:
-          - best-practice-project
-          - best-practice-submission
-        info: "Eingereicht am {{page.submittedAt}}"
-        empty: No submissions yet
+        info: "{{page.location}} · {{page.projectPeriod}}"
+        empty: Noch keine Praxisbeispiele

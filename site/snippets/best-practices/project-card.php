@@ -1,25 +1,17 @@
 <?php
 
-/** @var \Kirby\Cms\Page $project */
+/** @var \SchmollStudio\BestPractices\BestPracticeProjectPage $project */
 
 // Setup //
 //////////////////
 
-$image = $project->cover()->toFile() ?? $project->images()->first();
-$url   = $project->detailLink()->isNotEmpty()
-  ? $project->detailLink()->value()
-  : $project->url();
-$isExternal     = parse_url($url, PHP_URL_HOST) !== parse_url($site->url(), PHP_URL_HOST);
-$location       = $project->location()->value();
-$year           = $project->year()->value();
-$area           = $project->area()->toFloat();
-$co2RangeLabels = [
-  'below-10' => 'Unter 10 kgCO₂/m²/Jahr',
-  '10-20'    => '10–20 kgCO₂/m²/Jahr',
-  '20-30'    => '20–30 kgCO₂/m²/Jahr',
-  'above-30' => 'Über 30 kgCO₂/m²/Jahr',
-];
-$co2Label = $co2RangeLabels[$project->co2Range()->value()] ?? null;
+$image        = $project->cover()->toFile() ?? $project->images()->first();
+$url          = $project->detailUrl();
+$isExternal   = $project->hasExternalDetail()
+  && parse_url($url, PHP_URL_HOST) !== parse_url($site->url(), PHP_URL_HOST);
+$location     = $project->location()->value();
+$period       = $project->projectPeriod()->value();
+$co2Label     = $project->hasThgRange() ? $project->thgRangeLabel() : null;
 
 $args_btn_details = [
   'label'  => 'Weiterführende Informationen',
@@ -33,9 +25,9 @@ $args_btn_details = [
 
 <article
   class="best-practices-project flex min-w-0 flex-col border border-dark-green bg-off-white"
-  data-function="<?= esc(Str::slug($project->function()->value())) ?>"
-  data-construction="<?= esc(Str::slug($project->constructionType()->value())) ?>"
-  data-co2="<?= esc($project->co2Range()->value()) ?>"
+  data-function="<?= esc($project->buildingUse()->value()) ?>"
+  data-construction="<?= esc($project->constructionType()->value()) ?>"
+  data-co2="<?= esc($project->thgTarget()->value()) ?>"
 >
   <?php if ($image): ?>
     <a href="<?= esc($url) ?>" class="block aspect-4/3 overflow-hidden"<?= $isExternal ? ' target="_blank" rel="noopener noreferrer"' : '' ?>>
@@ -48,18 +40,18 @@ $args_btn_details = [
       <h3 class="font-heading text-2xl font-black leading-tight text-black-green">
         <a href="<?= esc($url) ?>"<?= $isExternal ? ' target="_blank" rel="noopener noreferrer"' : '' ?>><?= $project->title()->html() ?></a>
       </h3>
-      <?php if ($location !== '' || $year !== ''): ?>
+      <?php if ($location !== '' || $period !== ''): ?>
         <p class="mt-2 text-base text-dark-green">
-          <?= esc(implode(', ', array_filter([$location, $year]))) ?>
+          <?= esc(implode(', ', array_filter([$location, $period]))) ?>
         </p>
       <?php endif ?>
     </header>
 
     <dl class="mt-auto flex flex-wrap gap-2 text-xs uppercase tracking-wide text-off-white">
       <?php foreach ([
-        $project->function()->value(),
-        $project->constructionType()->value(),
-        $area > 0 ? number_format($area, 0, ',', '.') . ' m²' : null,
+        $project->buildingUseLabel(),
+        $project->constructionTypeLabel(),
+        $project->displayArea(),
         $co2Label,
       ] as $tag): ?>
         <?php if ($tag !== null && $tag !== ''): ?>

@@ -3,15 +3,14 @@
 /**
  * @var string $key
  * @var array $filter
- * @var array $co2RangeLabels
  */
 
 $key ??= '';
 $filter ??= [];
-$co2RangeLabels ??= [];
 
-$label = $filter['label'] ?? '';
+$label  = $filter['label'] ?? '';
 $values = $filter['values'] ?? [];
+$labels = $filter['labels'] ?? [];
 ?>
 
 <label class="flex flex-col gap-2 text-xs uppercase tracking-wide text-dark-green">
@@ -22,9 +21,8 @@ $values = $filter['values'] ?? [];
     aria-label="Filter by <?= esc($label) ?>"
   >
     <option value="">Alle</option>
-    <?php foreach ($values as $value):
-      $optionLabel = $key === 'co2' ? ($co2RangeLabels[$value] ?? $value) : $value ?>
-      <option value="<?= esc(Str::slug($value)) ?>"><?= esc($optionLabel) ?></option>
+    <?php foreach ($values as $value): ?>
+      <option value="<?= esc($value) ?>"><?= esc($labels[$value] ?? $value) ?></option>
     <?php endforeach ?>
   </select>
 </label>

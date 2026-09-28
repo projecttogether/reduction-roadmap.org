@@ -16,12 +16,10 @@ $image = $page->cover()->toFile() ?? $page->images()->first();
         <dl class="mt-8 grid gap-5 text-base text-dark-green">
           <?php foreach ([
             'Ort' => $page->location()->value(),
-            'Jahr' => $page->year()->value(),
-            'Fläche' => $page->area()->toFloat() > 0
-              ? number_format($page->area()->toFloat(), 0, ',', '.') . ' m²'
-              : '',
-            'Funktion' => $page->function()->value(),
-            'Baumaßnahme' => $page->constructionType()->value(),
+            'Zeitraum' => $page->projectPeriod()->value(),
+            'Fläche' => $page->displayArea(),
+            'Funktion' => $page->buildingUse()->isNotEmpty() ? $page->buildingUseLabel() : '',
+            'Baumaßnahme' => $page->constructionType()->isNotEmpty() ? $page->constructionTypeLabel() : '',
           ] as $label => $value): ?>
             <?php if ($value !== ''): ?>
               <div>
@@ -31,27 +29,21 @@ $image = $page->cover()->toFile() ?? $page->images()->first();
             <?php endif ?>
           <?php endforeach ?>
 
-          <?php if ($page->co2Range()->isNotEmpty()): ?>
+          <?php if ($page->thgRangeLabel() !== ''): ?>
             <div>
               <dt class="text-xs uppercase tracking-wide text-dark-green/70">CO₂-Belastung</dt>
               <dd class="mt-1 font-medium text-black-green">
-                <?= esc(match ($page->co2Range()->value()) {
-                  'below-10' => 'Unter 10 kgCO₂/m²/Jahr',
-                  '10-20' => '10–20 kgCO₂/m²/Jahr',
-                  '20-30' => '20–30 kgCO₂/m²/Jahr',
-                  'above-30' => 'Über 30 kgCO₂/m²/Jahr',
-                  default => $page->co2Range()->value(),
-                }) ?>
+                <?= esc($page->thgRangeLabel()) ?><?php if ($page->thgValue()->isNotEmpty()): ?> (<?= esc($page->thgValue()->value()) ?> kgCO₂e/m²a)<?php endif ?>
               </dd>
             </div>
           <?php endif ?>
         </dl>
 
-        <?php if ($page->detailLink()->isNotEmpty()): ?>
+        <?php if ($page->hasExternalDetail()): ?>
           <div class="mt-8">
             <?php snippet('btn', [
               'label'  => 'Weiterführende Informationen',
-              'url'    => $page->detailLink()->toUrl(),
+              'url'    => $page->detailUrl(),
               'size'   => 'sm',
               'target' => '_blank',
             ]) ?>

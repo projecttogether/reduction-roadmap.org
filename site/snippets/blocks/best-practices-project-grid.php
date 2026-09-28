@@ -16,28 +16,24 @@ $blockId   = 'best-practices-grid-' . $block->id();
 $columns   = $block->columns()->or(2)->int();
 $gridClass = $columns === 3 ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3' : 'grid-cols-1 lg:grid-cols-2';
 
-$co2RangeLabels = [
-  'below-10' => 'Unter 10 kgCO₂/m²/Jahr',
-  '10-20'    => '10–20 kgCO₂/m²/Jahr',
-  '20-30'    => '20–30 kgCO₂/m²/Jahr',
-  'above-30' => 'Über 30 kgCO₂/m²/Jahr',
-];
-
 $filters = [
   'function' => [
     'label' => 'Funktion',
     'attribute' => 'data-function',
-    'values' => $projects->pluck('function', ',', true),
+    'values' => $projects->pluck('buildingUse', ',', true),
+    'labels' => \SchmollStudio\BestPractices\BestPracticeProjectPage::BUILDING_USE_LABELS,
   ],
   'construction' => [
     'label' => 'Baumaßnahme',
     'attribute' => 'data-construction',
     'values' => $projects->pluck('constructionType', ',', true),
+    'labels' => \SchmollStudio\BestPractices\BestPracticeProjectPage::CONSTRUCTION_TYPE_LABELS,
   ],
   'co2' => [
-    'label' => 'kgCO₂/m²/Jahr',
+    'label' => 'kgCO₂e/m²a',
     'attribute' => 'data-co2',
-    'values' => $projects->pluck('co2Range', ',', true),
+    'values' => $projects->pluck('thgTarget', ',', true),
+    'labels' => \SchmollStudio\BestPractices\BestPracticeProjectPage::THG_RANGE_LABELS,
   ],
 ];
 
@@ -57,7 +53,7 @@ foreach ($filters as $key => $f) {
   // Filter bar //
   ////////////////////////
 
-  snippet('best-practices/project-filterbar', ['filters' => $filters, 'co2RangeLabels'  => $co2RangeLabels]);
+  snippet('best-practices/project-filterbar', ['filters' => $filters]);
 
   // Grid items //
   //////////////////////// ?>

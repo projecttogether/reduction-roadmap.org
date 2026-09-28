@@ -1,149 +1,179 @@
-title: Best Practice Project
+title: Praxisbeispiel
 icon: building
 
 status:
-  draft: Draft
-  listed: Published
+  draft: Entwurf
+  listed: Veröffentlicht
 
 tabs:
   content:
-    label: Content
+    label: Inhalt
     icon: text
     columns:
-      - width: 1/3
-        fields:
-          title:
-            type: text
-            label: Project title
-            required: true
+      - width: 1/2
+        sections:
+          public:
+            type: fields
+            fields:
+              publicInfo:
+                type: info
+                label: Öffentliche Projektdaten
+                text: Diese Felder werden auf der Website angezeigt (Projektkarte und Projektseite).
+              title:
+                type: text
+                label: Projekttitel
+                required: true
 
-          location:
-            type: text
-            label: Location
+              location:
+                type: text
+                label: Projektstandort
 
-          year:
-            type: text
-            label: Year
+              projectPeriod:
+                type: text
+                label: Jahr / Zeitraum
+                help: "Beispiel: 2018 oder 2019–2024"
 
-          area:
-            type: number
-            label: Building area
-            help: Area in square meters.
-            min: 0
-            step: 0.01
+              grossFloorArea:
+                type: text
+                label: Brutto-Grundfläche (m²)
 
-          function:
-            type: text
-            label: Function
-            help: "Example: Residential, Education, Office"
+              buildingUse:
+                type: select
+                label: Gebäudenutzung
+                options:
+                  residential: Wohngebäude
+                  non-residential: Nichtwohngebäude
+                  neighborhood: Quartier oder Siedlung
+                  mixed: Gemischte Nutzung
+                  other: Andere Nutzung
 
-          constructionType:
-            type: text
-            label: Construction type
-            help: "Example: New build, renovation, conversion"
+              constructionType:
+                type: select
+                label: Baumaßnahme
+                options:
+                  new-build: Neubau
+                  existing-building: Bauen im Bestand
+                  combined: Kombination mehrerer Maßnahmen
+                  other: Andere Maßnahme
 
-          co2Range:
-            type: select
-            label: CO₂ range
-            empty: Select a range
-            options:
-              below-10: "Below 10 kgCO₂/m²/year"
-              10-20: "10–20 kgCO₂/m²/year"
-              20-30: "20–30 kgCO₂/m²/year"
-              above-30: "Above 30 kgCO₂/m²/year"
+              thgTarget:
+                type: select
+                label: CO₂-Bereich (THG-Zielwert, kgCO₂e/m²a)
+                options:
+                  below-10: Unter 10
+                  10-20: 10 bis unter 20
+                  20-30: 20 bis unter 30
+                  30-plus: 30 oder mehr
+                  none: Kein Zielwert festgelegt
+                  unknown: Unbekannt
 
-          co2Value:
-            type: number
-            label: CO₂ value
-            help: Optional exact value in kgCO₂/m²/year.
-            step: 0.1
+              thgValue:
+                type: text
+                label: CO₂-Kennwert bei Fertigstellung (kgCO₂e/m²a)
 
-          detailLink:
-            type: url
-            label: External detail link
-            help: Optional. Leave empty to link to this project page.
+              sourceUrl:
+                type: url
+                label: Externer Link oder Quelle
+                help: Optional. Leer lassen, um auf diese Projektseite zu verlinken.
 
-      - width: 2/3
-        fields:
-          cover:
+              description:
+                type: textarea
+                label: Projektbeschreibung
+                buttons: false
+                size: large
+
+      - width: 1/2
+        sections:
+          media:
+            type: fields
+            fields:
+              cover:
+                type: files
+                label: Titelbild
+                max: 1
+                query: page.images
+
+          images:
             type: files
-            label: Cover image
-            max: 1
-            query: page.images
+            label: Bilder & Uploads
+            layout: cards
+            empty: Noch keine Bilder
 
-          description:
-            type: textarea
-            label: Project description
-            buttons: false
-            size: large
+          submission:
+            type: fields
+            fields:
+              submissionInfo:
+                type: info
+                label: Angaben aus der Einreichung
+                text: Zusätzliche Informationen aus der Einreichung. Nicht öffentlich sichtbar.
+              projectSponsor:
+                type: text
+                label: Projektträger:in oder Auftraggeber:in
+              participatingOrganizations:
+                type: textarea
+                label: Beteiligte Organisationen
+                buttons: false
+              projectStatus:
+                type: select
+                label: Projektstatus
+                options:
+                  planning: In Planung
+                  under-construction: Im Bau
+                  completed: Fertiggestellt
+              areaReference:
+                type: select
+                label: Flächenbezug der THG-Werte
+                options:
+                  gross-floor-area: Brutto-Grundfläche (BGF)
+                  net-room-area: Nettoraumfläche (NRF)
+                  living-area: Wohnfläche (WoFl)
+                  usable-area: Nutzfläche (NUF)
+                  other: Andere
+                  unknown: Nicht bekannt
 
-  submission:
-    label: Submission details
-    icon: info
-    columns:
-      - width: 1/2
-        fields:
-          projectSponsor:
-            type: text
-            label: Project sponsor or client
-          participatingOrganizations:
-            type: textarea
-            label: Participating organizations
-          projectStatus:
-            type: text
-            label: Project status
-          projectPeriod:
-            type: text
-            label: Project period
-          buildingUse:
-            type: text
-            label: Building use
-          grossFloorArea:
-            type: text
-            label: Gross floor area
-          thgTarget:
-            type: text
-            label: THG target
-          thgValue:
-            type: text
-            label: THG value
-          areaReference:
-            type: text
-            label: Area reference
-      - width: 1/2
-        fields:
-          submitterName:
-            type: text
-            label: Submitter name
-          submitterRole:
-            type: text
-            label: Submitter role
-          submitterOrganization:
-            type: text
-            label: Submitter organization
-          submitterEmail:
-            type: email
-            label: Submitter email
-          submitterPhone:
-            type: tel
-            label: Submitter phone
-          contactPermission:
-            type: text
-            label: Contact permission
-          internalNotes:
-            type: textarea
-            label: Internal notes
-          submittedAt:
-            type: text
-            label: Submitted at
-            readonly: true
-
-  files:
-    label: Project files
-    icon: image
-    sections:
-      images:
-        type: files
-        label: Images
-        layout: cards
-        template: image
+          contact:
+            type: fields
+            fields:
+              contactInfo:
+                type: info
+                label: Kontakt & interne Notizen
+                text: Nur für Rückfragen und interne Bearbeitung. Nicht öffentlich sichtbar.
+              submitterName:
+                type: text
+                label: Name
+              submitterRole:
+                type: text
+                label: Funktion oder Bezug zum Projekt
+              submitterOrganization:
+                type: text
+                label: Organisation
+              submitterEmail:
+                type: email
+                label: E-Mail-Adresse
+              submitterPhone:
+                type: tel
+                label: Telefonnummer
+              contactPermission:
+                type: select
+                label: Kontaktaufnahme erlaubt
+                options:
+                  "yes": Ja
+                  "no": Nein
+              submitPermission:
+                type: select
+                label: Übermittlung der Angaben bestätigt
+                options:
+                  "yes": Ja
+              imageRights:
+                type: select
+                label: Bildrechte bestätigt
+                options:
+                  "yes": Ja
+              internalNotes:
+                type: textarea
+                label: Interne Hinweise
+                buttons: false
+              submittedAt:
+                type: text
+                label: Eingereicht am
+                disabled: true

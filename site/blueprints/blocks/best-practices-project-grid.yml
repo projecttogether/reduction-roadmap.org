@@ -1,4 +1,4 @@
-name: Best Practices Project Grid
+name: Praxisbeispiel-Raster
 icon: dashboard
 
 preview: fields
@@ -8,19 +8,19 @@ tabs:
     fields:
       source:
         type: pages
-        label: Best Practices page
+        label: Best-Practices-Seite
         # query: site.find('best-practices')
         max: 1
-        help: Leave empty to use the Best Practices page.
+        help: Leer lassen, um die Best-Practices-Seite zu verwenden.
         width: 1/2
 
       columns:
         type: select
-        label: Columns
+        label: Spalten
         default: 2
         width: 1/2
         options:
-          2: Two columns
-          3: Three columns
+          2: Zwei Spalten
+          3: Drei Spalten
 
   layout: blocks/layout-settings

@@ -6,31 +6,31 @@ Location: Hamburg
 
 ----
 
-Year: 2018
+Projectperiod: 2018
 
 ----
 
-Area: 36000
+Grossfloorarea: 36000
 
 ----
 
-Function: Wohngebäude
+Buildinguse: residential
 
 ----
 
-Constructiontype: Neubau
+Constructiontype: new-build
 
 ----
 
-Co2range: 20-30
+Thgtarget: 20-30
 
 ----
 
-Co2value: 
+Thgvalue:
 
 ----
 
-Detaillink: https://roots-hamburg.de/
+Sourceurl: https://roots-hamburg.de/
 
 ----
 
@@ -42,7 +42,7 @@ Description: »Roots« ist der­zeit das höchste Deut­sche Holz­hoch­haus. I
 
 ----
 
-Layout: 
+Layout:
 
 ----
 

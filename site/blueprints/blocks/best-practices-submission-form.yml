@@ -1,4 +1,4 @@
-name: Best Practices Submission Form
+name: Praxisbeispiel-Einreichungsformular
 icon: inbox
 
 tabs:
@@ -6,29 +6,29 @@ tabs:
     fields:
       parent:
         type: pages
-        label: Best Practices parent page
+        label: Übergeordnete Best-Practices-Seite
         query: site.find('best-practices')
         max: 1
-        help: Submitted projects will be filed as drafts under this page.
+        help: Eingereichte Projekte werden als Entwürfe unter dieser Seite abgelegt.
         width: 1/2
 
       triggerLabel:
         type: text
-        label: Start button label
-        default: Submit new project
+        label: Beschriftung des Start-Buttons
+        default: Neues Projekt einreichen
         width: 1/2
 
       intro:
         type: textarea
-        label: Intro text
+        label: Einleitungstext
         buttons: false
         help: Optional.
         width: 1/1
 
       submitLabel:
         type: text
-        label: Submit button label
-        default: Submit project
+        label: Beschriftung des Absenden-Buttons
+        default: Projekt einreichen
         width: 1/2
 
   layout: blocks/layout-settings
