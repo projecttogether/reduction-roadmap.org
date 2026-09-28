@@ -643,9 +643,6 @@
   .items-center {
     align-items: center;
   }
-  .items-end {
-    align-items: flex-end;
-  }
   .items-start {
     align-items: flex-start;
   }
@@ -1444,11 +1441,6 @@
   .max-lg\:gap-y-12 {
     @media (width < 64rem) {
       row-gap: calc(var(--spacing) * 12);
-    }
-  }
-  .max-lg\:gap-y-\[1\.4rem\] {
-    @media (width < 64rem) {
-      row-gap: 1.4rem;
     }
   }
   .sm\:grid-cols-2 {

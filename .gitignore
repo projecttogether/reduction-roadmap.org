@@ -11,6 +11,7 @@
 !/site/plugins/schmoll-studio-block-layout/**
 !/site/plugins/schmoll-studio-footnotes/
 !/site/plugins/schmoll-studio-footnotes/**
+!/site/plugins/schmoll-studio-hyphenation/**
 /sessions
 site/sessions/
 site/accounts/
