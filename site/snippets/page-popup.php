@@ -11,11 +11,16 @@ if (!$enabled || ($headline->isEmpty() && $text->isEmpty())) return;
 
 $hasButton = $buttonLabel->isNotEmpty() && $buttonUrl !== null;
 $isExternal = $buttonUrl && preg_match('/^(https?:)?\/\//i', $buttonUrl) === 1;
+
+// Content-based version: editing the popup in the panel re-shows it to
+// visitors who already dismissed the previous version.
+$popupVersion = substr(md5($headline . '|' . $text . '|' . $buttonLabel . '|' . $buttonUrl . '|' . $position), 0, 12);
 ?>
 
 <aside
   id="site-popup"
   data-site-popup
+  data-popup-version="<?= $popupVersion ?>"
   aria-labelledby="site-popup-title"
   aria-describedby="site-popup-text"
   aria-hidden="true"
@@ -64,15 +69,41 @@ $isExternal = $buttonUrl && preg_match('/^(https?:)?\/\//i', $buttonUrl) === 1;
     var popup = document.querySelector('[data-site-popup]');
     if (!popup) return;
 
+    var COOKIE_NAME = 'rr_popup_seen';
+    var COOKIE_MAX_AGE = 60 * 60 * 24 * 14; // 14 days
+    var version = popup.getAttribute('data-popup-version') || '1';
+
+    var readCookie = function (name) {
+      var match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    };
+    var writeCookie = function (name, value) {
+      var secure = window.location.protocol === 'https:' ? '; Secure' : '';
+      document.cookie = name + '=' + encodeURIComponent(value) +
+        '; Max-Age=' + COOKIE_MAX_AGE + '; Path=/; SameSite=Lax' + secure;
+    };
+
+    // Already seen this version of the popup: leave it hidden.
+    if (readCookie(COOKIE_NAME) === version) return;
+
     var close = popup.querySelector('[data-popup-close]');
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dismissed = false;
+    var remember = function () {
+      if (dismissed) return;
+      dismissed = true;
+      writeCookie(COOKIE_NAME, version);
+    };
     var reveal = function () {
       popup.setAttribute('aria-hidden', 'false');
       popup.style.transform = 'translateY(0)';
+      // Mark as seen once shown, so navigating to another page won't re-trigger it.
+      remember();
     };
     var hide = function () {
       popup.setAttribute('aria-hidden', 'true');
       popup.style.transform = 'translateY(140%)';
+      remember();
     };
 
     close.addEventListener('click', hide);
