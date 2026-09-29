@@ -52,6 +52,15 @@ initialize_repository() {
     git -C "$app_dir" symbolic-ref HEAD "refs/heads/$repository_branch" || return 1
     git -C "$app_dir" reset --mixed HEAD || return 1
     git -C "$app_dir" branch --set-upstream-to="origin/$repository_branch" "$repository_branch" || return 1
+
+    # A freshly mounted persistent volume for content/ starts empty. Restore the
+    # tracked content from the deployed commit so the site is not blank before the
+    # first Git Content pull. Existing (already persisted) content is left as-is.
+    if [ -z "$(ls -A "$app_dir/content" 2>/dev/null)" ]; then
+        git -C "$app_dir" checkout -- content || return 1
+    fi
+    chown -R www-data:www-data "$app_dir/content" || return 1
+
     chown -R www-data:www-data "$app_dir/.git" || return 1
     touch "$git_content_ready_file" || return 1
 }
