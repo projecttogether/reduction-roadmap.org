@@ -1,0 +1,101 @@
+Title: Haus des Lernens
+
+----
+
+Location: St. Pölten, Österreich
+
+----
+
+Projectperiod: Fertigstellung in 2028
+
+----
+
+Grossfloorarea: 1485
+
+----
+
+Buildinguse: non-residential
+
+----
+
+Constructiontype: new-build
+
+----
+
+Thgtarget: below-10
+
+----
+
+Thgvalue: -150,0
+
+----
+
+Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HDL.pdf
+
+----
+
+Description: TEST
+
+----
+
+Cover: 
+
+----
+
+Projectsponsor: GESA (Gemeinnützige Sanierungs- und Beschäftigungs-GesmbH
+
+----
+
+Participatingorganizations: MAGK Architekten Aichholzer | Klein
+
+----
+
+Projectstatus: completed
+
+----
+
+Areareference: gross-floor-area
+
+----
+
+Submittername: Lukas Schuck
+
+----
+
+Submitterrole: Einreichender
+
+----
+
+Submitterorganization: ProjectTogether
+
+----
+
+Submitteremail: lschuck@projecttogether.org
+
+----
+
+Submitterphone: 
+
+----
+
+Contactpermission: yes
+
+----
+
+Submitpermission: yes
+
+----
+
+Imagerights: yes
+
+----
+
+Internalnotes: 
+
+----
+
+Submittedat: 2026-09-29 09:31:25
+
+----
+
+Uuid: ilircbtygpnje26d
