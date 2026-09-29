@@ -321,8 +321,21 @@ $args_btn = [
       </div>
     </details>
 
-    <div>
+    <div class="flex flex-wrap items-center gap-3" data-submit-row>
       <?php snippet('btn', $args_btn) ?>
+      <span
+        class="hidden items-center gap-2 text-sm text-dark-green data-[visible=true]:inline-flex"
+        data-submit-loading
+        data-visible="false"
+        role="status"
+        aria-live="polite"
+      >
+        <svg class="size-5 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-opacity="0.25"/>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>Wird übermittelt&nbsp;…</span>
+      </span>
     </div>
   </form>
 </div>
@@ -434,8 +447,31 @@ $args_btn = [
     form.addEventListener('change', updateSectionStatus);
     updateSectionStatus();
 
+    var submitting = false;
+    var loadingIndicator = form.querySelector('[data-submit-loading]');
+    var submitButton = form.querySelector('[data-submit-row] button');
+
+    function setLoading(on) {
+      submitting = on;
+      if (loadingIndicator) loadingIndicator.setAttribute('data-visible', on ? 'true' : 'false');
+      if (submitButton) {
+        if (on) submitButton.setAttribute('aria-busy', 'true');
+        else submitButton.removeAttribute('aria-busy');
+        submitButton.classList.toggle('pointer-events-none', on);
+        submitButton.classList.toggle('opacity-70', on);
+      }
+    }
+
     form.addEventListener('submit', function (event) {
-      if (!validate()) event.preventDefault();
+      if (submitting) { event.preventDefault(); return; }
+      if (!validate()) { event.preventDefault(); return; }
+      // Native submission proceeds; show the indicator until the page reloads.
+      setLoading(true);
+    });
+
+    // Reset the indicator if the page is restored from the back/forward cache.
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) setLoading(false);
     });
   })();
 </script>
