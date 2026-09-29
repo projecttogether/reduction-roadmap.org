@@ -50,6 +50,11 @@ return [
 
   'thathoff.git-content' => [
     'disable'       => !is_file('/run/git-content-ready'),
+    // Point the plugin at the actual repo root. The git repo lives at the app
+    // root (/var/www/html/.git), not in content/. Since content/ is a separate
+    // mounted volume in production, git can no longer discover the repo by
+    // walking up across the filesystem boundary, so we set the path explicitly.
+    'path'          => dirname(__DIR__, 2),
     'pull'          => true,
     'push'          => true,
     'commit'        => true,
