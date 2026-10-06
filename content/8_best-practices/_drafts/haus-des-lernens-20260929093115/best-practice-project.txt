@@ -22,7 +22,7 @@ Constructiontype: new-build
 
 ----
 
-Thgtarget: below-10
+Thgtarget: none
 
 ----
 
@@ -34,7 +34,7 @@ Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HDL.pdf
 
 ----
 
-Description: TEST
+Description: Das "Haus des Lernens" ist das erste dreigeschoßige Holzgebäude mit Strohballendämmung und Stroh- Einblasdämmung. Im Gebäude wurden außerdem Schafwolle, Hanf, und Lehm verbaut was neben dem Holzeinsatz den Global Warming Potential (GWP) total ergibt.
 
 ----
 
@@ -42,7 +42,7 @@ Cover: - file://5ng8kcaxjf1pkc67
 
 ----
 
-Projectsponsor: GESA (Gemeinnützige Sanierungs- und Beschäftigungs-GesmbH
+Projectsponsor: GESA (Gemeinnützige Sanierungs- und Beschäftigungs-GesmbH)
 
 ----
 
