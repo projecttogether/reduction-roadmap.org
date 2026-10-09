@@ -10,7 +10,7 @@ Projectperiod: Fertigstellung Mai 2026
 
 ----
 
-Grossfloorarea: 2827
+Grossfloorarea: 2827 m²
 
 ----
 
@@ -26,7 +26,7 @@ Thgtarget:
 
 ----
 
-Thgvalue: 9
+Thgvalue: 9 kgCO₂e/m²a
 
 ----
 
@@ -41,7 +41,7 @@ Im “Garten” entsteht ein nachhaltig gestaltetes Zusammen-Wohnen, gegliedert 
 
 ----
 
-Cover: - file://qchoaa9wdc9yitcn
+Cover: 
 
 ----
 
