@@ -2,59 +2,65 @@ Title: Hochschule für Agrar- und Umweltpädagogik-Gärtnerhaus
 
 ----
 
-Location: 
+Location: Wien, Österreich
 
 ----
 
-Projectperiod: 
+Projectperiod: Fertigstellung November 2025
 
 ----
 
-Grossfloorarea: 
+Grossfloorarea: 597
 
 ----
 
-Buildinguse: 
+Buildinguse: non-residential
 
 ----
 
-Constructiontype: 
+Constructiontype: new-build
 
 ----
 
-Thgtarget: 
+Thgtarget: none
 
 ----
 
-Thgvalue: 
+Thgvalue: -222
 
 ----
 
-Sourceurl: 
+Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HFA.pdf
 
 ----
 
-Description: 
+Description:
+
+Das Gärtnerhaus der Hochschule für Agrar- und Umweltpädagogik steht ganz im Motto „Mit der Natur Leben lernen“. Der Einsatz nachhaltiger Baumaterialien, sowie die ganzheitliche Betrachtung des Lebenszyklus des Gebäudes standen bei der Planung im Fokus.
+ 
+Der Neubau wird in Holzbauweise ausgeführt, die Außenwand- und Dachdämmung besteht aus Stroh, ebenso die luftunterspülte Bodenplatte, für die Installationsebene und die Innenwände kommt Schafwolle zum Einsatz, und im Innenraum Tonspachtel und Akustikelemente aus Strohbauplatten.
+​
+Ein besonderes Merkmal ist die Fassade aus Abschnittsholz und der Bodenbelag im Foyer aus Abbruchsteinen. Bereits abgebrochene Materialien erhalten hier als „Reuse material“ ein zweites Leben. Um den Rückbau zu ermöglichen, wird auf sortenreine und trennbare Bauteile geachtet.
 
 ----
 
-Cover: 
+Cover: - file://5dhll8mzyke3kgzv
 
 ----
 
-Projectsponsor: 
+Projectsponsor: Bundesimmobiliengesellschaft (BIG)
 
 ----
 
-Participatingorganizations: 
+Participatingorganizations: ARCH: MAGK Architekten; Statik: Schneider; HKLSE: HTB Plan; BPH: Jung; BS: Hoyer; Baumeister: Steiner Bau; Holzbau: Strobl; Spengler: Wögrath; Schlosser: Eybel; Tischler/Bautischler: DPM; Fenster: Kapo; Elektro: Gottwald; HKLS: Ledermüller
 
 ----
 
-Projectstatus: 
+Projectstatus: completed
 
 ----
 
-Areareference: 
+Areareference: gross-floor-area
 
 ----
 
