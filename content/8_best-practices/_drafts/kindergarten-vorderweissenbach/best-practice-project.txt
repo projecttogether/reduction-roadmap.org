@@ -10,7 +10,7 @@ Projectperiod: Fertigstellung in 2027
 
 ----
 
-Grossfloorarea: 1300
+Grossfloorarea: 1300 m²
 
 ----
 
@@ -26,7 +26,7 @@ Thgtarget: below-10
 
 ----
 
-Thgvalue: 
+Thgvalue: -17 kgCO₂e/m²a (Zielwert)
 
 ----
 
