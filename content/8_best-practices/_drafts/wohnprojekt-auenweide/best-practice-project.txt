@@ -2,59 +2,59 @@ Title: Wohnprojekt Auenweide
 
 ----
 
-Location: 
+Location: St. Andrä Wördern, Österreich
 
 ----
 
-Projectperiod: 
+Projectperiod: Fertiggestellt in 2022
 
 ----
 
-Grossfloorarea: 
+Grossfloorarea: 4830
 
 ----
 
-Buildinguse: 
+Buildinguse: residential
 
 ----
 
-Constructiontype: 
+Constructiontype: new-build
 
 ----
 
-Thgtarget: 
+Thgtarget: none
 
 ----
 
-Thgvalue: 
+Thgvalue: 12
 
 ----
 
-Sourceurl: 
+Sourceurl: https://habitat2030.at/projekte/pdf/einszueins_Auenweide.pdf
 
 ----
 
-Description: 
+Description: „Die Auenweide“ ist ein Baugruppenprojekt des Vereins Wohnprojekt Wördern in St. Andrä-Wördern, rund 30 km von Wien entfernt. Die Anlage wurde alternativ über einen Vermögenspool finanziert und bietet 45 BewohnerInnen leistbaren, naturnahen Wohnraum in 25 Wohneinheiten mit 35 bis 115 m². Acht Privathäuser gruppieren sich um eine grüne Mitte. Gemeinschaftshaus, Co-Working-Space und Gästewohnung fördern das Miteinander im Alltag. Die Niedrigstenergiehäuser sind in vorgefertigter Holzständerbauweise errichtet, mit Stroh und Jute gedämmt und innen mit Lehmbauplatten verkleidet. Geplant hat einszueins architektur, gebaut hat Lieb Bau Weiz. Fertiggestellt wurde das Projekt im April 2022.
 
 ----
 
-Cover: 
+Cover: - file://ibgjhzhwrb3cut5q
 
 ----
 
-Projectsponsor: 
+Projectsponsor: Verein Wohnprojekt Wördern
 
 ----
 
-Participatingorganizations: 
+Participatingorganizations: ARCH: einzueins architektur; Bauunternehmen: LiebBau Weiz; Statik: Kurt Pock ZT GmbH
 
 ----
 
-Projectstatus: 
+Projectstatus: completed
 
 ----
 
-Areareference: 
+Areareference: gross-floor-area
 
 ----
 
