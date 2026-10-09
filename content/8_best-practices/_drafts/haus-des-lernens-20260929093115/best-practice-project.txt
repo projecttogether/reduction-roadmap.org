@@ -38,7 +38,7 @@ Description: Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, we
 
 ----
 
-Cover: - file://5ng8kcaxjf1pkc67
+Cover: - file://rz59d1isryfaiwqe
 
 ----
 
