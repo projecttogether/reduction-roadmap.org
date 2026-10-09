@@ -10,7 +10,7 @@ Projectperiod: Fertigstellung in 2028
 
 ----
 
-Grossfloorarea: 1485
+Grossfloorarea: 1485 m²
 
 ----
 
@@ -26,7 +26,7 @@ Thgtarget: none
 
 ----
 
-Thgvalue: -150,0
+Thgvalue: -150,0 kgCO₂e/m²a
 
 ----
 
@@ -34,7 +34,7 @@ Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HDL.pdf
 
 ----
 
-Description: Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, welches von der GESA als best/novell Practice errichtet wurde. Kernthemen der Kreislauffähigkeit - ökologische Materialien, Regionalität, sortenreine Zerlegbarkeit - wurden nach dem heutigen Stand der Forschung und Wissenschaft ausgeführt. Damit ist das Haus des Lernens Vorreiter, was den CO2-Fußabdruck und die Ökologie angeht.
+Description: Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, welches von der GESA als best/novell Practice errichtet wurde. Kernthemen der Kreislauffähigkeit - ökologische Materialien, Regionalität, sortenreine Zerlegbarkeit - wurden nach dem heutigen Stand der Forschung und Wissenschaft ausgeführt. Damit ist das Haus des Lernens Vorreiter, was den CO2-Fußabdruck und die Ökologie angeht. Fotos: ©Rupert Steiner
 
 ----
 
