@@ -10,7 +10,7 @@ Projectperiod: Fertiggestellt in 2022
 
 ----
 
-Grossfloorarea: 4830
+Grossfloorarea: 4830 m²
 
 ----
 
@@ -26,7 +26,7 @@ Thgtarget: none
 
 ----
 
-Thgvalue: 12
+Thgvalue: 12 kgCO₂e/m²a
 
 ----
 
