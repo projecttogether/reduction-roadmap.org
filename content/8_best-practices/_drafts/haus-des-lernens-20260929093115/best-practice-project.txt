@@ -2,7 +2,7 @@ Title: Haus des Lernens
 
 ----
 
-Location: St. Pölten, Österreich
+Location: St. Pölten, Niederösterreich, Österreich
 
 ----
 
@@ -34,7 +34,7 @@ Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HDL.pdf
 
 ----
 
-Description: Das "Haus des Lernens" ist das erste dreigeschoßige Holzgebäude mit Strohballendämmung und Stroh- Einblasdämmung. Im Gebäude wurden außerdem Schafwolle, Hanf, und Lehm verbaut was neben dem Holzeinsatz den Global Warming Potential (GWP) total ergibt.
+Description: Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, welches von der GESA als best/novell Practice errichtet wurde. Kernthemen der Kreislauffähigkeit - ökologische Materialien, Regionalität, sortenreine Zerlegbarkeit - wurden nach dem heutigen Stand der Forschung und Wissenschaft ausgeführt. Damit ist das Haus des Lernens Vorreiter, was den CO2-Fußabdruck und die Ökologie angeht.
 
 ----
 
@@ -46,7 +46,7 @@ Projectsponsor: GESA (Gemeinnützige Sanierungs- und Beschäftigungs-GesmbH)
 
 ----
 
-Participatingorganizations: MAGK Architekten Aichholzer | Klein
+Participatingorganizations: ARCH: MAGK Architekten Aichholzer | Klein ZT OG; Statik: RWT PLUS; HKLS: Fa. Kollar, Lilienfeld; ELE: Elektro König, Herzogenburg; BPH: Hausmann; BS: FSE; Bauunternehmen: BM Franz Kickinger; Holzbau: Strobl
 
 ----
 
