@@ -6,19 +6,19 @@ Location: Wulkaprodersdorf, Österreich
 
 ----
 
-Projectperiod: 
+Projectperiod: Fertigstellung Mai 2026
 
 ----
 
-Grossfloorarea: 
+Grossfloorarea: 2827
 
 ----
 
-Buildinguse: 
+Buildinguse: residential
 
 ----
 
-Constructiontype: 
+Constructiontype: new-build
 
 ----
 
@@ -26,35 +26,38 @@ Thgtarget:
 
 ----
 
-Thgvalue: 
+Thgvalue: 9
 
 ----
 
-Sourceurl: 
+Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_WUP.pdf
 
 ----
 
-Description: 
+Description:
+
+Mittendrin im Ortskern von Wulkaprodersdorf entsteht ein neuer Treffpunkt für Jung und Alt. An der Hauptstraße, in Analogie zu den gewachsenen Streckhöfen fungiert ein multifunktionaler Hof als zukünftiger Standort von Bank, Apotheke, Hausarzt und einer Gastrofläche.
+Im “Garten” entsteht ein nachhaltig gestaltetes Zusammen-Wohnen, gegliedert auf drei Baukörper in Holzriegelbauweise. Die Baukörper zeichnen sich durch eine hohe Flexibilität der Wohnungskonfiguration aus. Jede Wohnung verfügt über einen privaten Freiraum.
 
 ----
 
-Cover: 
+Cover: - file://qchoaa9wdc9yitcn
 
 ----
 
-Projectsponsor: 
+Projectsponsor: BWS Gemeinnützige allgemeine Bau-, Wohn- und Siedlungsgenossenschaft
 
 ----
 
-Participatingorganizations: 
+Participatingorganizations: ARCH: MAGK Architekten; Statik, HT, ELE, BPH: RWT; BS: Schrey; Verkehr: Rosinak; Versickerung: Schattovits
 
 ----
 
-Projectstatus: 
+Projectstatus: completed
 
 ----
 
-Areareference: 
+Areareference: gross-floor-area
 
 ----
 
