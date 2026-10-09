@@ -10,7 +10,7 @@ Projectperiod: Fertigstellung November 2025
 
 ----
 
-Grossfloorarea: 597
+Grossfloorarea: 597 m²
 
 ----
 
@@ -26,7 +26,7 @@ Thgtarget: none
 
 ----
 
-Thgvalue: -222
+Thgvalue: -222 kgCO₂e/m²a
 
 ----
 
