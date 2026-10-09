@@ -2,31 +2,31 @@ Title: Kindergarten Vorderweißenbach
 
 ----
 
-Location: 
+Location: Vorderweißenbach, Österreich
 
 ----
 
-Projectperiod: 
+Projectperiod: Fertigstellung in 2027
 
 ----
 
-Grossfloorarea: 
+Grossfloorarea: 1300
 
 ----
 
-Buildinguse: 
+Buildinguse: non-residential
 
 ----
 
-Constructiontype: 
+Constructiontype: new-build
 
 ----
 
-Thgtarget: 
+Thgtarget: below-10
 
 ----
 
-Thgvalue: 
+Thgvalue: -17
 
 ----
 
@@ -42,15 +42,15 @@ Cover:
 
 ----
 
-Projectsponsor: 
+Projectsponsor: Marktgemeinde Vorderweißenbach
 
 ----
 
-Participatingorganizations: 
+Participatingorganizations: Caramel ArchitektInnen & MOD Architektur (Arch. Dietmar Moser)
 
 ----
 
-Projectstatus: 
+Projectstatus: under-construction
 
 ----
 
