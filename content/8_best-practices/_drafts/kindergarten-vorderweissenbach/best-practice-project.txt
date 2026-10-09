@@ -26,19 +26,19 @@ Thgtarget: below-10
 
 ----
 
-Thgvalue: -17
+Thgvalue: 
 
 ----
 
-Sourceurl: 
+Sourceurl: https://habitat2030.at/projekte/pdf/caramel_kiga_vorderwei%C3%9Fenbach.pdf
 
 ----
 
-Description: 
+Description: Holzrahmenbauweise Wände, Zwischendecke, Dach; Bodenplatte STB; Fassade Holzbau; sämtliche Hölzer regional egwachsen und verarbeitet; Nutzung der unterschiedlichen Freiraumniveaus zur barrierefreien Erschliesung und daher verzicht auf Aufzugsanlage, Bodenbeläge Linol und Holz.
 
 ----
 
-Cover: 
+Cover: - file://fsevcz4k0bfrom0r
 
 ----
 
@@ -54,7 +54,7 @@ Projectstatus: under-construction
 
 ----
 
-Areareference: 
+Areareference: gross-floor-area
 
 ----
 
