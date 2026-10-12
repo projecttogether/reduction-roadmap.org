@@ -2,39 +2,43 @@ Title: Haus des Lernens
 
 ----
 
-Location: 
+Location: St. Pölten, Österreich
 
 ----
 
-Projectperiod: 
+Projectperiod: Fertigstellung in 2018
 
 ----
 
-Grossfloorarea: 
+Grossfloorarea: 1485 m²
 
 ----
 
-Buildinguse: 
+Buildinguse: non-residential
 
 ----
 
-Constructiontype: 
+Constructiontype: new-build
 
 ----
 
-Thgtarget: 
+Thgtarget: none
 
 ----
 
-Thgvalue: 
+Thgvalue: 150,0 kgCO2e/m²a
 
 ----
 
-Sourceurl: 
+Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HDL.pdf
 
 ----
 
-Description: 
+Description:
+
+Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, welches von der GESA als best/novell Practice errichtet wurde. Kernthemen der Kreislauffähigkeit - ökologische Materialien, Regionalität, sortenreine Zerlegbarkeit - wurden nach dem heutigen Stand der Forschung und Wissenschaft ausgeführt. Damit ist das Haus des Lernens Vorreiter, was den CO2-Fußabdruck und die Ökologie angeht.
+
+© Fotos Rupert Steiner
 
 ----
 
@@ -42,19 +46,19 @@ Cover:
 
 ----
 
-Projectsponsor: 
+Projectsponsor: GESA (Gemeinnützige Sanierungs- und Beschäftigungs-GmbH)
 
 ----
 
-Participatingorganizations: 
+Participatingorganizations: ARCH: MAGK Architekten Aichholzer | Klein ZT OG; Statik: RWT PLUS; HKLS: Fa. Kollar, Lilienfeld; ELE: Elektro König, Herzogenburg; BPH: Hausmann; BS: FSE; Bauunternehmen: BM Franz Kickinger; Holzbau: Strobl
 
 ----
 
-Projectstatus: 
+Projectstatus: completed
 
 ----
 
-Areareference: 
+Areareference: gross-floor-area
 
 ----
 
