@@ -26,7 +26,7 @@ Thgtarget: none
 
 ----
 
-Thgvalue: 150,0 kgCO2e/m²a
+Thgvalue: -150,0 kgCO2e/m²a
 
 ----
 
