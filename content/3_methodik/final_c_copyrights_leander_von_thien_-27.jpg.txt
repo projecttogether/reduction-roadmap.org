@@ -1,0 +1,5 @@
+Uuid: hlmvozzd6rmlcrdb
+
+----
+
+Template: blocks/image
