@@ -61,6 +61,15 @@ initialize_repository() {
     fi
     chown -R www-data:www-data "$app_dir/content" || return 1
 
+    # Coolify rewrites deployment artifacts into the build context (e.g. the
+    # Dockerfile), and they get baked into the image. That leaves the work tree
+    # dirty, which changes git's "nothing to commit" wording to "no changes added
+    # to commit" - a string git-content does not recognise as harmless, so it
+    # surfaces a spurious error on every save. Restore the code to the deployed
+    # commit so the work tree stays clean. content/ is excluded: it lives on a
+    # persistent volume and is the only path allowed to diverge.
+    git -C "$app_dir" checkout -- . ':(exclude)content' 2>/dev/null || true
+
     chown -R www-data:www-data "$app_dir/.git" || return 1
     touch "$git_content_ready_file" || return 1
 }

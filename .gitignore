@@ -43,3 +43,6 @@ robots.txt
 /node_modules
 /TEMP
 **/TEMP/
+
+# Coolify deployment artifact (generated per deploy, never part of the repo)
+docker-compose.yaml
