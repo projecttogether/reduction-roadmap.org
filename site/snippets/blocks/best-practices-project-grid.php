@@ -73,5 +73,11 @@ foreach ($filters as $key => $f) {
 </section>
 
 <?php
+// Detail overlay (one per grid, filled from the clicked card)
+snippet('best-practices/project-overlay', ['blockId' => $blockId]);
+
 // Filter JS
-snippet('best-practices/project-grid-filter', ['blockId' => $blockId]) ?>
+snippet('best-practices/project-grid-filter', ['blockId' => $blockId]);
+
+// Overlay JS
+snippet('best-practices/project-overlay-toggle', ['blockId' => $blockId]) ?>
