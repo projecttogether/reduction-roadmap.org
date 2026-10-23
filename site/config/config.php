@@ -58,6 +58,12 @@ return [
     'pull'          => true,
     'push'          => true,
     'commit'        => true,
+    // Content commits are pushed to the deploy branch, which would otherwise
+    // trigger a full Coolify redeploy for every submission or panel save. The
+    // push is still wanted as an off-site backup, the redeploy is not: content
+    // persists on its own volume. The marker tells Coolify to skip deployment;
+    // code pushes use normal messages and keep deploying as before.
+    'commitMessage' => ':action:(:item:): :url: [skip ci]',
     'gitBin'        => '/usr/bin/git',
     'author'        => 'Johannes Schmoll <johannes@schmoll.studio>',
     'branch'        => $gitBranch,
