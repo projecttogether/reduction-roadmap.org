@@ -26,7 +26,7 @@ Thgtarget: 20-30
 
 ----
 
-Thgvalue: 
+Thgvalue:
 
 ----
 
@@ -34,79 +34,15 @@ Sourceurl: https://roots-hamburg.de/
 
 ----
 
-Description: »Roots« ist der­zeit das höchste Deut­sche Holz­hoch­haus. Ins­gesamt wur­den hier 181 Woh­nun­gen rea­lisiert sowie Aus­stel­lungs­räume und die Ver­wal­tung der Deut­schen Wild­tier Stif­tung. Alle Ober­geschosse wur­den mit Mas­siv­holz­decken und -innen­wän­den errich­tet, nur Unter- und Erd­geschoss sowie die Erschlie­ßungs­kerne des Hybrid­baus wer­den als Stahl­beton­kon­struk­tion geplant. Diese Bau­weise trägt nicht nur zur Reduk­tion des CO2-Fuß­abdrucks bei, son­dern begrenzt auch Lärm­emis­sio­nen bei der Umset­zung und lässt ein gesun­des Raum­klima ent­ste­hen. Ins­gesamt wer­den im Rah­men der Rea­lisie­rung 5.500 m³ Nadel­holz ver­baut.
-
-----
-
 Cover: - file://zxvwawnkxtbdzzzh
 
 ----
 
-Projectsponsor: 
+Description: »Roots« ist der­zeit das höchste Deut­sche Holz­hoch­haus. Ins­gesamt wur­den hier 181 Woh­nun­gen rea­lisiert sowie Aus­stel­lungs­räume und die Ver­wal­tung der Deut­schen Wild­tier Stif­tung. Alle Ober­geschosse wur­den mit Mas­siv­holz­decken und -innen­wän­den errich­tet, nur Unter- und Erd­geschoss sowie die Erschlie­ßungs­kerne des Hybrid­baus wer­den als Stahl­beton­kon­struk­tion geplant. Diese Bau­weise trägt nicht nur zur Reduk­tion des CO2-Fuß­abdrucks bei, son­dern begrenzt auch Lärm­emis­sio­nen bei der Umset­zung und lässt ein gesun­des Raum­klima ent­ste­hen. Ins­gesamt wer­den im Rah­men der Rea­lisie­rung 5.500 m³ Nadel­holz ver­baut.
 
 ----
 
-Participatingorganizations: 
-
-----
-
-Projectstatus: 
-
-----
-
-Areareference: 
-
-----
-
-Submittername: 
-
-----
-
-Submitterrole: 
-
-----
-
-Submitterorganization: 
-
-----
-
-Submitteremail: 
-
-----
-
-Submitterphone: 
-
-----
-
-Contactpermission: 
-
-----
-
-Submitpermission: 
-
-----
-
-Imagerights: 
-
-----
-
-Internalnotes: 
-
-----
-
-Submittedat: 
-
-----
-
-Overlayenabled: true
-
-----
-
-Overlaylayout: [{"attrs":{"w_max":"none","padd_top":"md","padd_bottom":"sm","margin_top":"none","margin_bottom":"none","backgroundcolor":"","bordertop":"none","borderright":"none","borderbottom":"none","borderleft":"none","colconfigs":[]},"columns":[{"blocks":[{"content":{"level":"h3","with_hyph":"false","text_eyebrow":"","text":"Über das Projekt","bordertop":"","borderright":"","borderbottom":"","borderleft":"","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"h-intro","isHidden":false,"type":"heading"},{"content":{"align":"left","colcount":1,"text":"<p>Mit 65 Metern Höhe ist »Roots« das derzeit höchste Holzhochhaus Deutschlands. Der Hybridbau verbindet eine Massivholzkonstruktion in den Obergeschossen mit einem Stahlbetonsockel und zeigt, wie innerstädtische Verdichtung mit deutlich reduzierten Treibhausgasemissionen gelingen kann.</p>","bordertop":"","borderright":"","borderbottom":"","borderleft":"","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"t-intro","isHidden":false,"type":"text"}],"id":"c1","width":"1/1"}],"id":"sec-intro"},{"attrs":{"w_max":"none","padd_top":"sm","padd_bottom":"sm","margin_top":"none","margin_bottom":"none","backgroundcolor":"","bordertop":"none","borderright":"none","borderbottom":"none","borderleft":"none","colconfigs":[]},"columns":[{"blocks":[{"content":{"location":"","image":["file://zxvwawnkxtbdzzzh"],"src":"","alt":"Holzbauhochhaus Roots in Hamburg","caption":"Holzbauhochhaus Roots, Hamburg","link":"","ratio":"16/9","crop":"false","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"b-img","isHidden":false,"type":"image"}],"id":"c2","width":"1/1"}],"id":"sec-img"},{"attrs":{"w_max":"none","padd_top":"sm","padd_bottom":"md","margin_top":"none","margin_bottom":"none","backgroundcolor":"","bordertop":"none","borderright":"none","borderbottom":"none","borderleft":"none","colconfigs":[]},"columns":[{"blocks":[{"content":{"level":"h4","with_hyph":"false","text_eyebrow":"","text":"Konstruktion","bordertop":"","borderright":"","borderbottom":"","borderleft":"","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"h-konstr","isHidden":false,"type":"heading"},{"content":{"align":"left","colcount":1,"text":"<p>Alle Obergeschosse wurden mit Massivholzdecken und -innenwänden errichtet. Unter- und Erdgeschoss sowie die Erschließungskerne bestehen aus Stahlbeton. Insgesamt wurden rund 5.500 m³ Nadelholz verbaut.</p>","bordertop":"","borderright":"","borderbottom":"","borderleft":"","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"t-konstr","isHidden":false,"type":"text"}],"id":"c3","width":"1/2"},{"blocks":[{"content":{"level":"h4","with_hyph":"false","text_eyebrow":"","text":"Kennwerte und Learnings","bordertop":"","borderright":"","borderbottom":"","borderleft":"","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"h-kenn","isHidden":false,"type":"heading"},{"content":{"align":"left","colcount":1,"text":"<p>Die Holzbauweise reduziert den CO₂-Fußabdruck deutlich, begrenzt Lärmemissionen während der Bauzeit und sorgt für ein gesundes Raumklima. 181 Wohnungen, Ausstellungsräume und eine Stiftungsverwaltung teilen sich das Gebäude.</p>","bordertop":"","borderright":"","borderbottom":"","borderleft":"","paddingtop":"","paddingtopcustom":"","paddingright":"","paddingrightcustom":"","paddingbottom":"","paddingbottomcustom":"","paddingleft":"","paddingleftcustom":"","margintop":"","margintopcustom":"","marginright":"","marginrightcustom":"","marginbottom":"","marginbottomcustom":"","marginleft":"","marginleftcustom":""},"id":"t-kenn","isHidden":false,"type":"text"}],"id":"c4","width":"1/2"}],"id":"sec-cols"}]
-
-----
-
-Layout: 
+Layout:
 
 ----
 
