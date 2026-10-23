@@ -48,7 +48,7 @@ $hasOverlay   = $project->hasOverlay();
 
     <?php snippet('best-practices/project-meta', [
       'project' => $project,
-      'class'   => 'mt-auto border-t border-dark-green/20 pt-5',
+      'class'   => 'border-t border-dark-green/20 pt-5',
     ]) ?>
 
     <?php if ($project->description()->isNotEmpty()): ?>
@@ -59,7 +59,7 @@ $hasOverlay   = $project->hasOverlay();
 
 
     <?php if ($hasOverlay): ?>
-    <div class="flex flex-wrap items-start justify-start gap-2">
+    <div class="mt-auto flex flex-wrap items-start justify-start gap-2">
       <button
         type="button"
         class="flex h-[30px] w-fit items-center justify-center bg-dark-green px-3 text-sm font-medium text-off-white transition-colors hover:bg-dark-green/65 focus:outline-none focus:ring-2 focus:ring-dark-green/30"
