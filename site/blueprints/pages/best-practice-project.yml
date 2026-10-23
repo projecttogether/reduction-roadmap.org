@@ -193,7 +193,7 @@ tabs:
           - Keine Detailansicht
           - Detailansicht anzeigen
         default: true
-        help: Ist die Detailansicht deaktiviert, erscheint auf der Projektkarte kein „Mehr erfahren“-Button und die Karte lässt sich nicht anklicken.
+        help: Ist die Detailansicht deaktiviert, erscheint auf der Projektkarte kein „Mehr erfahren“-Button und die Karte lässt sich nicht anklicken. Ohne Inhalte im Overlay-Layout wird die Detailansicht ohnehin nicht angezeigt.
       overlayLayout:
         extends: fields/layout/layoutSections
         label: Overlay-Layout

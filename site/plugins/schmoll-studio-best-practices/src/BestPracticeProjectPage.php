@@ -92,12 +92,16 @@ class BestPracticeProjectPage extends Page
   /**
    * Whether the detail overlay should be offered for this project.
    *
-   * Defaults to true so projects created before the toggle existed - whose
-   * content files have no such field - keep their overlay.
+   * Requires both the toggle and actual content: an overlay holding only the
+   * header would just repeat the card. The toggle defaults to true so projects
+   * created before it existed - whose content files have no such field - are
+   * not switched off by surprise; it is the explicit way to suppress an
+   * overlay that does have content.
    */
   public function hasOverlay(): bool
   {
-    return $this->overlayEnabled()->toBool(true);
+    return $this->overlayEnabled()->toBool(true)
+      && $this->overlayLayout()->isNotEmpty();
   }
 
   public function hasExternalDetail(): bool
