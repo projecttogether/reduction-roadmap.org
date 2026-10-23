@@ -61,13 +61,13 @@ $args_btn_details = [
     </header>
 
     <?php if ($metaItems !== []): ?>
-      <dl class="mt-auto flex flex-wrap gap-2">
+      <dl class="mt-auto flex flex-wrap gap-x-6 gap-y-3">
         <?php foreach ($metaItems as $metaItem): ?>
-          <div class="flex flex-col gap-0.5 bg-dark-green px-2 py-1 text-off-white">
-            <dt class="text-[10px] uppercase leading-none tracking-wide text-off-white/70">
+          <div class="flex flex-col gap-0.5">
+            <dt class="text-[10px] uppercase leading-none tracking-wide text-dark-green/70">
               <?= esc($metaItem['label']) ?>
             </dt>
-            <dd class="text-xs leading-tight">
+            <dd class="text-xs leading-tight text-dark-green">
               <?= esc($metaItem['value']) ?>
             </dd>
           </div>
