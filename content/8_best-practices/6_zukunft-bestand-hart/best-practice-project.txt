@@ -1,0 +1,105 @@
+Title: Zukunft Bestand Hart
+
+----
+
+Location: Leonding
+
+----
+
+Projectperiod: 2025 - 2030
+
+----
+
+Grossfloorarea: 4629
+
+----
+
+Buildinguse: residential
+
+----
+
+Constructiontype: existing-building
+
+----
+
+Thgtarget: below-10
+
+----
+
+Thgvalue: -6 kg CO₂e/m²BGF
+
+----
+
+Sourceurl: https://projekt.studio/projekte/014-zukunft-bestand-1/
+
+----
+
+Description:
+
+Zukunft Bestand Hart projektiert die gesamtheitliche, ökologische und sozial inklusive Sanierung des Wohnbau- und Quartiersbestands im Harterfeld in Leonding. Ein modularer Werkzeugkasten aus konkreten Sanierungsmaßnahmen dient dabei der umfassenden und langfristigen Verbesserung von Gebäuden, Grünflächen, Mobilität und Energie.
+
+Sanierungsmaßnahmen des bilanzierten Wohngebäudes umfassen insbesondere: Aufstockung in Holzbauweise; Dämmung mit vorgefertigten Holzelementen als serielle Sanierung; neue, bodentiefe Holz-Alufenster mit Sonnenschutz; Erneuerung von Loggien, neue Balkone; Verlängerung von Stiegenhaus und Aufzug; Fernwärme und Solargründach mit PV-Elementen. Ziel ist eine klimaneutrale Sanierung.
+
+----
+
+Cover: - file://ibvieywop8a1hxhe
+
+----
+
+Projectsponsor: PROJEKT projektstudio zt (selbstinitiiert)
+
+----
+
+Participatingorganizations: PROJEKT projektstudio zt
+
+----
+
+Projectstatus: planning
+
+----
+
+Areareference: gross-floor-area
+
+----
+
+Submittername: 
+
+----
+
+Submitterrole: 
+
+----
+
+Submitterorganization: 
+
+----
+
+Submitteremail: 
+
+----
+
+Submitterphone: 
+
+----
+
+Contactpermission: 
+
+----
+
+Submitpermission: 
+
+----
+
+Imagerights: 
+
+----
+
+Internalnotes: 
+
+----
+
+Submittedat: 
+
+----
+
+Uuid: tzm1y9q28okbpxp7
