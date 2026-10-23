@@ -89,6 +89,17 @@ class BestPracticeProjectPage extends Page
     return $this->sourceUrl()->isNotEmpty() ? $this->sourceUrl()->value() : $this->url();
   }
 
+  /**
+   * Whether the detail overlay should be offered for this project.
+   *
+   * Defaults to true so projects created before the toggle existed - whose
+   * content files have no such field - keep their overlay.
+   */
+  public function hasOverlay(): bool
+  {
+    return $this->overlayEnabled()->toBool(true);
+  }
+
   public function hasExternalDetail(): bool
   {
     return $this->sourceUrl()->isNotEmpty();

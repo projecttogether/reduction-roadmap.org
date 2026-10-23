@@ -14,7 +14,13 @@
 $blockId  ??= '';
 $projects ??= null;
 
-if ($projects === null || $projects->isEmpty()) return;
+if ($projects === null) return;
+
+// Only projects whose overlay is switched on get a section, so a disabled
+// project cannot be reached even if its id is guessed.
+$projects = $projects->filter(fn ($project) => $project->hasOverlay());
+
+if ($projects->isEmpty()) return;
 
 $overlayId = 'best-practices-overlay-' . $blockId;
 ?>

@@ -186,6 +186,14 @@ tabs:
         type: info
         label: Overlay-Inhalte
         text: Diese Inhalte erscheinen in der Detailansicht unterhalb von Titel und Kennwerten. Titel, Standort und Kennwerte kommen aus dem Tab „Inhalt“ und müssen hier nicht wiederholt werden.
+      overlayEnabled:
+        type: toggle
+        label: Detailansicht aktivieren
+        text:
+          - Keine Detailansicht
+          - Detailansicht anzeigen
+        default: true
+        help: Ist die Detailansicht deaktiviert, erscheint auf der Projektkarte kein „Mehr erfahren“-Button und die Karte lässt sich nicht anklicken.
       overlayLayout:
         extends: fields/layout/layoutSections
         label: Overlay-Layout

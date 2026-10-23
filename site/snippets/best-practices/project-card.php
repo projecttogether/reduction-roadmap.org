@@ -8,23 +8,29 @@
 $image        = $project->cover()->toFile() ?? $project->images()->first();
 $location     = $project->location()->value();
 $period       = $project->projectPeriod()->value();
+
+// With the overlay switched off the card carries no trigger, is not
+// clickable and shows no "Mehr erfahren" button.
+$hasOverlay   = $project->hasOverlay();
 // Markup //
 ////////////////// ?>
 
 <article
-  class="best-practices-project group flex min-w-0 cursor-pointer flex-col border border-dark-green bg-off-white"
+  class="best-practices-project group flex min-w-0 flex-col border border-dark-green bg-off-white<?= $hasOverlay ? ' cursor-pointer' : '' ?>"
   data-function="<?= esc($project->buildingUse()->value()) ?>"
   data-construction="<?= esc($project->constructionType()->value()) ?>"
   data-co2="<?= esc($project->thgTarget()->value()) ?>"
-  data-project-trigger
-  data-project-id="<?= esc($project->id()) ?>"
-  data-project-title="<?= esc($project->title()->value()) ?>"
-  data-project-url="<?= esc($project->url()) ?>"
-  data-project-source="<?= esc($project->hasExternalDetail() ? $project->sourceUrl()->value() : '') ?>"
+  <?php if ($hasOverlay): ?>
+    data-project-trigger
+    data-project-id="<?= esc($project->id()) ?>"
+    data-project-title="<?= esc($project->title()->value()) ?>"
+    data-project-url="<?= esc($project->url()) ?>"
+    data-project-source="<?= esc($project->hasExternalDetail() ? $project->sourceUrl()->value() : '') ?>"
+  <?php endif ?>
 >
   <?php if ($image): ?>
     <div class="aspect-4/3 overflow-hidden">
-      <img src="<?= esc($image->url()) ?>" alt="<?= esc($image->alt()->or($project->title())->value()) ?>" class="size-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none">
+      <img src="<?= esc($image->url()) ?>" alt="<?= esc($image->alt()->or($project->title())->value()) ?>" class="size-full object-cover transition-transform duration-300 motion-reduce:transition-none<?= $hasOverlay ? ' group-hover:scale-[1.02]' : '' ?>">
     </div>
   <?php endif ?>
 
@@ -52,6 +58,7 @@ $period       = $project->projectPeriod()->value();
     <?php endif ?>
 
 
+    <?php if ($hasOverlay): ?>
     <div class="flex flex-wrap items-start justify-start gap-2">
       <button
         type="button"
@@ -62,5 +69,6 @@ $period       = $project->projectPeriod()->value();
         <span class="inline-flex pt-0.5">Mehr erfahren</span>
       </button>
     </div>
+    <?php endif ?>
   </div>
 </article>
