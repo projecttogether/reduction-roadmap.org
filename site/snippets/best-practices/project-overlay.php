@@ -77,7 +77,12 @@ $overlayId = 'best-practices-overlay-' . $blockId;
           </header>
 
           <?php if ($overlayProject->overlayLayout()->isNotEmpty()): ?>
-            <?php snippet('layout', ['layoutField' => $overlayProject->overlayLayout()]) ?>
+            <div class="px-5 md:px-6">
+              <?php snippet('layout', [
+                'layoutField'  => $overlayProject->overlayLayout(),
+                'edgePadding'  => false,
+              ]) ?>
+            </div>
           <?php endif ?>
         </article>
       <?php endforeach ?>

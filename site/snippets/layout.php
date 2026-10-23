@@ -4,6 +4,12 @@
 // layout field can be passed in (e.g. the project overlay layout).
 $layoutField ??= $page->layout();
 
+// Sections pad themselves against the viewport edge on narrow screens. Inside a
+// container that is already inset - the project overlay - that padding is both
+// wrong (it keys off the viewport, not the container) and doubled up, so it can
+// be switched off and handled by the container instead.
+$edgePadding ??= true;
+
 if ($layoutField->isNotEmpty()):
   foreach ($layoutField->toLayouts() as $layout):
 
@@ -49,7 +55,7 @@ if ($layoutField->isNotEmpty()):
     <section
       data-padd-top="<?= $padd_top ?>"
       class        ="
-        max-[1099px]:px-4
+        <?= $edgePadding ? 'max-[1099px]:px-4' : '' ?>
         <?= $padd_top == 'sm' ? 'pt-8'  : '' ?>
         <?= $padd_top == 'md' ? 'pt-16' : '' ?>
         <?= $padd_top == 'lg' ? 'pt-24' : '' ?>
