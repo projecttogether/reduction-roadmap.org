@@ -22,7 +22,7 @@ Constructiontype: new-build
 
 ----
 
-Thgtarget: 
+Thgtarget: none
 
 ----
 
@@ -101,6 +101,14 @@ Internalnotes:
 ----
 
 Submittedat: 
+
+----
+
+Overlayenabled: true
+
+----
+
+Overlaylayout: 
 
 ----
 
