@@ -62,7 +62,7 @@ $overlayId = 'best-practices-overlay-' . $blockId;
         ?>
         <article data-overlay-project="<?= esc($overlayProject->id()) ?>" hidden>
           <header class="border-b border-dark-green/20 p-5 pr-20 md:p-6 md:pr-20">
-            <h2 class="font-heading text-3xl font-black leading-tight text-black-green md:text-4xl">
+            <h2 class="font-heading text-4xl font-black leading-tight text-black-green md:text-5xl">
               <?= $overlayProject->title()->html() ?>
             </h2>
 
