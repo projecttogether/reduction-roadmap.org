@@ -24,11 +24,32 @@ if ($siteUrl === false || $siteUrl === '') {
 
 $siteUrl = trim(explode(',', $siteUrl)[0]);
 
+// Debug mode. //
+////////////////////////////////////
+
+// Debug output renders stack traces, file paths and source snippets to whoever
+// triggers the error, so it must never be on for the public site. It defaults
+// to off and is only enabled automatically for local development hosts.
+// KIRBY_DEBUG=true|false overrides the detection, e.g. to inspect an error on a
+// staging deployment or when developing on a custom local hostname.
+$debugOverride = trim((string)getenv('KIRBY_DEBUG'));
+
+if ($debugOverride !== '') {
+  $debug = filter_var($debugOverride, FILTER_VALIDATE_BOOLEAN);
+} else {
+  $debugHost = (string)($_SERVER['HTTP_X_FORWARDED_HOST'] ?? $_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? '');
+  $debugHost = trim(explode(',', $debugHost)[0]);
+  $debugHost = strtolower(trim(preg_replace('/:\d+$/', '', $debugHost), '[]'));
+  $debug     = in_array($debugHost, ['localhost', '127.0.0.1', '::1'], true)
+    || str_ends_with($debugHost, '.test')
+    || str_ends_with($debugHost, '.localhost');
+}
+
 // Kirby config. //
 ////////////////////////////////////
 
 return [
-  'debug' => true,
+  'debug' => $debug,
   'url'   => $siteUrl,
   'panel' => [
     'install' => true,
