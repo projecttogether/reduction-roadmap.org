@@ -8,21 +8,6 @@
 $image        = $project->cover()->toFile() ?? $project->images()->first();
 $location     = $project->location()->value();
 $period       = $project->projectPeriod()->value();
-$co2Label     = $project->hasThgRange() ? $project->thgRangeLabel() : null;
-
-// Each meta value carries its own label so it is clear what the value refers to.
-// Wording follows the filter bar on the same page, so a tag and the filter that
-// matches it read the same.
-$metaItems = array_values(array_filter(
-  [
-    ['label' => 'Funktion',     'value' => $project->buildingUseLabel()],
-    ['label' => 'Baumaßnahme',  'value' => $project->constructionTypeLabel()],
-    ['label' => 'Fläche (BGF)', 'value' => $project->displayArea()],
-    ['label' => 'THG-Zielwert', 'value' => $co2Label],
-  ],
-  fn ($item) => trim((string)$item['value']) !== ''
-));
-
 // Markup //
 ////////////////// ?>
 
@@ -55,20 +40,10 @@ $metaItems = array_values(array_filter(
       <?php endif ?>
     </header>
 
-    <?php if ($metaItems !== []): ?>
-      <dl class="mt-auto flex flex-wrap gap-x-6 gap-y-3 border-t border-dark-green/20 pt-5">
-        <?php foreach ($metaItems as $metaItem): ?>
-          <div class="flex flex-col gap-0.5">
-            <dt class="text-[10px] uppercase leading-none tracking-wide text-dark-green/70">
-              <?= esc($metaItem['label']) ?>
-            </dt>
-            <dd class="text-xs leading-tight text-dark-green">
-              <?= esc($metaItem['value']) ?>
-            </dd>
-          </div>
-        <?php endforeach ?>
-      </dl>
-    <?php endif ?>
+    <?php snippet('best-practices/project-meta', [
+      'project' => $project,
+      'class'   => 'mt-auto border-t border-dark-green/20 pt-5',
+    ]) ?>
 
     <?php if ($project->description()->isNotEmpty()): ?>
       <div class="border-t border-dark-green/20 pt-5 text-base leading-relaxed text-dark-green">

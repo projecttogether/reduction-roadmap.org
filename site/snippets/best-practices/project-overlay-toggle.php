@@ -14,7 +14,8 @@ $blockId ??= '';
 
     var backdrop = overlay.querySelector('[data-overlay-backdrop]');
     var panel = overlay.querySelector('[data-overlay-panel]');
-    var titleEl = overlay.querySelector('[data-overlay-title]');
+    var scrollArea = overlay.querySelector('[data-overlay-scroll]');
+    var sections = overlay.querySelectorAll('[data-overlay-project]');
     var closeButton = overlay.querySelector('[data-overlay-close]');
 
     var isOpen = false;
@@ -32,7 +33,14 @@ $blockId ??= '';
       // Remember what to hand focus back to when the panel closes.
       lastFocused = card.querySelector('[data-project-more]') || card;
 
-      titleEl.textContent = card.dataset.projectTitle || '';
+      // Reveal this project's section and hide the others. The dialog has no
+      // single static heading, so it is labelled from the card instead.
+      var projectId = card.dataset.projectId;
+      Array.prototype.forEach.call(sections, function (section) {
+        section.hidden = section.dataset.overlayProject !== projectId;
+      });
+      panel.setAttribute('aria-label', card.dataset.projectTitle || 'Projektdetails');
+      scrollArea.scrollTop = 0;
 
       window.clearTimeout(hideTimer);
       overlay.hidden = false;

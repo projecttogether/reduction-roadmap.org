@@ -177,3 +177,15 @@ tabs:
                 type: text
                 label: Eingereicht am
                 disabled: true
+
+  overlay:
+    label: Inhalte Unterseite/Overlay
+    icon: layers
+    fields:
+      overlayInfo:
+        type: info
+        label: Overlay-Inhalte
+        text: Diese Inhalte erscheinen in der Detailansicht unterhalb von Titel und Kennwerten. Titel, Standort und Kennwerte kommen aus dem Tab „Inhalt“ und müssen hier nicht wiederholt werden.
+      overlayLayout:
+        extends: fields/layout/layoutSections
+        label: Overlay-Layout

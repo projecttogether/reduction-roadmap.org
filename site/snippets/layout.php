@@ -1,7 +1,11 @@
-<?php 
+<?php
 
-if ($page->layout()->isNotEmpty()): 
-  foreach ($page->layout()->toLayouts() as $layout):
+// Renders a layout field. Defaults to the current page's main layout, but any
+// layout field can be passed in (e.g. the project overlay layout).
+$layoutField ??= $page->layout();
+
+if ($layoutField->isNotEmpty()):
+  foreach ($layoutField->toLayouts() as $layout):
 
     $config        = $layout->attrs();
     $w_max         = $config->w_max()->or('wide');
