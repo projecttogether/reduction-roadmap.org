@@ -13,6 +13,19 @@ $location     = $project->location()->value();
 $period       = $project->projectPeriod()->value();
 $co2Label     = $project->hasThgRange() ? $project->thgRangeLabel() : null;
 
+// Each meta value carries its own label so it is clear what the value refers to.
+// Wording follows the filter bar on the same page, so a tag and the filter that
+// matches it read the same.
+$metaItems = array_values(array_filter(
+  [
+    ['label' => 'Funktion',     'value' => $project->buildingUseLabel()],
+    ['label' => 'Baumaßnahme',  'value' => $project->constructionTypeLabel()],
+    ['label' => 'Fläche (BGF)', 'value' => $project->displayArea()],
+    ['label' => 'THG-Zielwert', 'value' => $co2Label],
+  ],
+  fn ($item) => trim((string)$item['value']) !== ''
+));
+
 $args_btn_details = [
   'label'  => 'Weiterführende Informationen',
   'url'    => $url,
@@ -47,21 +60,20 @@ $args_btn_details = [
       <?php endif ?>
     </header>
 
-    <dl class="mt-auto flex flex-wrap gap-2 text-xs uppercase tracking-wide text-off-white">
-      <?php foreach ([
-        $project->buildingUseLabel(),
-        $project->constructionTypeLabel(),
-        $project->displayArea(),
-        $co2Label,
-      ] as $tag): ?>
-        <?php if ($tag !== null && $tag !== ''): ?>
-          <div class="bg-dark-green px-2 py-1">
-            <dt class="sr-only">Project category</dt>
-            <dd><?= esc($tag) ?></dd>
+    <?php if ($metaItems !== []): ?>
+      <dl class="mt-auto flex flex-wrap gap-2">
+        <?php foreach ($metaItems as $metaItem): ?>
+          <div class="flex flex-col gap-0.5 bg-dark-green px-2 py-1 text-off-white">
+            <dt class="text-[10px] uppercase leading-none tracking-wide text-off-white/70">
+              <?= esc($metaItem['label']) ?>
+            </dt>
+            <dd class="text-xs leading-tight">
+              <?= esc($metaItem['value']) ?>
+            </dd>
           </div>
-        <?php endif ?>
-      <?php endforeach ?>
-    </dl>
+        <?php endforeach ?>
+      </dl>
+    <?php endif ?>
 
     <?php if ($project->description()->isNotEmpty()): ?>
       <div class="text-base leading-relaxed text-dark-green">
