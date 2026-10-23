@@ -61,7 +61,7 @@ $args_btn_details = [
     </header>
 
     <?php if ($metaItems !== []): ?>
-      <dl class="mt-auto flex flex-wrap gap-x-6 gap-y-3">
+      <dl class="mt-auto flex flex-wrap gap-x-6 gap-y-3 border-t border-dark-green/20 pt-5">
         <?php foreach ($metaItems as $metaItem): ?>
           <div class="flex flex-col gap-0.5">
             <dt class="text-[10px] uppercase leading-none tracking-wide text-dark-green/70">
@@ -76,7 +76,7 @@ $args_btn_details = [
     <?php endif ?>
 
     <?php if ($project->description()->isNotEmpty()): ?>
-      <div class="text-base leading-relaxed text-dark-green">
+      <div class="border-t border-dark-green/20 pt-5 text-base leading-relaxed text-dark-green">
         <?= $project->description()->kt() ?>
       </div>
     <?php endif ?>
