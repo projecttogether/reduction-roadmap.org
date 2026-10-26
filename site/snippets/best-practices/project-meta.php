@@ -17,7 +17,7 @@ $metaItems = array_values(array_filter(
     ['label' => 'Funktion',     'value' => $project->buildingUseLabel()],
     ['label' => 'Baumaßnahme',  'value' => $project->constructionTypeLabel()],
     ['label' => 'Fläche (BGF)', 'value' => $project->displayArea()],
-    ['label' => 'THG-Zielwert', 'value' => $project->hasThgRange() ? $project->thgRangeLabel() : ''],
+    ['label' => 'THG-Kennwert', 'value' => $project->thgValue()->value()],
   ],
   fn ($item) => trim((string)$item['value']) !== ''
 ));
