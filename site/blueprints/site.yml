@@ -29,6 +29,7 @@ tabs:
         image: icon
         template:
           - best-practices
+          - members
 
   navigation:
     extends: tabs/navigation

@@ -33,6 +33,7 @@ fieldsets:
   - image-marquee
   - logo-slideshow
   - card-grid
+  - members-wall
 
 settings:
   tabs:

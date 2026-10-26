@@ -1,0 +1,17 @@
+title: Mitglieder
+icon: users
+
+tabs:
+  content:
+    label: Inhalt
+    icon: text
+    sections:
+      members:
+        type: pages
+        label: Mitglieder
+        template: member
+        layout: cards
+        image: logo
+        info: "{{ page.website }}"
+        empty: Noch keine Mitglieder
+        sortBy: title asc

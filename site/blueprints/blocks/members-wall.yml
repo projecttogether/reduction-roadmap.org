@@ -1,0 +1,60 @@
+name: Mitglieder-Wand
+icon: users
+
+preview: fields
+
+tabs:
+  content:
+    fields:
+      source:
+        type: pages
+        label: Mitglieder-Seite
+        max: 1
+        help: Leer lassen, um die Mitglieder-Seite zu verwenden.
+        width: 1/2
+
+      columns:
+        type: select
+        label: Logos pro Reihe (Desktop)
+        default: 6
+        width: 1/2
+        options:
+          4: Vier
+          5: Fünf
+          6: Sechs
+          7: Sieben
+
+      headline:
+        type: text
+        label: Überschrift
+        help: "Optional. Beispiel: 630+ Organisationen unterstützen …"
+        width: 1/1
+
+      intro:
+        type: textarea
+        label: Einleitung
+        buttons: false
+        help: Optional.
+        width: 1/1
+
+      textWallScope:
+        type: select
+        label: Textwand zeigt
+        default: without-logo
+        width: 1/2
+        options:
+          without-logo: Nur Mitglieder ohne Logo
+          all: Alle Mitglieder
+          none: Keine Textwand
+        help: Ob die Textwand nur die Mitglieder ohne Logo auflistet oder alle.
+
+      showLogoWall:
+        type: toggle
+        label: Logowand anzeigen
+        text:
+          - Keine Logowand
+          - Logowand anzeigen
+        default: true
+        width: 1/2
+
+  layout: blocks/layout-settings

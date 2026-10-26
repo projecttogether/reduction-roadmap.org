@@ -1,0 +1,43 @@
+title: Mitglied
+icon: users
+
+status:
+  draft: Entwurf
+  listed: Veröffentlicht
+
+tabs:
+  content:
+    label: Inhalt
+    icon: text
+    columns:
+      - width: 1/2
+        fields:
+          memberInfo:
+            type: info
+            label: Mitglied
+            text: Mitglieder mit Logo erscheinen in der Logowand, Mitglieder ohne Logo in der Textwand.
+          title:
+            type: text
+            label: Name der Organisation
+            required: true
+          website:
+            type: url
+            label: Website
+            help: Optional. Ist eine Website hinterlegt, wird der Eintrag verlinkt.
+
+      - width: 1/2
+        sections:
+          logoFields:
+            type: fields
+            fields:
+              logo:
+                type: files
+                label: Logo
+                max: 1
+                query: page.images
+                help: Bild oder SVG. Ohne Logo erscheint die Organisation in der Textwand.
+          files:
+            type: files
+            label: Dateien
+            layout: cards
+            empty: Noch kein Logo hochgeladen
