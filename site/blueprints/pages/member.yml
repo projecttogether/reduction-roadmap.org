@@ -14,8 +14,8 @@ tabs:
         fields:
           memberInfo:
             type: info
-            label: Mitglied
-            text: Mitglieder mit Logo erscheinen in der Logowand, Mitglieder ohne Logo in der Textwand.
+            label:
+            text: Mitglieder können über den Baustein "Mitglieder-Wand" in Seitenlayouts angezeigt werden.
           title:
             type: text
             label: Name der Organisation
