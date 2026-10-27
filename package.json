@@ -1,6 +1,7 @@
 {
   "name": "reduction-roadmap",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
     "dev": "php -S localhost:8000 kirby/router.php & npm run watch-tw",
     "watch-tw": "tailwindcss -i ./assets/css/app.css -o ./assets/css/main.css --watch",
