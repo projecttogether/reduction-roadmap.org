@@ -26,18 +26,20 @@ tabs:
             help: Optional. Ist eine Website hinterlegt, wird der Eintrag verlinkt.
 
       - width: 1/2
-        sections:
-          logoFields:
-            type: fields
-            fields:
-              logo:
-                type: files
-                label: Logo
-                max: 1
-                query: page.images
-                help: Bild oder SVG. Ohne Logo erscheint die Organisation in der Textwand.
-          files:
+        fields:
+          logo:
             type: files
-            label: Dateien
-            layout: cards
-            empty: Noch kein Logo hochgeladen
+            label: Logo
+            max: 1
+            query: page.images
+            help: Bild oder SVG. Ohne Logo erscheint die Organisation in der Textwand.
+
+  media:
+    label: Mediathek
+    icon: image
+    sections:
+      files:
+        type: files
+        label: Dateien
+        layout: cards
+        empty: Noch keine Dateien hochgeladen

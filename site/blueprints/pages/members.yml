@@ -8,7 +8,7 @@ tabs:
     sections:
       members:
         type: pages
-        label: Mitglieder
+        label: Mitglieder/Partner:innen
         template: member
         layout: cards
         image: logo

@@ -1,8 +1,6 @@
 name: Mitglieder-Wand
 icon: users
 
-preview: fields
-
 tabs:
   content:
     fields:
@@ -16,13 +14,13 @@ tabs:
       columns:
         type: select
         label: Logos pro Reihe (Desktop)
-        default: 6
+        default: "6"
         width: 1/2
         options:
-          4: Vier
-          5: Fünf
-          6: Sechs
-          7: Sieben
+          "4": "4"
+          "5": "5"
+          "6": "6"
+          "7": "7"
 
       headline:
         type: text
