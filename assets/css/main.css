@@ -25,6 +25,7 @@
     --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-black: #000;
     --color-white: #fff;
@@ -616,14 +617,23 @@
   .flex-1 {
     flex: 1;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .flex-shrink-0 {
     flex-shrink: 0;
   }
   .shrink-0 {
     flex-shrink: 0;
   }
+  .flex-grow {
+    flex-grow: 1;
+  }
   .grow {
     flex-grow: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
   }
   .translate-x-0 {
     --tw-translate-x: 0;
@@ -645,6 +655,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .list-disc {
     list-style-type: disc;
@@ -690,6 +703,9 @@
   }
   .justify-start {
     justify-content: flex-start;
+  }
+  .gap-0 {
+    gap: 0;
   }
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
@@ -986,6 +1002,9 @@
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
+  .pt-0 {
+    padding-top: 0;
+  }
   .pt-0\.5 {
     padding-top: calc(var(--spacing) * 0.5);
   }
@@ -1036,6 +1055,9 @@
   }
   .pr-64 {
     padding-right: calc(var(--spacing) * 64);
+  }
+  .pb-0 {
+    padding-bottom: 0;
   }
   .pb-0\.75 {
     padding-bottom: calc(var(--spacing) * 0.75);
@@ -1305,6 +1327,9 @@
   .underline {
     text-decoration-line: underline;
   }
+  .decoration-dark-green {
+    text-decoration-color: var(--color-dark-green);
+  }
   .decoration-dark-green\/30 {
     text-decoration-color: color-mix(in srgb, #2e472f 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1333,6 +1358,10 @@
   .shadow-2xl {
     --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
@@ -2139,6 +2168,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -2255,6 +2289,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
