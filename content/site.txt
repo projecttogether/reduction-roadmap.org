@@ -15,7 +15,7 @@ Navigation:
   footer: 'false'
   is_cta: 'false'
 - 
-  label: Praxisbeispiel
+  label: Praxisbeispiele
   link: page://as7s2d7lubmaj9i2
   footer: 'false'
   is_cta: 'false'
