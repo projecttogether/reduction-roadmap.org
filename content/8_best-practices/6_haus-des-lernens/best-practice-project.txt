@@ -34,7 +34,7 @@ Sourceurl: https://habitat2030.at/projekte/pdf/MAGK_HDL.pdf
 
 ----
 
-Description: Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, welches von der GESA als best/novell Practice errichtet wurde. Kernthemen der Kreislauffähigkeit - ökologische Materialien, Regionalität, sortenreine Zerlegbarkeit - wurden nach dem heutigen Stand der Forschung und Wissenschaft ausgeführt. Damit ist das Haus des Lernens Vorreiter, was den CO2-Fußabdruck und die Ökologie angeht. Fotos: ©Rupert Steiner
+Description: Das Haus des Lernens ist ein gemeinschaftlich soziales Gebäude, welches von der GESA als best/novell Practice errichtet wurde. Kernthemen der Kreislauffähigkeit - ökologische Materialien, Regionalität, sortenreine Zerlegbarkeit - wurden nach dem heutigen Stand der Forschung und Wissenschaft ausgeführt. Damit ist das Haus des Lernens Vorreiter, was den CO2-Fußabdruck und die Ökologie angeht.
 
 ----
 
